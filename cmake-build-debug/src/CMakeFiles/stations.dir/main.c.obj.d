@@ -21,4 +21,5 @@ src/CMakeFiles/stations.dir/main.c.obj: \
  C:/PROGRA~1/JetBrains/CLion\ 2022.2.1/bin/mingw/x86_64-w64-mingw32/include/malloc.h \
  C:/PROGRA~1/JetBrains/CLion\ 2022.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/mm_malloc.h \
  C:/PROGRA~1/JetBrains/CLion\ 2022.2.1/bin/mingw/x86_64-w64-mingw32/include/errno.h \
- C:\Users\Frederik\CLionProjects\P1\src\stations.h
+ C:\Users\Frederik\CLionProjects\P1\src\stations.h \
+ C:\Users\Frederik\CLionProjects\P1\src\trains.h
