@@ -6,7 +6,7 @@
 // When multiple routes for the same journey are available, the route with shortest travel time is selected.
 
 // All stations are of format "SOURCE_DESTINATION".
-// Unit is km.
-const double berlinHBF_parisNord = 1000.52;
+// Unit is m.
+const double berlinHBF_parisNord = 1000.52 * 1000;
 
 #endif //P1_STATIONS_H
