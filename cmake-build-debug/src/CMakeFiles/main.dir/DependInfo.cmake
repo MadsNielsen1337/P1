@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/Frederik/CLionProjects/P1/src/main.c" "src/CMakeFiles/main.dir/main.c.obj" "gcc" "src/CMakeFiles/main.dir/main.c.obj.d"
+  "C:/Users/BoBByN/Documents/GitHub/P1/src/main.c" "src/CMakeFiles/main.dir/main.c.obj" "gcc" "src/CMakeFiles/main.dir/main.c.obj.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src/CMakeFiles/stations.dir/DependInfo.cmake"
+  "C:/Users/BoBByN/Documents/GitHub/P1/cmake-build-debug/src/CMakeFiles/stations.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

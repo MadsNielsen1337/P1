@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Frederik\CLionProjects\P1
+CMAKE_SOURCE_DIR = C:\Users\BoBByN\Documents\GitHub\P1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Frederik\CLionProjects\P1\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -96,14 +96,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Frederik\CLionProjects\P1\cmake-build-debug\CMakeFiles C:\Users\Frederik\CLionProjects\P1\cmake-build-debug\src\\CMakeFiles\progress.marks
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Frederik\CLionProjects\P1\cmake-build-debug\CMakeFiles 0
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug\CMakeFiles C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug\src\\CMakeFiles\progress.marks
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/clean
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -112,22 +112,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/preinstall
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/preinstall
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/main.dir/rule:
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/main.dir/rule
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/main.dir/rule
 .PHONY : src/CMakeFiles/main.dir/rule
 
 # Convenience name for target.
@@ -136,12 +136,12 @@ main: src/CMakeFiles/main.dir/rule
 
 # fast build rule for target.
 main/fast:
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/build
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
 # Convenience name for target.
 src/CMakeFiles/stations.dir/rule:
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/stations.dir/rule
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/stations.dir/rule
 .PHONY : src/CMakeFiles/stations.dir/rule
 
 # Convenience name for target.
@@ -150,7 +150,7 @@ stations: src/CMakeFiles/stations.dir/rule
 
 # fast build rule for target.
 stations/fast:
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/build
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/build
 .PHONY : stations/fast
 
 main.obj: main.c.obj
@@ -158,8 +158,8 @@ main.obj: main.c.obj
 
 # target to build an object file
 main.c.obj:
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.obj
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.obj
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.obj
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.obj
 .PHONY : main.c.obj
 
 main.i: main.c.i
@@ -167,8 +167,8 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.i
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.i
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.i
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -176,8 +176,8 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.s
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.s
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.s
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -205,6 +205,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
