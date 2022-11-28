@@ -161,11 +161,50 @@
 					<DistClean command="C:/PROGRA~1/JetBrains/CLion 2022.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="graph">
+				<Option output="C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src/libgraph.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JetBrains/CLion 2022.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 graph"/>
+					<CompileFile command="C:/PROGRA~1/JetBrains/CLion 2022.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JetBrains/CLion 2022.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JetBrains/CLion 2022.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graph/fast">
+				<Option output="C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src/libgraph.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Program Files/JetBrains/CLion 2022.2.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JetBrains/CLion 2022.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 graph/fast"/>
+					<CompileFile command="C:/PROGRA~1/JetBrains/CLion 2022.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JetBrains/CLion 2022.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JetBrains/CLion 2022.2.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="C:/Users/Frederik/CLionProjects/P1/src/main.c">
 			<Option target="main"/>
 			<Option target="trains"/>
 			<Option target="stations"/>
+			<Option target="graph"/>
 		</Unit>
 		<Unit filename="C:/Users/Frederik/CLionProjects/P1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

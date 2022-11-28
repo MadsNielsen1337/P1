@@ -23,4 +23,5 @@ src/CMakeFiles/stations.dir/main.c.obj: \
  C:/PROGRA~1/JetBrains/CLion\ 2022.2.1/bin/mingw/x86_64-w64-mingw32/include/errno.h \
  C:/PROGRA~1/JetBrains/CLion\ 2022.2.1/bin/mingw/x86_64-w64-mingw32/include/math.h \
  C:\Users\Frederik\CLionProjects\P1\src\stations.h \
- C:\Users\Frederik\CLionProjects\P1\src\trains.h
+ C:\Users\Frederik\CLionProjects\P1\src\trains.h \
+ C:\Users\Frederik\CLionProjects\P1\src\graph.h
