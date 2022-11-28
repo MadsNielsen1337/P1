@@ -44,6 +44,7 @@ double time(double train_accel, double max_speed, double distance, int track_spe
 int main(void)
 {
     printf("%s\n",IC4.name);
+    printf("Fisk");
 
     double travel_time = time(IC4.accel, IC4.max_speed, berlinHBF_parisNord, 9999);
     printf("Travel time from berlinHBF to parisNord - assuming stuff, not accurate: %lf s\n", travel_time);
