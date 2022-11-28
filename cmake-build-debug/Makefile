@@ -164,6 +164,19 @@ stations/fast:
 	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/build
 .PHONY : stations/fast
 
+#=============================================================================
+# Target rules for targets named graph
+
+# Build rule for target.
+graph: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 graph
+.PHONY : graph
+
+# fast build rule for target.
+graph/fast:
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\graph.dir\build.make src/CMakeFiles/graph.dir/build
+.PHONY : graph/fast
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -173,6 +186,7 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... test
+	@echo ... graph
 	@echo ... main
 	@echo ... stations
 	@echo ... trains

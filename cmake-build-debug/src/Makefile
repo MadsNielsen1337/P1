@@ -167,6 +167,20 @@ stations/fast:
 	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/build
 .PHONY : stations/fast
 
+# Convenience name for target.
+src/CMakeFiles/graph.dir/rule:
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/graph.dir/rule
+.PHONY : src/CMakeFiles/graph.dir/rule
+
+# Convenience name for target.
+graph: src/CMakeFiles/graph.dir/rule
+.PHONY : graph
+
+# fast build rule for target.
+graph/fast:
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\graph.dir\build.make src/CMakeFiles/graph.dir/build
+.PHONY : graph/fast
+
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -175,6 +189,7 @@ main.c.obj:
 	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.obj
 	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\trains.dir\build.make src/CMakeFiles/trains.dir/main.c.obj
 	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.obj
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\graph.dir\build.make src/CMakeFiles/graph.dir/main.c.obj
 .PHONY : main.c.obj
 
 main.i: main.c.i
@@ -185,6 +200,7 @@ main.c.i:
 	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.i
 	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\trains.dir\build.make src/CMakeFiles/trains.dir/main.c.i
 	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.i
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\graph.dir\build.make src/CMakeFiles/graph.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -195,6 +211,7 @@ main.c.s:
 	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.s
 	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\trains.dir\build.make src/CMakeFiles/trains.dir/main.c.s
 	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.s
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\graph.dir\build.make src/CMakeFiles/graph.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -206,6 +223,7 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... test
+	@echo ... graph
 	@echo ... main
 	@echo ... stations
 	@echo ... trains

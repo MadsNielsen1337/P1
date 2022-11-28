@@ -7,6 +7,13 @@
 
 // All stations are of format "SOURCE_DESTINATION".
 // Unit is m.
-const double berlinHBF_parisNord = 1000.52 * 1000;
+
+enum station_e {Berlin_Hbf,
+                Paris_Nord,
+                Frankfurt_am_Main_Hbf,
+                Bruxelles_Midi};
+
+
+double berlinHBF_parisNord = 1000.52 * 1000;
 
 #endif //P1_STATIONS_H

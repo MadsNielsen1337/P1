@@ -3,41 +3,7 @@
 #include <math.h>
 #include "stations.h"
 #include "trains.h"
-
-// Maybe have a struct with stats for each train? Like acceleration/deceleration (accel/decel), train cap, top speed,  and so on
-
-// Sources for IC4
-    // https://web.archive.org/web/20121202210720/http://www.siemens.com/press/pool/de/events/2011/industry/mobility/2011-05-icx/siemens-icx-factsheet-e.pdf
-    // https://en.wikipedia.org/wiki/ICE_4#cite_note-ICxFact-7
-
-void track_speed();
-// Prolly not gonna be a single function as the problem is way more complex for just one
-
-// Holds data for [INSERT FUNCTION NAME] for all edges.
-
-
-void track_gauges();
-// See above
-
-// Holds data for [INSERT FUNCTION NAME] for all edges.
-
-void power();
-// See above
-
-// Holds data for [INSERT FUNCTION NAME] for all edges.
-
-void stations();
-// See above
-
-// Holds data for [INSERT FUNCTION NAME] for all edges.
-
-
-void signals();
-// See above
-
-// Holds data for [INSERT FUNCTION NAME] for all edges.
-
-//fisk
+#include "graph.h"
 
 double time(double train_accel, double max_speed, double distance, int track_speed);
 
@@ -48,40 +14,31 @@ int main(void)
     double travel_time = time(IC4.accel, IC4.max_speed, berlinHBF_parisNord, 9999);
     printf("Travel time from berlinHBF to parisNord - assuming stuff, not accurate: %lf s\n", travel_time);
 
+
+    // input array containing edges of the graph (as per above diagram)
+    // `(x, y, w)` tuple in the array represents an edge from `x` to `y`
+    // having weight `w`
+    struct Edge edges[] =
+            {
+                    { Berlin_Hbf, Paris_Nord, 6 }, { 1, 2, 7 }, { 2, 0, 5 }, { 2, 1, 4 },
+                    { 3, 2, 10 }, { 4, 5, 1 }, { 5, 4, 3 }
+            };
+
+    // calculate the number of edges
+    int n = sizeof(edges)/sizeof(edges[0]);
+
+    // construct a graph from the given edges
+    struct Graph *graph = createGraph(edges, n);
+
+    // print adjacency list representation of a graph
+    printGraph(graph);
+
+
+
+
+
+
     return EXIT_SUCCESS;
-}
-
-
-void track_speed()
-{
-
-}
-
-void track_gauges()
-{
-
-}
-
-void power()
-{
-
-}
-
-
-void stations()
-{
-
-}
-
-
-void signals()
-{
-
-}
-
-void train_cap() //maybe as a struct with train stats like speed, accel...
-{
-
 }
 
 double time(double accel, double max_speed, double distance, int track_speed)
