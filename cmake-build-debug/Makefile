@@ -139,6 +139,19 @@ main/fast:
 .PHONY : main/fast
 
 #=============================================================================
+# Target rules for targets named trains
+
+# Build rule for target.
+trains: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 trains
+.PHONY : trains
+
+# fast build rule for target.
+trains/fast:
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\trains.dir\build.make src/CMakeFiles/trains.dir/build
+.PHONY : trains/fast
+
+#=============================================================================
 # Target rules for targets named stations
 
 # Build rule for target.
@@ -162,6 +175,7 @@ help:
 	@echo ... test
 	@echo ... main
 	@echo ... stations
+	@echo ... trains
 .PHONY : help
 
 

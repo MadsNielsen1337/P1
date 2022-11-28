@@ -140,6 +140,20 @@ main/fast:
 .PHONY : main/fast
 
 # Convenience name for target.
+src/CMakeFiles/trains.dir/rule:
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/trains.dir/rule
+.PHONY : src/CMakeFiles/trains.dir/rule
+
+# Convenience name for target.
+trains: src/CMakeFiles/trains.dir/rule
+.PHONY : trains
+
+# fast build rule for target.
+trains/fast:
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\trains.dir\build.make src/CMakeFiles/trains.dir/build
+.PHONY : trains/fast
+
+# Convenience name for target.
 src/CMakeFiles/stations.dir/rule:
 	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/stations.dir/rule
 .PHONY : src/CMakeFiles/stations.dir/rule
@@ -158,8 +172,14 @@ main.obj: main.c.obj
 
 # target to build an object file
 main.c.obj:
+<<<<<<< HEAD
 	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.obj
 	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.obj
+=======
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.obj
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\trains.dir\build.make src/CMakeFiles/trains.dir/main.c.obj
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.obj
+>>>>>>> main
 .PHONY : main.c.obj
 
 main.i: main.c.i
@@ -167,8 +187,14 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
+<<<<<<< HEAD
 	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.i
 	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.i
+=======
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.i
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\trains.dir\build.make src/CMakeFiles/trains.dir/main.c.i
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.i
+>>>>>>> main
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -176,8 +202,14 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
+<<<<<<< HEAD
 	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.s
 	cd /d C:\Users\BoBByN\Documents\GitHub\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.s
+=======
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/main.c.s
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\trains.dir\build.make src/CMakeFiles/trains.dir/main.c.s
+	cd /d C:\Users\Frederik\CLionProjects\P1\cmake-build-debug && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\stations.dir\build.make src/CMakeFiles/stations.dir/main.c.s
+>>>>>>> main
 .PHONY : main.c.s
 
 # Help Target
@@ -191,6 +223,7 @@ help:
 	@echo ... test
 	@echo ... main
 	@echo ... stations
+	@echo ... trains
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -32,7 +32,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				},
 				{
@@ -61,7 +62,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -79,6 +81,13 @@
 					"id" : "stations::@145eef247bfb46b6828c",
 					"jsonFile" : "target-stations-Debug-ac6901901f76dfe857b0.json",
 					"name" : "stations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "trains::@145eef247bfb46b6828c",
+					"jsonFile" : "target-trains-Debug-98d740aa2331804f8996.json",
+					"name" : "trains",
 					"projectIndex" : 0
 				}
 			]

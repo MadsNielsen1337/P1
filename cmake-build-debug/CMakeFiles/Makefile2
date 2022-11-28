@@ -81,6 +81,7 @@ clean: test/clean
 
 # Recursive "all" directory target.
 src/all: src/CMakeFiles/main.dir/all
+src/all: src/CMakeFiles/trains.dir/all
 src/all: src/CMakeFiles/stations.dir/all
 .PHONY : src/all
 
@@ -90,6 +91,7 @@ src/preinstall:
 
 # Recursive "clean" directory target.
 src/clean: src/CMakeFiles/main.dir/clean
+src/clean: src/CMakeFiles/trains.dir/clean
 src/clean: src/CMakeFiles/stations.dir/clean
 .PHONY : src/clean
 
@@ -133,6 +135,32 @@ main: src/CMakeFiles/main.dir/rule
 src/CMakeFiles/main.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\main.dir\build.make src/CMakeFiles/main.dir/clean
 .PHONY : src/CMakeFiles/main.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/trains.dir
+
+# All Build rule for target.
+src/CMakeFiles/trains.dir/all:
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\trains.dir\build.make src/CMakeFiles/trains.dir/depend
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\trains.dir\build.make src/CMakeFiles/trains.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Frederik\CLionProjects\P1\cmake-build-debug\CMakeFiles --progress-num=5,6 "Built target trains"
+.PHONY : src/CMakeFiles/trains.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/trains.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Frederik\CLionProjects\P1\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/trains.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Frederik\CLionProjects\P1\cmake-build-debug\CMakeFiles 0
+.PHONY : src/CMakeFiles/trains.dir/rule
+
+# Convenience name for target.
+trains: src/CMakeFiles/trains.dir/rule
+.PHONY : trains
+
+# clean rule for target.
+src/CMakeFiles/trains.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\trains.dir\build.make src/CMakeFiles/trains.dir/clean
+.PHONY : src/CMakeFiles/trains.dir/clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/stations.dir
