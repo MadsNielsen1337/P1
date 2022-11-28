@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/BoBByN/Documents/GitHub/P1/src/main.c" "src/CMakeFiles/stations.dir/main.c.obj" "gcc" "src/CMakeFiles/stations.dir/main.c.obj.d"
+  "C:/Users/Frederik/CLionProjects/P1/src/main.c" "src/CMakeFiles/stations.dir/main.c.obj" "gcc" "src/CMakeFiles/stations.dir/main.c.obj.d"
   )
 
 # Targets to which this target links.

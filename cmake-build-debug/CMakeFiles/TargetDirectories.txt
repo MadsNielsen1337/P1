@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-C:/Users/BoBByN/Documents/GitHub/P1/cmake-build-debug/CMakeFiles/test.dir
-C:/Users/BoBByN/Documents/GitHub/P1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/BoBByN/Documents/GitHub/P1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/BoBByN/Documents/GitHub/P1/cmake-build-debug/src/CMakeFiles/main.dir
-C:/Users/BoBByN/Documents/GitHub/P1/cmake-build-debug/src/CMakeFiles/stations.dir
-C:/Users/BoBByN/Documents/GitHub/P1/cmake-build-debug/src/CMakeFiles/test.dir
-C:/Users/BoBByN/Documents/GitHub/P1/cmake-build-debug/src/CMakeFiles/edit_cache.dir
-C:/Users/BoBByN/Documents/GitHub/P1/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir
-C:/Users/BoBByN/Documents/GitHub/P1/cmake-build-debug/test/CMakeFiles/test.dir
-C:/Users/BoBByN/Documents/GitHub/P1/cmake-build-debug/test/CMakeFiles/edit_cache.dir
-C:/Users/BoBByN/Documents/GitHub/P1/cmake-build-debug/test/CMakeFiles/rebuild_cache.dir
-=======
 C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/CMakeFiles/test.dir
 C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
@@ -23,4 +10,3 @@ C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/src/CMakeFiles/rebuild_cach
 C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/test/CMakeFiles/test.dir
 C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/test/CMakeFiles/edit_cache.dir
 C:/Users/Frederik/CLionProjects/P1/cmake-build-debug/test/CMakeFiles/rebuild_cache.dir
->>>>>>> main
