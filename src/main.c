@@ -18,8 +18,8 @@ void train_cap();
 
 int main(void)
 {
-    printf("Fisk\n");
     printf("Mario\n");
+    printf("Fisk\n");
     distance();
     return EXIT_SUCCESS;
 }
