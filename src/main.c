@@ -11,11 +11,34 @@
     // https://en.wikipedia.org/wiki/ICE_4#cite_note-ICxFact-7
 
 void track_speed();
+// Prolly not gonna be a single function as the problem is way more complex for just one
+
+// Holds data for [INSERT FUNCTION NAME] for all edges.
+
+
 void track_gauges();
+// See above
+
+// Holds data for [INSERT FUNCTION NAME] for all edges.
+
 void power();
+// See above
+
+// Holds data for [INSERT FUNCTION NAME] for all edges.
+
 void stations();
+// See above
+
+// Holds data for [INSERT FUNCTION NAME] for all edges.
+
+
 void signals();
-void train_cap();
+// See above
+
+// Holds data for [INSERT FUNCTION NAME] for all edges.
+
+
+
 double time(double train_accel, double max_speed, double distance, int track_speed);
 
 int main(void)
