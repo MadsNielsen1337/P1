@@ -25,7 +25,8 @@ src/CMakeFiles/main.dir/main.c.obj: ../src/main.c \
   C:/Program\ Files/JetBrains/CLion\ 2022.2.1/bin/mingw/x86_64-w64-mingw32/include/errno.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.2.1/bin/mingw/x86_64-w64-mingw32/include/math.h \
   ../src/stations.h \
-  ../src/trains.h
+  ../src/trains.h \
+  ../src/graph.h
 
 
 ../src/main.c:
@@ -77,3 +78,5 @@ C:/Program\ Files/JetBrains/CLion\ 2022.2.1/bin/mingw/x86_64-w64-mingw32/include
 C:/Program\ Files/JetBrains/CLion\ 2022.2.1/bin/mingw/x86_64-w64-mingw32/include/errno.h:
 
 ../src/stations.h:
+
+../src/graph.h:
