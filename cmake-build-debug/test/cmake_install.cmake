@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Frederik/CLionProjects/P1/test
+# Install script for directory: C:/Users/emils/CLionProjects/P1/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
