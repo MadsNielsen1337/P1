@@ -36,7 +36,7 @@ int main(void)
                               "Fisk",
                               "Fisk2");
     printf("Travel time from berlinHBF to parisNord - assuming stuff, not accurate: %lf s\n", travel_time);
-    printf("Distance: %d m\n", station_distance(Berlin_Hbf, Paris_Nord));
+    printf("Distance: %d km\n", station_distance(Berlin_Hbf, Paris_Nord));
     printf("Weight for above-mentioned route: %d\n", weight_calc(160, station_distance(Berlin_Hbf, Paris_Nord),
                                                                  "15kV_16Hz", "Standard", "ETCS,LZB,PZB", "IC4", IC4.name,
                                                                  IC4.track_gauge, IC4.control, IC4.fuel_type, IC4.max_speed));
@@ -99,7 +99,7 @@ double time(double accel_ts,
 
     // t = (sqrt(2 * a_0 * s - 2 * a_0 * s_0 + v_0^2) - v_0)/ a_0
 
-    double time = distance/max_speed_ts; // Unit: s
+    double time = (distance*1000)/max_speed_ts; // Unit: s
 
     // This simple solution subtracts the accel/decel time with total time. While it isn't 100% accurate it tries to make an estimate of the time taken to travel the given distance.
     double total_time = (time - time_max_speed) + (60 * added_delay(track_gauge_ts, control_ts, fuel_type_ts, track_gauge, power, control));
