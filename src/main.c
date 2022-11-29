@@ -16,13 +16,10 @@ double time(double accel_ts,
             char power[],
             char control[]);
 
-double added_delay(char track_gauge_ts[],
-                    char control_ts[],
-                    char fuel_type_ts[],
-                    char track_gauge[],
-                    char power[],
-                    char control[]);
+double added_delay(char track_gauge_ts[], char control_ts[], char fuel_type_ts[], char track_gauge[], char power[], char control[]);
 
+int weight_calc(int avg_track_speed, int distance, char power_f[], char track_gauge_f[], char control_f[], char train_in_use_f[],
+                char train_type_s[], char train_track_gauge_s[], char control_s[], char fuel_type_s[], double max_speed);
 
 int main(void)
 {
@@ -39,14 +36,19 @@ int main(void)
                               "Fisk",
                               "Fisk2");
     printf("Travel time from berlinHBF to parisNord - assuming stuff, not accurate: %lf s\n", travel_time);
-    printf("Distance: %.2lf m\n", station_distance(Berlin_Hbf, Paris_Nord));
+    printf("Distance: %d m\n", station_distance(Berlin_Hbf, Paris_Nord));
+    printf("Weight for above-mentioned route: %d\n", weight_calc(160, station_distance(Berlin_Hbf, Paris_Nord),
+                                                                 "15kV_16Hz", "Standard", "ETCS,LZB,PZB", "IC4", IC4.name,
+                                                                 IC4.track_gauge, IC4.control, IC4.fuel_type, IC4.max_speed));
 
     // input array containing edges of the graph (as per above diagram)
     // `(x, y, w)` tuple in the array represents an edge from `x` to `y`
     // having weight `w`
     struct Edge edges[] =
             {
-                    { Berlin_Hbf, Paris_Nord, 1000 },
+                    { Berlin_Hbf, Paris_Nord, weight_calc(160, station_distance(Berlin_Hbf, Paris_Nord),
+                                                           "15kV_16Hz", "Standard", "ETCS,LZB,PZB", "IC4", IC4.name,
+                                                           IC4.track_gauge, IC4.control, IC4.fuel_type, IC4.max_speed) },
                     { 1, 2, 2 },
                     { 2, 0, 3 },
                     { 2, 1, 4 },
@@ -125,3 +127,20 @@ double added_delay(char track_gauge_ts[],
 
 }
 
+//track speed, distance, power, gauge, control and train in
+int weight_calc(int avg_track_speed, int distance, char power_f[], char track_gauge_f[], char control_f[], char train_in_use_f[],
+                char train_type_s[], char train_track_gauge_s[], char control_s[], char fuel_type_s[], double max_speed)
+{
+    int weight = 0;
+    // The weight calc is multiplied by 10 to avoid the delay weight getting rounded off to 0.
+    weight += ((distance/avg_track_speed)*10); // distance travel time with average track speed. Unit: h.
+
+    // check to see if the train in use can continue onto the next edge. Find a way to check layer 3 & 4 stats for next edge.
+    if(power_f != fuel_type_s || track_gauge_f != train_track_gauge_s || control_f != control_s) // Doubt you can do this. Prolly need strcmp or something
+        weight += (10/60)*10; // Added delay in hours. Find the average time it takes to switch trains.
+
+
+    // maybe also make a delay at each vertex to account for passengers leaving/getting on the train - unless the vertex is the final destination
+
+    return weight;
+}

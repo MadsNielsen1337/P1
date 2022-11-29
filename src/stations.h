@@ -6,14 +6,14 @@
 // When multiple routes for the same journey are available, the route with shortest travel time is selected.
 
 // All stations are of format "SOURCE_DESTINATION".
-// Unit is m.
+
 
 enum station_e {Berlin_Hbf,
                 Paris_Nord,
                 Frankfurt_am_Main_Hbf,
                 Bruxelles_Midi};
 
-typedef struct {
+typedef struct { // NOT IN USE
     char name[20];
     int wait_time;
 } station_s;
@@ -21,14 +21,14 @@ typedef struct {
 
 
 
-double station_distance(enum station_e src, enum station_e dest)
+int station_distance(enum station_e src, enum station_e dest)
 {
-    double distance;
+    int distance;
 
     switch (src && dest) {
         case Berlin_Hbf && Paris_Nord || Paris_Nord && Berlin_Hbf:
         {
-            distance = 1000.52 * 1000; // Unit: m
+            distance = 1001; // Unit: km
             break;
         }
     }
