@@ -248,7 +248,7 @@ int weight_calc(int avg_track_speed, int distance, char power_f[], char track_ga
                    IC4.fuel_type,
                    "Standard",
                    "Fisk",
-                   "Fisk2");
+                   "Fisk2 ");
     // maybe also make a delay at each vertex to account for passengers leaving/getting on the train - unless the vertex is the final destination
 
     return weight;

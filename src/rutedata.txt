@@ -1,1 +1,1 @@
-Distance,avg_track_speed,Power,Gauge,Controls,Station_Start,Station_End
+,Distance,avg_track_speed,Power,Gauge,Controls,Station_Start,Station_End
