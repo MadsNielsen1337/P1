@@ -49,9 +49,11 @@ int main(void)
 
 
     route routes[ROUTE_COUNT];
-    FILE* datafile = fopen("rutedata.txt", "r");
+    FILE* routefile = fopen("rutedata.txt", "r");
 
-    scan_routes(datafile, routes);
+    scan_routes(routefile, routes);
+
+    fclose(routefile);
 
     return EXIT_SUCCESS;
 }
@@ -62,10 +64,10 @@ void scan_routes(FILE* p_file, route* r){
     for (int i = 0; i < ROUTE_COUNT; ++i) {
 
         fscanf(p_file, "%[^,]", temp);
-        r[i].distance = atoi(temp);                      //using atoi here to convert the string we've read into an integer
+        r[i].distance = strtol(temp, NULL, 10);                      //using atoi here to convert the string we've read into an integer
         fscanf(p_file, "%*[,]");
         fscanf(p_file, "%[^,]", temp);
-        r[i].track_speed = atoi(temp);
+        r[i].track_speed = strtol(temp, NULL, 10);
         fscanf(p_file, "%*[,]");
         fscanf(p_file, "%[^,]", r[i].power);
         fscanf(p_file, "%*[,]");
