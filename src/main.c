@@ -49,7 +49,7 @@ int main(void)
 
 
     route routes[ROUTE_COUNT];
-    FILE* routefile = fopen("rutedata.txt", "r");
+    FILE* routefile = fopen("..\\..\\src\\rutedata.txt", "r");
 
     scan_routes(routefile, routes);
 
