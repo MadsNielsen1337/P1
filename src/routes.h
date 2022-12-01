@@ -80,7 +80,7 @@ void print_station_list(station_list_node* node){
     }
 }
 
-void list_test(){   //function to test the linked station list
+void list_test(){   //function to test the linked station list's basic functions
     station_list_node* list = create_station_list("Test:");
     char name[DATA_SIZE];
     for (int i = 0; i < 5; ++i) {
@@ -90,5 +90,14 @@ void list_test(){   //function to test the linked station list
     print_station_list(list);
 }
 
+//function to create and fill a linked list of station names with data from the route array
+void station_list(station_list_node* list, route* r){
+    create_station_list(r[0].station_start);
+
+    for (int i = 0; i < ROUTE_COUNT; ++i){
+        add_node(list, r[i].station_start);
+        add_node(list, r[i].station_end);
+    }
+}
 
 #endif //P1_ROUTES_H
