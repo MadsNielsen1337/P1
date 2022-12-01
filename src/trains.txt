@@ -1,2 +1,1 @@
-IC4,Standard,ETCS.LZB.PZB,15kV_16Hz,0.55,230,499
-IC5,Fisk,ETCS.LZB.PZB,15kV_16Hz,0.55,400,999
+Name,Gauge,Control1.Control2.Control3,Fuel1.Fuel2.Fuel3,Acceleration,Max_speed,Passenger_space

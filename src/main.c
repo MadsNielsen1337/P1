@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "stations.h"
+#include "routes.h"
 #include "trains.h"
 #include "graph.h"
 
@@ -9,17 +9,7 @@
 #define METER_PER_SECOND_CONVERSION 3.6
 
 #define DATA_SIZE 40
-#define ROUTE_COUNT 3
 #define TRAIN_COUNT 3
-typedef struct route{
-    int distance;
-    int track_speed;
-    char power[DATA_SIZE];
-    char gauge[DATA_SIZE];
-    char controls[DATA_SIZE];
-    char station_start[DATA_SIZE];
-    char station_end[DATA_SIZE];
-} route;
 
 typedef struct train{
     char name[DATA_SIZE];
@@ -45,6 +35,7 @@ void scan_trains(FILE*, train*);
 
 int main(void)
 {
+    /*
     route routes[ROUTE_COUNT];
     FILE* routefile = fopen("..\\..\\src\\rutedata.txt", "r");
 
@@ -58,7 +49,10 @@ int main(void)
     scan_trains(trainfile, trains);
 
     fclose(trainfile);
+    */
 
+
+    /*
     double travel_time = time(routes[0], trains[0]);
     printf("\nTravel time from %s to %s - assuming stuff, not accurate: %lf s\n",routes[0].station_start, routes[0].station_end, travel_time);
     printf("Distance: %d km\n", station_distance(Berlin_Hbf, Paris_Nord));
@@ -88,37 +82,11 @@ int main(void)
     // print adjacency list representation of a graph
     printGraph(graph);
 
-
+    */
 
 
 
     return EXIT_SUCCESS;
-}
-
-
-void scan_routes(FILE* p_file, route* r){   //reads from a file where each line has the following format: Distance,Track_speed,Power,Gauge,Controls,Station_Start,Station_End
-    char temp[DATA_SIZE];
-    for (int i = 0; i < ROUTE_COUNT; ++i) {
-
-        fscanf(p_file, "%[^,]", temp);
-        r[i].distance = strtol(temp, NULL, 10);  //using strtol here to convert the string we've read into a long integer
-        fscanf(p_file, "%*[,]");
-        fscanf(p_file, "%[^,]", temp);
-        r[i].track_speed = strtol(temp, NULL, 10);
-        fscanf(p_file, "%*[,]");
-        fscanf(p_file, "%[^,]", r[i].power);
-        fscanf(p_file, "%*[,]");
-        fscanf(p_file, "%[^,]", r[i].gauge);        //read until a comma is found
-        fscanf(p_file, "%*[,]");                    //dump the comma
-        fscanf(p_file, "%[^,]", r[i].controls);     //read until the next comma
-        fscanf(p_file, "%*[,]");                    //and so on
-        fscanf(p_file, "%[^,]", r[i].station_start);
-        fscanf(p_file, "%*[,]");
-        fscanf(p_file, "%[^\n]", r[i].station_end); //station_end is the last piece of data. a newline character comes right after it
-        fscanf(p_file, "%*[^a-zA-Z0-9]");           //skip characters until a letter or number is reached, which would be at the next line
-    }
-    //printf to test if the format is right. delete later
-    printf("Routedata:\n%d %d %s %s %s %s %s\n",r[0].distance,r[0].track_speed,r[0].power,r[0].gauge,r[0].controls,r[0].station_start,r[0].station_end);
 }
 
 void scan_trains(FILE* p_file, train* t){   //reads from a file where each line has the following format: Name,Gauge,Control1.Control2.Control3,Fuel1.Fuel2.Fuel3,Acceleration,Max_speed,Passenger_space
