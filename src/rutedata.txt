@@ -1,1 +1,1 @@
-,Distance,avg_track_speed,Power,Gauge,Controls,Station_Start,Station_End
+1001,200,15kV_16Hz,Standard,ETCS.LZB.PZB,Berlin_Hbf,Paris_Nord

@@ -7,7 +7,6 @@
 
 // All stations are of format "SOURCE_DESTINATION".
 
-
 enum station_e {Berlin_Hbf,
                 Paris_Nord,
                 Frankfurt_am_Main_Hbf,
