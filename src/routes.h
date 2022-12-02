@@ -80,6 +80,43 @@ void print_station_list(station_list_node* node){
     }
 }
 
+//function to create and fill a linked list of station names with data from the route array
+void station_list(station_list_node* list, route* r){
+    create_station_list(r[0].station_start);     //use the first data point to begin the list
+
+    for (int i = 0; i < ROUTE_COUNT; ++i){
+        add_node(list, r[i].station_start);//run add_node with every station_start and station_end value
+        add_node(list, r[i].station_end);
+    }
+}
+
+//function to find the length of the station list
+int list_length(station_list_node* node){
+    if(node->next == NULL){
+        return 0;
+    } else {
+        return 1 + list_length(node->next);
+    }
+}
+
+//recursive part of search_station_list. the depth variable should always be set to 1 at the beginning of a search
+int search_list_recursive(station_list_node* node, const char* searched_name, int depth){
+    if(strcmp(node->name, searched_name) == 0){
+        return 0;
+    } else {
+        if(node->next == NULL){
+            return -(depth);
+        } else {
+            return 1 + search_list_recursive(node->next, searched_name, depth + 1);
+        }
+    }
+}
+
+//function that returns an integer based on how far into the list a name is. Returns -1 if searched name is not in the list
+int search_station_list(station_list_node* list, const char* searched_name){
+    return search_list_recursive(list, searched_name, 1);   //runs the recursive search function with depth 1 to make it possible to return -1
+}
+
 void list_test(){   //function to test the linked station list's basic functions
     station_list_node* list = create_station_list("Test:");
     char name[DATA_SIZE];
@@ -88,16 +125,8 @@ void list_test(){   //function to test the linked station list's basic functions
         add_node(list, name);
     }
     print_station_list(list);
-}
-
-//function to create and fill a linked list of station names with data from the route array
-void station_list(station_list_node* list, route* r){
-    create_station_list(r[0].station_start);
-
-    for (int i = 0; i < ROUTE_COUNT; ++i){
-        add_node(list, r[i].station_start);
-        add_node(list, r[i].station_end);
-    }
+    printf("\nList has a length of %d\n", list_length(list));
+    printf ("\nWord \"hello\" is at index %d\n" ,search_station_list(list, "hello"));
 }
 
 #endif //P1_ROUTES_H
