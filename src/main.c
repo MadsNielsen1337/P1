@@ -21,50 +21,32 @@ typedef struct train{
     int passenger_space;
 } train;
 
-
+int printOutput(route routes, train trains);
 double time(route r, train t);
-
-
 double added_delay(route r, train t);
-
 // First route data, then train data then everything else
 int weight_calc(route r, train t);
 
 void scan_routes(FILE*, route*);
 void scan_trains(FILE*, train*);
+int drawUI(void);
 
 int main(void)
 {
-    /*
-    route routes[ROUTE_COUNT];
-    FILE* routefile = fopen("..\\..\\src\\rutedata.txt", "r");
-
-    scan_routes(routefile, routes);
-
-    fclose(routefile);
-
+    route routes[DATA_SIZE];
     train trains[TRAIN_COUNT];
     FILE* trainfile = fopen("..\\..\\src\\trains.txt", "r");
 
     scan_trains(trainfile, trains);
 
     fclose(trainfile);
-    */
-
-
-    /*
-    double travel_time = time(routes[0], trains[0]);
-    printf("\nTravel time from %s to %s - assuming stuff, not accurate: %lf s\n",routes[0].station_start, routes[0].station_end, travel_time);
-    printf("Distance: %d km\n", station_distance(Berlin_Hbf, Paris_Nord));
-    printf("Weight for above-mentioned route: %d\n", weight_calc(routes[0], trains[0]));
-
 
     // input array containing edges of the graph (as per above diagram)
     // `(x, y, w)` tuple in the array represents an edge from `x` to `y`
     // having weight `w`
     struct Edge edges[] =
             {
-                    { Berlin_Hbf, Paris_Nord, weight_calc(routes[0], trains[0]) },
+                    { 10, 11, weight_calc(routes[0], trains[0]) },
                     { 1, 2, 2 },
                     { 2, 0, 3 },
                     { 2, 1, 4 },
@@ -82,9 +64,7 @@ int main(void)
     // print adjacency list representation of a graph
     printGraph(graph);
 
-    */
-
-
+    drawUI();
 
     return EXIT_SUCCESS;
 }
@@ -183,4 +163,41 @@ int weight_calc(route r, train t)
     // maybe also make a delay at each vertex to account for passengers leaving/getting on the train - unless the vertex is the final destination
 
     return weight;
+}
+
+int printOutput(route routes, train trains)
+{
+    printf("\nTravel time from %s to %s - assuming stuff, not accurate: %lf s\n", routes.station_start,
+           routes.station_end, time(routes, trains));
+    printf("Distance: %d km\n", routes.distance);
+    printf("Weight for above-mentioned route: %d\n", weight_calc(routes, trains));
+}
+
+int drawUI(void)
+{
+    char drawMenu = '-';
+    int UI_size = 61;
+    int UI_spacing = 2;
+
+    printf("\n");
+    for (int i = 0; i < UI_size; ++i) {
+        printf("%c", drawMenu);     // Print the UI header
+    }
+    for (int i = 0; i < UI_spacing-1; ++i) {
+        printf("\n%c%60c", drawMenu, drawMenu);     // Add space between text
+    }
+    printf("\n%c UI of European railway simulation%26c", drawMenu, drawMenu);
+    printf("\n%c Made by Emil, Eva, Frederik, Louise, Mads & Mohamad%8c", drawMenu, drawMenu);
+    for (int i = 0; i < UI_spacing; ++i) {
+        printf("\n%c%60c", drawMenu, drawMenu);     // More space
+    }
+    printf("\n%c [1] Berlin Hbf -> Paris Nord%31c", drawMenu, drawMenu);
+    printf("\n%c [q] Exit%51c", drawMenu, drawMenu);
+    for (int i = 0; i < UI_spacing; ++i) {
+        printf("\n%c%60c", drawMenu, drawMenu);     // Even more space
+    }
+    printf("\n");
+    for (int i = 0; i < UI_size; ++i) {
+        printf("%c", drawMenu);     // Print UI footer
+    }
 }
