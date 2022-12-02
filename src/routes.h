@@ -81,7 +81,7 @@ void print_station_list(station_list_node* node){
 }
 
 //function to create and fill a linked list of station names with data from the route array. Returns a pointer to the start of the created list
-station_list_node* station_list(route* r){
+station_list_node* build_station_list(route* r){
     station_list_node* list = create_station_list(r[0].station_start);     //use the first data point to begin the list
     add_node(list, r[0].station_end);
 
