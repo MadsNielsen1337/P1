@@ -175,6 +175,9 @@ int printOutput(route routes, train trains)
 
 int drawUI(void)
 {
+    int station_count = sizeof(route) / sizeof(route[0]); // division by zero? eh, it'll be fine.
+
+
     char drawMenu = '-';
     int UI_size = 61;
     int UI_spacing = 2;
@@ -191,7 +194,10 @@ int drawUI(void)
     for (int i = 0; i < UI_spacing; ++i) {
         printf("\n%c%60c", drawMenu, drawMenu);     // More space
     }
-    printf("\n%c [1] Berlin Hbf -> Paris Nord%31c", drawMenu, drawMenu);
+    for (int i = 0; i < ; ++i) {
+        printf("\n%c [%d] %c%31c", drawMenu, );
+    }
+
     printf("\n%c [q] Exit%51c", drawMenu, drawMenu);
     for (int i = 0; i < UI_spacing; ++i) {
         printf("\n%c%60c", drawMenu, drawMenu);     // Even more space
