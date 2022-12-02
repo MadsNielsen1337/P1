@@ -1,0 +1,3 @@
+,name,track_gauge,control,fuel_type,accel,max_speed,passenger_cap
+
+IC4,Standard,ETCS.LZB.PZB,15/16,0.55,230,499
