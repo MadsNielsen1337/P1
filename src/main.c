@@ -4,75 +4,66 @@
 #include "trains.h"
 #include "graph.h"
 #include "UI.h"
+#include "readFiles.h"
+
+// Source vs header
+// https://stackoverflow.com/questions/3482948/what-is-the-fundamental-difference-between-source-and-header-files-in-c
 
 #define METER_CONVERSION 1000
 #define METER_PER_SECOND_CONVERSION 3.6
-#define DATA_SIZE 40
 
-
-int printOutput(route routes, train trains);
 double time(route r, train t);
 double added_delay(route r, train t);
-// First route data, then train data then everything else
 int weight_calc(route r, train t);
-
-int lines_in_file(FILE*);
 
 int main(void)
 {
-    int route_count = 0, train_count = 0;
+    int route_count = 0;
+    int train_count = 0;
 
-    FILE* routefile = fopen("..\\..\\src\\rutedata.txt", "r");
-    route_count = lines_in_file(routefile);
-    fclose(routefile);
+    route_count = get_route_size(route_count);  // Calculate size of route.txt - aka. how many lines are there?
+    train_count = get_train_size(train_count);  // Calculate size of trains.txt - aka. how many lines are there?
 
+    // Test to see if calc were done correct. Should be deleted later
+    printf("R = %d\n", route_count);
+    printf("T = %d\n", train_count);
+
+    // Allocate space in the arrays for input size of *.txt files
+    train trains[train_count];
     route routes[route_count];
 
-    routefile = fopen("..\\..\\src\\rutedata.txt", "r");
-    scan_routes(routefile, routes);
-    fclose(routefile);
+    // Read data from *.txt files and assign to corresponding place in the array
+    read_routes(routes, &route_count);
+    read_trains(trains, &train_count);
 
-    FILE* trainfile = fopen("..\\..\\src\\trains.txt", "r");
-    train_count = lines_in_file(trainfile);
-    fclose(trainfile);
+    // Build the station list from the stations in the route array
+    station_list_node* list_of_stations = build_station_list(routes, &route_count);
 
-    train trains[train_count];
-
-    trainfile = fopen("..\\..\\src\\trains.txt", "r");
-    scan_trains(trainfile, trains);
-    fclose(trainfile);
-
-    station_list_node* list_of_stations = build_station_list(routes); //build the station list from the stations in the route array
-
-    //error-testing here. Should probably be moved or deleted later
+    // Error-testing here. Should probably be moved or deleted later
     double travel_time = time(routes[0], trains[0]);
     printf("\nTravel time from %s to %s - assuming stuff, not accurate: %lf s\n",routes[1].station_start, routes[1].station_end, travel_time);
+    printf("Distance: %d km\n", routes[1].distance);
     printf("Weight for above-mentioned route: %d\n", weight_calc(routes[0], trains[0]));
+    //list_test();
 
-
-    // input array containing edges of the graph
+    // Input array containing edges of the graph
     struct Edge* edges = build_edges(list_of_stations, routes, route_count, trains);
 
-    /* calculate the number of edges
-    int n = sizeof(edges)/sizeof(edges[0]);     Deprecated since route_count should have the same value and can be used instead
-    */
-
-    // construct a graph from the given edges
+    // Construct a graph from the given edges
     struct Graph *graph = createGraph(edges, route_count);
 
-    // print adjacency list representation of a graph
+    // Print adjacency list representation of a graph
     printGraph(graph);
 
+    // Draw the UI
     GenerateUI(routes, list_of_stations);
-    free(edges);
 
-    //list_test();
+    // Give memory back to the OS
+    free(edges);
 
     return EXIT_SUCCESS;
 }
 
-//int distance, int avg_track_speed_r, char power_r[], char track_gauge_r[], char control_r[],
-//            double max_speed_t, char fuel_type_t[], char track_gauge_t[], char control_t[], double train_accel_t
 double time(route r, train t)
 {
     if(r.track_speed < t.max_speed) {
@@ -102,9 +93,6 @@ double time(route r, train t)
     return total_time;
 }
 
-
-//char power_r[], char track_gauge_r[], char control_r[],
-//                   char fuel_type_t[], char track_gauge_t[], char control_t[]
 double added_delay(route r, train t)
 {
     double delay = 0;    // Delay time in minutes
@@ -119,11 +107,17 @@ double added_delay(route r, train t)
     return delay;
 
 }
-//char station_start[], char station_end[], int distance, int avg_track_speed_r, char power_r[], char track_gauge_r[], char control_r[],
-//                char train_name[], double max_speed_t, char fuel_type_t[], char track_gauge_t[], char control_t[], double train_accel_t
+
 int weight_calc(route r, train t)
 {
     int weight = 0;    // Delay time in minutes
+
+    weight += time(r, t);
+    // maybe also make a delay at each vertex to account for passengers leaving/getting on the train - unless the vertex is the final destination
+
+
+    // Comments down below are loose thoughts and random stuff
+
 
     // We convert km && km/h to m && m/s
     //   weight += ((distance * METER_CONVERSION) / (avg_track_speed_r/METER_PER_SECOND_CONVERSION)); // distance travel time with average track speed.
@@ -132,32 +126,6 @@ int weight_calc(route r, train t)
     /*if(power_f != fuel_type_s || track_gauge_f != train_track_gauge_s || control_f != control_s)             // Doubt you can do this. Prolly need strcmp or something
         weight += 10;       // Added delay in minutes. Find the average time it takes to switch trains.
 */
-    weight += time(r, t);
-    // maybe also make a delay at each vertex to account for passengers leaving/getting on the train - unless the vertex is the final destination
 
     return weight;
-}
-
-//counts the number of lines in the file pointed to by p_file. Uses up the entire input stream, so if the file needs to be used again it must be closed and reopened!
-int lines_in_file(FILE* p_file){
-    int count = 0;
-    int c;
-    if(p_file != NULL){             //check if the file exists before we start trying to read it. set count to 1 if it does exist since there will always be at least one line
-        count = 1;
-        do {                        //grabs the next character in the file and checks if it's a newline character
-            c = getc(p_file);
-            if(c == '\n'){
-                count++;
-            }
-        }
-        while (c != EOF);   //repeats until the end of the file and returns the number of newline characters
-    }
-    return count;
-}
-
-int printOutput(route routes, train trains) {
-    printf("\nTravel time from %s to %s - assuming stuff, not accurate: %lf s\n", routes.station_start,
-           routes.station_end, time(routes, trains));
-    printf("Distance: %d km\n", routes.distance);
-    printf("Weight for above-mentioned route: %d\n", weight_calc(routes, trains));
 }

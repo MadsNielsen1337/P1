@@ -1,7 +1,13 @@
 
-add_executable(main main.c)
+add_executable(main main.c
+                    readFiles.c
+                    UI.c
+                    routes.c
+                    trains.c)
+
 add_library(trains main.c)
-add_library(stations main.c)
 add_library(graph main.c)
 add_library(UI main.c)
-target_link_libraries(main stations)
+add_library(readFiles main.c)
+add_library(routes main.c)
+target_link_libraries(main trains graph UI readFiles routes)
