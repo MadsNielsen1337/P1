@@ -46,7 +46,7 @@ int main(void)
 
     //error-testing here. Should probably be moved or deleted later
     double travel_time = time(routes[0], trains[0]);
-    printf("\nTravel time from %s to %s - assuming stuff, not accurate: %lf s\n",routes[0].station_start, routes[0].station_end, travel_time);
+    printf("\nTravel time from %s to %s - assuming stuff, not accurate: %lf s\n",routes[1].station_start, routes[1].station_end, travel_time);
     printf("Weight for above-mentioned route: %d\n", weight_calc(routes[0], trains[0]));
 
 
@@ -65,6 +65,8 @@ int main(void)
 
     GenerateUI(routes, list_of_stations);
     free(edges);
+
+    //list_test();
 
     return EXIT_SUCCESS;
 }
