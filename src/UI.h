@@ -32,7 +32,7 @@ int drawMenu1(void) {
 int drawMenu2(route* routes, station_list_node* list_of_stations)
 {
     for (int i = 0; i < list_length(list_of_stations); ++i) {   // Dynamically prints ALL available stations and their index.
-        printf("\n%c [%d] %s%31c", drawMenu, search_station_list(list_of_stations, routes[i].station_start), routes[i].station_start, drawMenu);
+        printf("\n%c [%d] %s%31c", drawMenu, (list_of_stations, routes[i].station_start), routes[i].station_start, drawMenu);
     }
 }
 
