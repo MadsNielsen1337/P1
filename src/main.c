@@ -173,7 +173,7 @@ int printOutput(route routes, train trains)
     printf("Weight for above-mentioned route: %d\n", weight_calc(routes, trains));
 }
 
-int drawUI(void)
+int drawUI(route* routes)
 {
     int station_count = sizeof(route) / sizeof(route[0]); // division by zero? eh, it'll be fine.
 
@@ -194,8 +194,8 @@ int drawUI(void)
     for (int i = 0; i < UI_spacing; ++i) {
         printf("\n%c%60c", drawMenu, drawMenu);     // More space
     }
-    for (int i = 0; i < ; ++i) {
-        printf("\n%c [%d] %c%31c", drawMenu, );
+    for (int i = 0; i < list_length(routes[i]); ++i) {
+        printf("\n%c [%d] %c%31c", drawMenu, search_station_list(&routes[i], routes[i].station_start), routes[i].station_start, drawMenu);
     }
 
     printf("\n%c [q] Exit%51c", drawMenu, drawMenu);
