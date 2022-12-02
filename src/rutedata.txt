@@ -1,4 +1,4 @@
-,Distance,avg_track_speed,Power,Gauge,Controls,Station_Start,Station_End
+Distance,Track_speed,Power,Gauge,Controls,Station_Start,Station_End
 
 481.1,184,15/16_7,Standard,Controls,Berlin_Hbf,Mannheim_Hbf
 449.9,262,25/50.15/16_7,Standard,Controls,Mannheim_Hbf,Paris Est
