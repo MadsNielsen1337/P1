@@ -1,1 +1,8 @@
 Distance,Track_speed,Power,Gauge,Controls,Station_Start,Station_End
+
+481.1,184,15/16_7,Standard,Controls,Berlin_Hbf,Mannheim_Hbf
+449.9,262,25/50.15/16_7,Standard,Controls,Mannheim_Hbf,Paris Est
+577.4,183,15/16_7,Standard,Controls,Berlin_Hbf,Cologne_Hbf
+183.5,231,15/16_7.25/50.3.15/3000,Standard,Controls,Cologne_Hbf,Bruxelles-Midi
+354,233,25/50.15/16_7.3.15/3000,Standard,Controls,Bruxelles-Midi,Paris_Nord
+547.2,233,25/50.15/16_7.3.15/3000,Standard,Controls,Cologne_Hbf,Paris_Nord
