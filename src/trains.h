@@ -1,35 +1,42 @@
 #ifndef P1_TRAINS_H
 #define P1_TRAINS_H
+#define TRAIN_COUNT 3
 
-//for structs with train specs
+typedef struct train{
+    char name[DATA_SIZE];
+    char gauge[DATA_SIZE];
+    char controls[DATA_SIZE];
+    char fuels[DATA_SIZE];
+    double acceleration;
+    double max_speed;
+    int passenger_space;
+} train;
 
-// Units for structs:
-// accel: m/s^2
-// max_speed: m/s
+void scan_trains(FILE* p_file, train* t){   //reads from a file where each line has the following format: Name,Gauge,Control1.Control2.Control3,Fuel1.Fuel2.Fuel3,Acceleration,Max_speed,Passenger_space
+    char temp[DATA_SIZE];
+    for (int i = 0; i < TRAIN_COUNT; ++i) {
 
-enum fuels_e {diesel, el_15kV_16Hz, el_25kV_50Hz};
+        fscanf(p_file, "%[^,]", t[i].name);
+        fscanf(p_file, "%*[,]");
+        fscanf(p_file, "%[^,]", t[i].gauge);
+        fscanf(p_file, "%*[,]");
+        fscanf(p_file, "%[^,]", t[i].controls);
+        fscanf(p_file, "%*[,]");
+        fscanf(p_file, "%[^,]", t[i].fuels);
+        fscanf(p_file, "%*[,]");
+        fscanf(p_file, "%[^,]", temp);
+        t[i].acceleration = strtod(temp, NULL);        //converting the string to a double, so we can do math on it
+        fscanf(p_file, "%*[,]");
+        fscanf(p_file, "%[^,]", temp);
+        t[i].max_speed = strtod(temp, NULL);
+        fscanf(p_file, "%*[,]");
+        fscanf(p_file, "%[^\n]", temp);
+        t[i].passenger_space = strtol(temp, NULL, 10);
+        fscanf(p_file, "%*[^a-zA-Z0-9]");
 
-
-typedef struct {
-    char name[20],
-         track_gauge[20],
-         control[20],
-         fuel_type[20];
-    double accel,
-           max_speed;
-    int passenger_cap;
-} train_s;
-
-// IC4 with 7 cars
-// Sources for IC4
-// https://web.archive.org/web/20121202210720/http://www.siemens.com/press/pool/de/events/2011/industry/mobility/2011-05-icx/siemens-icx-factsheet-e.pdf
-// https://en.wikipedia.org/wiki/ICE_4#cite_note-ICxFact-7
-train_s IC4 = {"IC4","Standard", "ETCS.LZB.PZB", "15kV_16Hz", 0.55, 230, 499};
-
-/*  From rutedata.txt
-Distance,Track_speed,Power,Gauge,Controls,Station_Start,Station_End
-*/
-
-
+        //printf to test if the format is right. delete later
+        printf("%s %s %s %s %.0lf %.0lf %d\n",t[i].name,t[i].gauge,t[i].controls,t[i].fuels,t[i].acceleration,t[i].max_speed,t[i].passenger_space);
+    }
+}
 
 #endif //P1_TRAINS_H

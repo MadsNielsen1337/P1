@@ -40,9 +40,10 @@ void scan_routes(FILE* p_file, route* r){   //reads from a file where each line 
         fscanf(p_file, "%*[,]");
         fscanf(p_file, "%[^\n]", r[i].station_end); //station_end is the last piece of data. a newline character comes right after it
         fscanf(p_file, "%*[^a-zA-Z0-9]");           //skip characters until a letter or number is reached, which would be at the next line
+
+        //printf to test if the format is right. delete later
+        printf("%d %d %s %s %s %s %s\n",r[0].distance,r[i].track_speed,r[i].power,r[i].gauge,r[i].controls,r[i].station_start,r[i].station_end);
     }
-    //printf to test if the format is right. delete later
-    printf("\n%d %d %s %s %s %s %s\n",r[0].distance,r[0].track_speed,r[0].power,r[0].gauge,r[0].controls,r[0].station_start,r[0].station_end);
 }
 
 typedef struct station_list_node{
@@ -117,6 +118,20 @@ int search_list_recursive(station_list_node* node, const char* searched_name, in
 //function that returns an integer based on how far into the list a name is. Returns -1 if searched name is not in the list
 int search_station_list(station_list_node* list, const char* searched_name){
     return search_list_recursive(list, searched_name, 1);   //runs the recursive search function with depth 1 to make it possible to return -1
+}
+
+//returns the name at a given index of a station list starting from the location pointed to by the node variable. Does not support negative index values
+char* index_station_list(station_list_node* node, const int index){
+    if(index == 0){
+        return node->name;
+    } else {
+        if(node->next == NULL){
+            printf("WARNING: Station list size exceeded by %d", index);
+            return ("INDEX OUT OF BOUNDS");
+        } else {
+            return (index_station_list(node->next, index - 1));
+        }
+    }
 }
 
 void list_test(){   //function to test the linked station list's basic functions
