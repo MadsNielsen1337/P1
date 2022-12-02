@@ -1,7 +1,7 @@
 #ifndef P1_ROUTES_H
 #define P1_ROUTES_H
 #define DATA_SIZE 40
-#define ROUTE_COUNT 3
+#define ROUTE_COUNT 6
 #include <string.h>
 // Data taken from "https://www.raileurope.com/en"
 // For more info see "https://www.raileurope.com/blog/travel-green-calculating-your-carbon-savings"
@@ -39,7 +39,7 @@ void scan_routes(FILE* p_file, route* r){   //reads from a file where each line 
         fscanf(p_file, "%[^,]", r[i].station_start);
         fscanf(p_file, "%*[,]");
         fscanf(p_file, "%[^\n]", r[i].station_end); //station_end is the last piece of data. a newline character comes right after it
-        fscanf(p_file, "%*[^a-zA-Z0-9]");           //skip characters until a letter or number is reached, which would be at the next line
+        fscanf(p_file, "%*[\n]");           //skip characters until a letter or number is reached, which would be at the next line
 
         //printf to test if the format is right. delete later
         printf("%d %d %s %s %s %s %s\n",r[0].distance,r[i].track_speed,r[i].power,r[i].gauge,r[i].controls,r[i].station_start,r[i].station_end);
@@ -143,7 +143,8 @@ void list_test(){   //function to test the linked station list's basic functions
     }
     print_station_list(list);
     printf("\nList has a length of %d\n", list_length(list));
-    printf ("\nWord \"hello\" is at index %d\n" ,search_station_list(list, "hello"));
+    printf("\nWord \"hello\" is at index %d\n" ,search_station_list(list, "hello"));
+    printf("\nWord at the 3rd index is \"%s\"", index_station_list(list, 3));
 }
 
 #endif //P1_ROUTES_H
