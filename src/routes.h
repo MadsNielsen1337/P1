@@ -80,20 +80,22 @@ void print_station_list(station_list_node* node){
     }
 }
 
-//function to create and fill a linked list of station names with data from the route array
-void station_list(station_list_node* list, route* r){
-    create_station_list(r[0].station_start);     //use the first data point to begin the list
+//function to create and fill a linked list of station names with data from the route array. Returns a pointer to the start of the created list
+station_list_node* station_list(route* r){
+    station_list_node* list = create_station_list(r[0].station_start);     //use the first data point to begin the list
+    add_node(list, r[0].station_end);
 
-    for (int i = 0; i < ROUTE_COUNT; ++i){
-        add_node(list, r[i].station_start);//run add_node with every station_start and station_end value
+    for (int i = 1; i < ROUTE_COUNT; ++i){
+        add_node(list, r[i].station_start); //run add_node with every station_start and station_end value
         add_node(list, r[i].station_end);
     }
+    return list;
 }
 
-//function to find the length of the station list
+//function to find the length of an existing station list
 int list_length(station_list_node* node){
     if(node->next == NULL){
-        return 0;
+        return 1;
     } else {
         return 1 + list_length(node->next);
     }
