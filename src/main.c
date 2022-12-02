@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 #include "routes.h"
 #include "trains.h"
 #include "graph.h"
+#include "UI.h"
 
 #define METER_CONVERSION 1000
 #define METER_PER_SECOND_CONVERSION 3.6
@@ -27,9 +29,7 @@ double added_delay(route r, train t);
 // First route data, then train data then everything else
 int weight_calc(route r, train t);
 
-void scan_routes(FILE*, route*);
 void scan_trains(FILE*, train*);
-int drawUI(void);
 
 int main(void)
 {
@@ -40,6 +40,10 @@ int main(void)
     scan_trains(trainfile, trains);
 
     fclose(trainfile);
+
+   station_list_node* list_of_stations = build_station_list(routes);
+
+
 
     // input array containing edges of the graph (as per above diagram)
     // `(x, y, w)` tuple in the array represents an edge from `x` to `y`
@@ -64,8 +68,7 @@ int main(void)
     // print adjacency list representation of a graph
     printGraph(graph);
 
-    drawUI();
-
+    GenerateUI(routes, list_of_stations);
     return EXIT_SUCCESS;
 }
 
@@ -173,37 +176,3 @@ int printOutput(route routes, train trains)
     printf("Weight for above-mentioned route: %d\n", weight_calc(routes, trains));
 }
 
-int drawUI(route* routes)
-{
-    int station_count = sizeof(route) / sizeof(route[0]); // division by zero? eh, it'll be fine.
-
-
-    char drawMenu = '-';
-    int UI_size = 61;
-    int UI_spacing = 2;
-
-    printf("\n");
-    for (int i = 0; i < UI_size; ++i) {
-        printf("%c", drawMenu);     // Print the UI header
-    }
-    for (int i = 0; i < UI_spacing-1; ++i) {
-        printf("\n%c%60c", drawMenu, drawMenu);     // Add space between text
-    }
-    printf("\n%c UI of European railway simulation%26c", drawMenu, drawMenu);
-    printf("\n%c Made by Emil, Eva, Frederik, Louise, Mads & Mohamad%8c", drawMenu, drawMenu);
-    for (int i = 0; i < UI_spacing; ++i) {
-        printf("\n%c%60c", drawMenu, drawMenu);     // More space
-    }
-    for (int i = 0; i < list_length(routes[i]); ++i) {
-        printf("\n%c [%d] %c%31c", drawMenu, search_station_list(&routes[i], routes[i].station_start), routes[i].station_start, drawMenu);
-    }
-
-    printf("\n%c [q] Exit%51c", drawMenu, drawMenu);
-    for (int i = 0; i < UI_spacing; ++i) {
-        printf("\n%c%60c", drawMenu, drawMenu);     // Even more space
-    }
-    printf("\n");
-    for (int i = 0; i < UI_size; ++i) {
-        printf("%c", drawMenu);     // Print UI footer
-    }
-}
