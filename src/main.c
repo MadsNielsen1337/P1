@@ -7,19 +7,8 @@
 
 #define METER_CONVERSION 1000
 #define METER_PER_SECOND_CONVERSION 3.6
-
 #define DATA_SIZE 40
-#define TRAIN_COUNT 3
 
-typedef struct train{
-    char name[DATA_SIZE];
-    char gauge[DATA_SIZE];
-    char controls[DATA_SIZE];
-    char fuels[DATA_SIZE];
-    double acceleration;
-    double max_speed;
-    int passenger_space;
-} train;
 
 
 double time(route r, train t);
@@ -30,91 +19,57 @@ double added_delay(route r, train t);
 // First route data, then train data then everything else
 int weight_calc(route r, train t);
 
-void scan_routes(FILE*, route*);
-void scan_trains(FILE*, train*);
+int lines_in_file(FILE*);
 
 int main(void)
 {
-    /*
-    route routes[ROUTE_COUNT];
+    int route_count = 0, train_count = 0;
+
     FILE* routefile = fopen("..\\..\\src\\rutedata.txt", "r");
-
-    scan_routes(routefile, routes);
-
+    route_count = lines_in_file(routefile);
     fclose(routefile);
 
-    train trains[TRAIN_COUNT];
+    route routes[route_count];
+
+    routefile = fopen("..\\..\\src\\rutedata.txt", "r");
+    scan_routes(routefile, routes);
+    fclose(routefile);
+
     FILE* trainfile = fopen("..\\..\\src\\trains.txt", "r");
-
-    scan_trains(trainfile, trains);
-
+    train_count = lines_in_file(trainfile);
     fclose(trainfile);
-    */
 
+    train trains[train_count];
 
-    /*
+    trainfile = fopen("..\\..\\src\\trains.txt", "r");
+    scan_trains(trainfile, trains);
+    fclose(trainfile);
+
+    station_list_node* list_of_stations = build_station_list(routes); //build the station list from the stations in the route array
+
+    //error-testing here. Should probably be moved or deleted later
     double travel_time = time(routes[0], trains[0]);
     printf("\nTravel time from %s to %s - assuming stuff, not accurate: %lf s\n",routes[0].station_start, routes[0].station_end, travel_time);
-    printf("Distance: %d km\n", station_distance(Berlin_Hbf, Paris_Nord));
     printf("Weight for above-mentioned route: %d\n", weight_calc(routes[0], trains[0]));
 
 
-    // input array containing edges of the graph (as per above diagram)
-    // `(x, y, w)` tuple in the array represents an edge from `x` to `y`
-    // having weight `w`
-    struct Edge edges[] =
-            {
-                    { Berlin_Hbf, Paris_Nord, weight_calc(routes[0], trains[0]) },
-                    { 1, 2, 2 },
-                    { 2, 0, 3 },
-                    { 2, 1, 4 },
-                    { 3, 2, 5 },
-                    { 4, 5, 6 },
-                    { 5, 4, 7 }
-            };
+    // input array containing edges of the graph
+    struct Edge* edges = build_edges(list_of_stations, routes, route_count, trains);
 
-    // calculate the number of edges
-    int n = sizeof(edges)/sizeof(edges[0]);
+    /* calculate the number of edges
+    int n = sizeof(edges)/sizeof(edges[0]);     Deprecated since route_count should have the same value and can be used instead
+    */
 
     // construct a graph from the given edges
-    struct Graph *graph = createGraph(edges, n);
+    struct Graph *graph = createGraph(edges, route_count);
 
     // print adjacency list representation of a graph
     printGraph(graph);
 
-    */
-
+    free(edges);
 
 
     return EXIT_SUCCESS;
-}
-
-void scan_trains(FILE* p_file, train* t){   //reads from a file where each line has the following format: Name,Gauge,Control1.Control2.Control3,Fuel1.Fuel2.Fuel3,Acceleration,Max_speed,Passenger_space
-    char temp[DATA_SIZE];
-    for (int i = 0; i < TRAIN_COUNT; ++i) {
-
-        fscanf(p_file, "%[^,]", t[i].name);
-        fscanf(p_file, "%*[,]");
-        fscanf(p_file, "%[^,]", t[i].gauge);
-        fscanf(p_file, "%*[,]");
-        fscanf(p_file, "%[^,]", t[i].controls);
-        fscanf(p_file, "%*[,]");
-        fscanf(p_file, "%[^,]", t[i].fuels);
-        fscanf(p_file, "%*[,]");
-        fscanf(p_file, "%[^,]", temp);
-        t[i].acceleration = strtod(temp, NULL);        //converting the string to a double, so we can do math on it
-        fscanf(p_file, "%*[,]");
-        fscanf(p_file, "%[^,]", temp);
-        t[i].max_speed = strtod(temp, NULL);
-        fscanf(p_file, "%*[,]");
-        fscanf(p_file, "%[^\n]", temp);
-        t[i].passenger_space = strtol(temp, NULL, 10);
-        fscanf(p_file, "%*[^a-zA-Z0-9]");
-
-        //printf to test if the format is right. delete later
-        printf("Traindata:\n%s %s %s %s %.0lf %.0lf %d\n",t[i].name,t[i].gauge,t[i].controls,t[i].fuels,t[i].acceleration,t[i].max_speed,t[i].passenger_space);
-    }
-
 }
 
 
@@ -183,4 +138,21 @@ int weight_calc(route r, train t)
     // maybe also make a delay at each vertex to account for passengers leaving/getting on the train - unless the vertex is the final destination
 
     return weight;
+}
+
+//counts the number of lines in the file pointed to by p_file. Uses up the entire input stream, so if the file needs to be used again it must be closed and reopened!
+int lines_in_file(FILE* p_file){
+    int count = 0;
+    int c;
+    if(p_file != NULL){             //check if the file exists before we start trying to read it. set count to 1 if it does exist since there will always be at least one line
+        count = 1;
+        do {                        //grabs the next character in the file and checks if it's a newline character
+            c = getc(p_file);
+            if(c == '\n'){
+                count++;
+            }
+        }
+        while (c != EOF);   //repeats until the end of the file and returns the number of newline characters
+    }
+    return count;
 }

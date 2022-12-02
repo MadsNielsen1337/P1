@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define the maximum number of vertices in the graph
+// Define the maximum number of vertices in the graph. Should use list_length from routes.h after a station list is built!!
 #define N 6
 
 // Data structure to store adjacency list nodes of the graph
@@ -119,5 +119,17 @@ int main(void)
     return 0;
 }
  */
+
+struct Edge* build_edges(station_list_node* list, route* r, int route_count, train* t){
+    struct Edge* edges = malloc(sizeof(struct Edge) * route_count);
+
+    for (int i = 0; i < route_count; ++i) {
+        edges[i].src = search_station_list(list, r[i].station_start);
+        edges[i].dest = search_station_list(list, r[i].station_end);
+        edges[i].weight = weight_calc(r[i], t);
+    }
+
+    return edges;
+}
 
 #endif //P1_GRAPH_H
