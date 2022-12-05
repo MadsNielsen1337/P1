@@ -3,7 +3,8 @@ add_executable(main main.c
                     readFiles.c
                     UI.c
                     routes.c
-                    trains.c)
+                    trains.c
+                    graph.c)
 
 add_library(trains main.c)
 add_library(graph main.c)
