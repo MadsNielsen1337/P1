@@ -16,27 +16,9 @@ int lines_in_file(FILE* p_file){
                 count++;
             }
         }
-        while (c != EOF);   //repeats until the end of the file and returns the number of newline characters
+        while (c != EOF);           //repeats until the end of the file and returns the number of newline characters
     }
     return count;
-}
-
-// Calculates size of route.txt - aka. how many lines are there?
-int get_route_size(int route_count)
-{
-    FILE* routefile = fopen("..\\..\\src\\rutedata.txt", "r");
-    route_count = lines_in_file(routefile);
-    fclose(routefile);
-    return route_count;
-}
-
-// Calculates size of train.txt - aka. how many lines are there?
-int get_train_size(int train_count)
-{
-    FILE* trainfile = fopen("..\\..\\src\\trains.txt", "r");
-    train_count = lines_in_file(trainfile);
-    fclose(trainfile);
-    return train_count;
 }
 
 // Reads input in route.txt using scan_routes
@@ -56,7 +38,7 @@ void read_trains(train* trains, int* train_count)
 }
 
 // Reads from a file where each line has the following format: Distance,Track_speed,Power,Gauge,Controls,Station_Start,Station_End
-void scan_routes(FILE* p_file, route* r, int* route_count)
+void scan_routes(FILE* p_file, route* r, const int* route_count)
 {
     char temp[DATA_SIZE];
     for (int i = 0; i < *route_count; ++i) {
@@ -84,7 +66,7 @@ void scan_routes(FILE* p_file, route* r, int* route_count)
 }
 
 // Reads from a file where each line has the following format: Name,Track_gauge,Control1.Control2.Control3,Fuel1.Fuel2.Fuel3,Acceleration,Max_speed,Passenger_cap
-void scan_trains(FILE* p_file, train* t, int* train_count)
+void scan_trains(FILE* p_file, train* t, const int* train_count)
 {
     char temp[DATA_SIZE];
     for (int i = 0; i < *train_count; ++i) {
