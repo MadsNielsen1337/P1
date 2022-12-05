@@ -10,10 +10,10 @@ void read_trains(train* trains, int* train_count);
 
 
 // Reads from a file where each line has the following format: Distance,Track_speed,Power,Gauge,Controls,Station_Start,Station_End
-void scan_routes(FILE* p_file, route* r, int* route_count);
+void scan_routes(FILE* p_file, route* r, const int* route_count);
 
 // Reads from a file where each line has the following format: Name,Track_gauge,Control1.Control2.Control3,Power1.Power2.Power3,Acceleration,Max_speed,Passenger_cap
-void scan_trains(FILE* p_file, train* t, int* train_count);
+void scan_trains(FILE* p_file, train* t, const int* train_count);
 
 // Calculates size of *.txt files - aka. how many lines are there?
 int get_route_size(int route_count);
