@@ -1,4 +1,3 @@
-
 #include "routes.h"
 #include "trains.h"
 #include "time_calc.h"
@@ -6,12 +5,12 @@
 #define METER_CONVERSION 1000               // Multiply this with km to get m
 #define METER_PER_SECOND_CONVERSION 3.6     // Divide this with km/h to get m/s
 
-
+// Calculate the time it takes to go from station_start to station_end. Takes accel & decel into account
 double time(route r, train t)
 {
-    if(r.track_speed < t.max_speed) {
+    if(r.track_speed < t.max_speed)
         t.max_speed = r.track_speed;
-    }
+
 
     double time_max_speed;
     t.max_speed /= METER_PER_SECOND_CONVERSION;
@@ -36,6 +35,7 @@ double time(route r, train t)
     return total_time;
 }
 
+// Adds delay to the time if we're switching trains. More or less a placeholder for now
 double added_delay(route r, train t)
 {
     double delay = 0;    // Delay time in minutes
@@ -51,6 +51,7 @@ double added_delay(route r, train t)
 
 }
 
+// Calculates the weight for the edge going from station_start to station_end
 int weight_calc(route r, train t)
 {
     int weight = 0;    // Delay time in minutes
