@@ -13,8 +13,4 @@ typedef struct train{
     int passenger_space;
 } train;
 
-
-
-
-
 #endif //P1_TRAINS_H

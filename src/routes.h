@@ -30,7 +30,7 @@ void add_node(station_list_node* node, const char* new_name);
 void print_station_list(station_list_node* node);
 
 // Function to create and fill a linked list of station names with data from the route array. Returns a pointer to the start of the created list
-station_list_node* build_station_list(route* r, int* route_count);
+station_list_node* build_station_list(route* r, const int* route_count);
 
 // Function to find the length of an existing station list
 int list_length(station_list_node* node);
