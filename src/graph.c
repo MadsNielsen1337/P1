@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "graph.h"
+#include "time_calc.h"
 
 
 // Function to create an adjacency list from specified edges
@@ -103,7 +104,7 @@ struct Edge* build_edges(station_list_node* list, route* r, int route_count, tra
     for (int i = 0; i < route_count; ++i) {
         edges[i].src = search_station_list(list, r[i].station_start);
         edges[i].dest = search_station_list(list, r[i].station_end);
-        //edges[i].weight = weight_calc(r[i], t);
+        edges[i].weight = weight_calc(r[i], *t);
     }
 
     return edges;
