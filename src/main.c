@@ -46,10 +46,6 @@ int main(void)
     // Construct a graph from the given edges
     struct Graph *graph = createGraph(edges, route_count);
 
-
-
-
-
     // Print adjacency list representation of a graph
     printGraph(graph);
 
