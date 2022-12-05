@@ -32,7 +32,7 @@ struct Graph* createGraph(struct Edge edges[], int n);
 // Function to print adjacency list representation of a graph
 void printGraph(struct Graph* graph);
 
-
+// Function that constructs the edges for the graph
 struct Edge* build_edges(station_list_node* list, route* r, int route_count, train* t);
 
 

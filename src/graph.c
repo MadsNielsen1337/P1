@@ -96,6 +96,7 @@ int main(void)
 }
  */
 
+// Function that constructs the edges for the graph
 struct Edge* build_edges(station_list_node* list, route* r, int route_count, train* t){
     struct Edge* edges = malloc(sizeof(struct Edge) * route_count);
 
