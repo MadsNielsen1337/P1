@@ -15,7 +15,7 @@ void print_long_line(int ui_size);
 void clear_input(void);
 
 // Draws a UI in the terminal
-void drawMenu(route* routes, station_list_node* list_of_stations);
+void drawMenu(void);
 
 // Processes the user input
 int menu_choice(route* routes, station_list_node* list_of_stations);
@@ -49,7 +49,7 @@ void print_long_line(int ui_size)
 }
 
 // Draws a UI in the terminal
-void drawMenu(route* routes, station_list_node* list_of_stations)
+void drawMenu(void)
 {
     char drawMenu = '-';
     char drawWhitespace = ' ';
@@ -67,8 +67,8 @@ void drawMenu(route* routes, station_list_node* list_of_stations)
 
     add_spacing(SPACING);
 
-    printf("\n%c [a] Run simulation (placeholder)%27c", drawMenu, drawMenu);
-    printf("\n%c [b] See all available stations%29c", drawMenu, drawMenu);
+    printf("\n%c [r] Run simulation (placeholder)%27c", drawMenu, drawMenu);
+    printf("\n%c [s] See all available stations%29c", drawMenu, drawMenu);
     printf("\n%c [q] Exit%51c", drawMenu, drawMenu);
 
     add_spacing(SPACING);
@@ -120,14 +120,18 @@ int menu_choice(route* routes, station_list_node* list_of_stations) {
         scanf("%c", &choice);       // Read input from user
         clear_input();
 
-        if (choice == 'q')       // Since the while loop can't break for some reason these if-else statements do the job.
+        // Since the while loop can't break for some reason these if-else statements do the job.
+        if (choice == 'q')                  // Quit
             exit(EXIT_SUCCESS);
-        else if (choice == 'a') {
+        else if (choice == 'a') {           // UNDEFINED
             // call a function
             printf("a = fisk\n");
         }
-        else if (choice == 'b') {
+        else if (choice == 's') {           // Show all stations
             list_all_stations(list_of_stations);
+        }
+        else if (choice == 'b') {           // Return to main menu
+            drawMenu();
         }
     }
 }
@@ -145,12 +149,14 @@ void list_all_stations(station_list_node* list_of_stations)
     }
 
     printf("\n");
+    printf("\n [b] Return tp main menu");
+    printf("\n");
     print_long_line(UI_SIZE);
 }
 
 // Encapsulates all UI functions into one for ease of use
 void GenerateUI(route* routes, station_list_node* list_of_stations)
 {
-    drawMenu(routes, list_of_stations);
+    drawMenu();
     menu_choice(routes, list_of_stations);
 }

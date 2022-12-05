@@ -24,7 +24,7 @@ int lines_in_file(FILE* p_file){
 // Calculates size of route.txt - aka. how many lines are there?
 int get_route_size(int route_count)
 {
-    FILE* routefile = fopen("..\\..\\src\\rutedata.txt", "r");
+    FILE* routefile = fopen("..\\..\\src\\routes.txt", "r");
     route_count = lines_in_file(routefile);
     fclose(routefile);
     return route_count;
@@ -42,7 +42,7 @@ int get_train_size(int train_count)
 // Reads input in route.txt using scan_routes
 void read_routes(route* routes, int* route_count)
 {
-    FILE* routefile = fopen("..\\..\\src\\rutedata.txt", "r");
+    FILE* routefile = fopen("..\\..\\src\\routes.txt", "r");
     scan_routes(routefile, routes, route_count);
     fclose(routefile);
 }
