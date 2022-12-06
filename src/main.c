@@ -15,7 +15,7 @@ int main(void)
     int route_count = 0;
     int train_count = 0;
 
-    FILE* routefile = fopen("..\\..\\src\\rutedata.txt", "r");
+    FILE* routefile = fopen("..\\..\\src\\routes.txt", "r");
     route_count = lines_in_file(routefile);  // Calculate size of route.txt - aka. how many lines are there?
     fclose(routefile);
 
@@ -50,10 +50,6 @@ int main(void)
 
     // Construct a graph from the given edges
     struct Graph *graph = createGraph(edges, route_count);
-
-
-
-
 
     // Print adjacency list representation of a graph
     printGraph(graph);
