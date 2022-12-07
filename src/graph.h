@@ -24,6 +24,7 @@ struct Graph
 // Data structure to store graph edges
 struct Edge {
     int src, dest, weight;
+    char trains[DATA_SIZE];
 };
 
 // Function to create an adjacency list from specified edges
@@ -33,7 +34,7 @@ struct Graph* createGraph(struct Edge edges[], int n);
 void printGraph(struct Graph* graph);
 
 // Function that constructs the edges for the graph
-struct Edge* build_edges(station_list_node* list, route* r, int route_count, train* t);
+struct Edge* build_edges(station_list_node* list, route* r, int route_count, train* t, int train_count);
 
 
 #endif //P1_GRAPH_H
