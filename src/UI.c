@@ -10,6 +10,8 @@
 
 void add_spacing(int spacing);
 void print_long_line(int ui_size);
+void print_long_line_pipe(int ui_size);
+void print_long_line_equals(int ui_size);
 
 // Garbage collector. Keeps reading the input until a new line (or the end of the file) is reached
 void clear_input(void);
@@ -33,7 +35,7 @@ void clear_input(void){
 
 void add_spacing(int spacing)
 {
-    char drawMenu = '-';
+    char drawMenu = '|';
     for (int i = 0; i < spacing; ++i) {
         printf("\n%c%60c", drawMenu, drawMenu);     // Add space between text
     }
@@ -41,20 +43,42 @@ void add_spacing(int spacing)
 
 void print_long_line(int ui_size)
 {
-    char drawMenu = '-';
+    char drawMenu = '_';
     printf("\n");
     for (int i = 0; i < ui_size; ++i) {
         printf("%c", drawMenu);     // Print the UI header
     }
 }
 
+void print_long_line_pipe(int ui_size)
+{
+    char drawMenu = '_';
+    char drawPipe = '|';
+    printf("\n");
+    printf("%c", drawPipe);
+    for (int i = 0; i < ui_size - 2; ++i) {
+        printf("%c", drawMenu);     // Print the UI header
+    }
+    printf("%c", drawPipe);
+}
+
+void print_long_line_equals(int ui_size)
+{
+    char drawEquals = '=';
+    printf("\n");
+    for (int i = 0; i < ui_size; ++i) {
+        printf("%c", drawEquals);     // Print the UI header
+    }
+}
+
+
+
 // Draws a UI in the terminal
 void drawMenu(void)
 {
-    char drawMenu = '-';
-    char drawWhitespace = ' ';
+    char drawMenu = '|';
 
-    print_long_line(UI_SIZE);
+    print_long_line_equals(UI_SIZE);
 
     add_spacing(SPACING - 1);
 
@@ -63,17 +87,17 @@ void drawMenu(void)
 
     add_spacing(SPACING - 1);
 
-    print_long_line(UI_SIZE);
+    print_long_line_pipe(UI_SIZE);
 
-    add_spacing(SPACING);
+    add_spacing(SPACING - 1);
 
     printf("\n%c [r] Run simulation (placeholder)%27c", drawMenu, drawMenu);
     printf("\n%c [s] See all available stations%29c", drawMenu, drawMenu);
     printf("\n%c [q] Exit%51c", drawMenu, drawMenu);
 
-    add_spacing(SPACING);
+    add_spacing(SPACING - 1);
 
-    print_long_line(UI_SIZE);
+    print_long_line_equals(UI_SIZE);
 
     printf("\n");
 
@@ -138,7 +162,7 @@ int menu_choice(route* routes, station_list_node* list_of_stations) {
 
 void list_all_stations(station_list_node* list_of_stations)
 {
-    print_long_line(UI_SIZE);
+    print_long_line_equals(UI_SIZE);
     printf("\n");
     printf("\nHere are all available stations:\n");
 
