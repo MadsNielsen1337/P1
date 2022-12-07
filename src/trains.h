@@ -12,5 +12,9 @@ typedef struct train{
     double max_speed;
     int passenger_space;
 } train;
+//char** compatible_trains(route r, train*, int length_of_train_list);
 
+//void convert_controls(train* t, route r, int train_count);
+int segmented_string_compare(const char* str, const char* target);
+char* compatible_trains(const train* t, route r, int train_count);
 #endif //P1_TRAINS_H

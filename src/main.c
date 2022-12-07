@@ -34,7 +34,6 @@ int main(void)
     // Read data from *.txt files and assign to corresponding place in the array
     read_routes(routes, &route_count);
     read_trains(trains, &train_count);
-
     // Build the station list from the stations in the route array
     station_list_node* list_of_stations = build_station_list(routes, &route_count);
 
@@ -46,13 +45,17 @@ int main(void)
     //list_test();
 
     // Input array containing edges of the graph
-    struct Edge* edges = build_edges(list_of_stations, routes, route_count, trains);
+    struct Edge* edges = build_edges(list_of_stations, routes, route_count, trains, train_count);
 
     // Construct a graph from the given edges
     struct Graph *graph = createGraph(edges, route_count);
 
     // Print adjacency list representation of a graph
     printGraph(graph);
+
+
+    printf("\n%s", compatible_trains(trains, routes[0], train_count));
+
 
     // Draw the UI
     GenerateUI(routes, list_of_stations);

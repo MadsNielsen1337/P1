@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "graph.h"
 #include "time_calc.h"
 
@@ -98,14 +99,17 @@ int main(void)
  */
 
 // Function that constructs the edges for the graph
-struct Edge* build_edges(station_list_node* list, route* r, int route_count, train* t){
+struct Edge* build_edges(station_list_node* list, route* r, int route_count, train* t, int train_count){
     struct Edge* edges = malloc(sizeof(struct Edge) * route_count);
+    char* allowed_trains;
 
     for (int i = 0; i < route_count; ++i) {
         edges[i].src = search_station_list(list, r[i].station_start);
         edges[i].dest = search_station_list(list, r[i].station_end);
         edges[i].weight = weight_calc(r[i], *t);
+        allowed_trains = compatible_trains(t, r[i], train_count);
+        strcpy(edges[i].trains , allowed_trains);
+        free(allowed_trains);
     }
-
     return edges;
 }
