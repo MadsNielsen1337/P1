@@ -1,3 +1,4 @@
+#include "stdio.h"
 #include "routes.h"
 #include "trains.h"
 #include "time_calc.h"
@@ -18,7 +19,6 @@ double time(route r, train t)
 
     // Since data about decel is hard to find, it is expected that accel = decel.
     // This accounts both for accel and decel
-    time_max_speed = 2 * ((t.max_speed) / t.acceleration); // Unit: s
 
     // Accel
     // v = a * t + v_0
@@ -27,10 +27,24 @@ double time(route r, train t)
 
     // t = (sqrt(2 * a_0 * s - 2 * a_0 * s_0 + v_0^2) - v_0)/ a_0
 
+
+    // The time it takes to accelerate from v = 0 to t.max_speed (Times 2 to account for decel)
+    time_max_speed = 2 * ((t.max_speed) / t.acceleration); // Unit: s
+
+
+    double v;
+    // Velocity at time_max_speed
+    v = t.acceleration * time_max_speed / 2;
+
+    // The time it takes to travel distance with velocity v
     double time = (r.distance) / t.max_speed; // Unit: s
 
     // This simple solution subtracts the accel/decel time with total time. While it isn't 100% accurate it tries to make an estimate of the time taken to travel the given distance.
     double total_time = (time - time_max_speed) + added_delay(r, t);
+
+    if(time_max_speed > total_time) {
+        total_time = (time - (time_max_speed / 2)) + added_delay(r, t);
+    }
 
     return total_time;
 }

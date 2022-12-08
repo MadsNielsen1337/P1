@@ -24,8 +24,8 @@ int main(void)
     fclose(trainfile);
 
     // Test to see if calc were done correct. Should be deleted later
-    printf("R = %d\n", route_count);
-    printf("T = %d\n", train_count);
+    //printf("R = %d\n", route_count);
+    //printf("T = %d\n", train_count);
 
     // Allocate space in the arrays for input size of *.txt files
     train trains[train_count];
@@ -38,11 +38,11 @@ int main(void)
     station_list_node* list_of_stations = build_station_list(routes, &route_count);
 
     // Error-testing here. Should probably be moved or deleted later
-    double travel_time = time(routes[0], trains[0]);
+    /*double travel_time = time(routes[0], trains[0]);
     printf("\nTravel time from %s to %s - assuming stuff, not accurate: %lf s\n",routes[1].station_start, routes[1].station_end, travel_time);
     printf("Distance: %d km\n", routes[1].distance);
     printf("Weight for above-mentioned route: %d\n", weight_calc(routes[0], trains[0]));
-    //list_test();
+    *///list_test();
 
     // Input array containing edges of the graph
     struct Edge* edges = build_edges(list_of_stations, routes, route_count, trains, train_count);
@@ -54,11 +54,12 @@ int main(void)
     printGraph(graph);
 
 
-    printf("\n%s", compatible_trains(trains, routes[0], train_count));
+    //printf("\n%s", compatible_trains(trains, routes[0], train_count));
 
+    printf("Total weight of route is %d\n", dijkstra(graph, 3, 5));
 
     // Draw the UI
-    GenerateUI(routes, list_of_stations);
+    //GenerateUI(routes, list_of_stations);
 
     // Give memory back to the OS
     free(edges);
