@@ -5,7 +5,8 @@ add_executable(main main.c
                     routes.c
                     trains.c
                     graph.c
-                    time_calc.c)
+                    time_calc.c
+        )
 
 add_library(trains main.c)
 add_library(graph main.c)

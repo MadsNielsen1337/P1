@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "routes.h"
+#include "graph.h"
 
 #define UI_SIZE 61
 #define SPACING 2
+#define MENU_OPTIONS 4
 
 // -----------------------------------------------------------------------------------
 // Local prototypes. Globals are declared in UI.h
@@ -20,9 +23,13 @@ void clear_input(void);
 void drawMenu(void);
 
 // Processes the user input
-int menu_choice(route* routes, station_list_node* list_of_stations);
+int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph* graph);
 
 void list_all_stations(station_list_node* list_of_stations);
+
+int convert_letter(char input_letter);
+
+
 
 // -----------------------------------------------------------------------------------
 
@@ -93,6 +100,7 @@ void drawMenu(void)
 
     printf("\n%c [r] Run simulation (placeholder)%27c", drawMenu, drawMenu);
     printf("\n%c [s] See all available stations%29c", drawMenu, drawMenu);
+    printf("\n%c [g] Print graph%44c", drawMenu, drawMenu);
     printf("\n%c [q] Exit%51c", drawMenu, drawMenu);
 
     add_spacing(SPACING - 1);
@@ -124,7 +132,7 @@ void drawMenu(void)
 }
 
 // Processes the user input
-int menu_choice(route* routes, station_list_node* list_of_stations) {
+int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph* graph) {
     /*
         fscanf(stdin, "%[^A-Za-z0-9]", &choice);    // Read until a letter or number is found.
         fscanf(choice, "%[^q]", choice);            // Check if 'q' was input
@@ -139,26 +147,46 @@ int menu_choice(route* routes, station_list_node* list_of_stations) {
             }
      */
     char choice = ' ';
-    while (choice != 'q' || choice != 'a' || choice != 'b') {
+    while (choice != 'q') {
         printf("\nChoose menu option:");
         scanf("%c", &choice);       // Read input from user
         clear_input();
 
-        // Since the while loop can't break for some reason these if-else statements do the job.
-        if (choice == 'q')                  // Quit
-            exit(EXIT_SUCCESS);
-        else if (choice == 'a') {           // UNDEFINED
-            // call a function
-            printf("a = fisk\n");
-        }
-        else if (choice == 's') {           // Show all stations
-            list_all_stations(list_of_stations);
-        }
-        else if (choice == 'b') {           // Return to main menu
-            drawMenu();
+        switch (choice) {
+            case 'q':   // Quit
+                exit(EXIT_SUCCESS);
+            case 'r':    // SORTA DEFINED OR NOT
+            {
+                int s_start, s_end;
+                printf("\nInput station start:\n");
+                scanf("%d", &s_start);
+                printf("\nInput station end:\n");
+                scanf("%d", &s_end);
+
+                printf("\nGoing from station %s (%d) to station %s (%d) with total weight (%d)\n",
+                       index_station_list(list_of_stations, s_start), s_start,
+                       index_station_list(list_of_stations, s_end), s_end, dijkstra(graph, s_start, s_end));
+                drawMenu();
+                break;
+            }
+            case 's':    // Show all stations
+                list_all_stations(list_of_stations);
+                printf("\n\n");
+                drawMenu();
+                break;
+            case 'g':   // Print graph
+                printGraph(graph);
+                break;
+            case 'b':    // Return to main menu
+                drawMenu();
+                break;
+            default:
+                printf("\nDEFAULT\n");
+                drawMenu();
         }
     }
 }
+
 
 void list_all_stations(station_list_node* list_of_stations)
 {
@@ -167,20 +195,19 @@ void list_all_stations(station_list_node* list_of_stations)
     printf("\nHere are all available stations:\n");
 
     // Dynamically prints ALL available stations and their index.
-    for (int i = 0; i < (list_length(list_of_stations)); ++i) {
+    for (int i = 0; i <= 9; ++i) {
+        printf("\n [%d]  %s", i,index_station_list(list_of_stations, i));
+    }
+    for (int i = 10; i < (list_length(list_of_stations)); ++i) {
         //printf("\n%c [%d] %s",drawMenu, i, routes[i].station_start);
         printf("\n [%d] %s", i,index_station_list(list_of_stations, i));
     }
-
-    printf("\n");
-    printf("\n [b] Return tp main menu");
-    printf("\n");
-    print_long_line(UI_SIZE);
+    print_long_line_equals(UI_SIZE);
 }
 
 // Encapsulates all UI functions into one for ease of use
-void GenerateUI(route* routes, station_list_node* list_of_stations)
+void GenerateUI(route* routes, station_list_node* list_of_stations, struct Graph* graph)
 {
     drawMenu();
-    menu_choice(routes, list_of_stations);
+    menu_choice(routes, list_of_stations, graph);
 }

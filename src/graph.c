@@ -55,6 +55,7 @@ struct Graph* createGraph(struct Edge edges[], int n)
 void printGraph(struct Graph* graph)
 {
     int i;
+    printf("\n\n");
     for (i = 0; i < N; i++)
     {
         // print the current vertex and all its neighbors
@@ -119,10 +120,8 @@ struct Edge* build_edges(station_list_node* list, route* r, int route_count, tra
 int dijkstra_recursive(struct Graph* graph, int search_pos, int target, int total_weight)
 {
     if(search_pos == target) {
-        printf("\nFOUND\n");
         return 0;
     } else {
-        printf("\nNOT FOUND\n");
         return graph->head[search_pos]->weight + dijkstra_recursive(graph, graph->head[search_pos]->dest, target, total_weight);
     }
 }

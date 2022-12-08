@@ -1,4 +1,3 @@
-#include "stdio.h"
 #include "routes.h"
 #include "trains.h"
 #include "time_calc.h"
