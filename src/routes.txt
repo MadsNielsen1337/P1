@@ -1,5 +1,41 @@
-481,184,15/16_7,Standard,PZB,Berlin_Hbf,Mannheim_Hbf
-450,262,25/50.15/16_7,Standard,ETCS,Mannheim_Hbf,Paris Est
-577,183,15/16_7,Standard,PZB,Berlin_Hbf,Cologne_Hbf
-184,231,15/16_7.25/50.3.15/3000,Standard,ETCS,Cologne_Hbf,Bruxelles-Midi
-354,233,25/50.15/16_7.3.15/3000,Standard,TVM,Bruxelles-Midi,Paris_Nord
+16,60,15/16_7,Standard,PZB,Berlin Hbf,Berlin-Spandau
+167,250,15/16_7,Standard,LZB,Berlin-Spandau,Wolfsburg Hbf
+78,160,15/16_7,Standard,PZB,Wolfsburg Hbf,Hildesheim
+209,250,15/16_7,Standard,LZB,Hildesheim,Fulda
+103,160,15/16_7,Standard,PZB,Fulda,Frankfurt Hbf
+79,200,15/16_7,Standard,LZB,Frankfurt Hbf, Mannheim
+71,240,15/16_7,Standard,LZB,Mannheim Hbf,Karlsruhe
+65,160,15/16_7,Standard,PZB,Karlsruhe,Strasbourg-Kehl
+375,300,25/50,Standard,ETCS,Strasbourg-Kehl,Vaires-Torcy
+20,80,25/50,Standard,KVB,Vaires-Torcy,Paris Est
+55,200,15/16_7,Standard,LZB,Wolfsburg Hbf,Lehrte
+16,120,15/16_7,Standard,PZB,Lehrte,Hannover Hbf
+21,200,15/16_7,Standard,LZB,Hannover Hbf,Wunstorf
+6,160,15/16_7,Standard,PZB,Wunstorf,Haste Hf
+27,200,15/16_7,Standard,LZB,Haste Hf,Bückeburg
+106,200,15/16_7,Standard,PZB,Bückeburg,Hamm-West Hbf
+32,200,15/16_7,Standard,LZB,Hamm-West Hbf,Dortmund Hbf
+107,200,15/16_7,Standard,PZB,Dortmund Hbf,Cologne Hbf
+70,250,15/16_7,Standard,PZB,Cologne Hbf,Aachen Hbf
+8,160,3,Standard,PZB,Aachen Hbf,Hergenrath Bf
+31,260,25/50,Standard,ETCS,Hergenrath Bf,Chénée
+12,140,3,Standard,ETCS,Chénée,Bierset-Awans
+59,300,25/50,Standard,ETCS,Bierset-Awans,Leuven
+25,160,3,Standard,ETCS,Leuven,Bruxelles-Midi
+15,160,3,Standard,ETCS,Bruxelles-Midi,Halle
+233,300,25/50,Standard,TVM,Halle,Villers-Le-Bel
+13,120,25/50,Standard,KVB,Villers-Le-Bel,Paris Nord
+129,140,15/16_7,Standard,PZB,Bückeburg,Bad Bentheim
+130,160,15/16_7,Standard,PZB,Mannheim Hbf,Saarbrücken
+46,130,25/50,Standard,KVB,Saarbrücken,Herny
+281,320,25/50,Standard,ETCS,Herny,Vaires-Torcy
+22,160,15/16_7,Standard,PZB,Karlsruhe,Rastatt
+47,250,15/16_7,Standard,LZB,Rastatt,Offenburg
+106,160,15/16_7,Standard,LZB,Offenburg,Basel SBB
+168,160,15/16_7,Standard,ETCS,Basel SBB,Domodossola
+45,110,3,Standard,ETCS,Domodossola,Arona
+59,160,3,Standard,SCMT,Arona,Milan Centrale
+16,120,3,Standard,ETCS,Milan Centrale,Melegnano
+232,300,25/50,Standard,ETCS,Melegnano,Firenze Castello
+4,100,3,Standard,SCMT,Firenze Castello,Firenze Campo
+231,250,3,Standard,ETCS,Firenze Campo,Rome Termini
