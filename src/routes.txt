@@ -3,7 +3,7 @@
 78,160,15/16_7,Standard,PZB,Wolfsburg Hbf,Hildesheim
 209,250,15/16_7,Standard,LZB,Hildesheim,Fulda
 103,160,15/16_7,Standard,PZB,Fulda,Frankfurt Hbf
-79,200,15/16_7,Standard,LZB,Frankfurt Hbf, Mannheim
+79,200,15/16_7,Standard,LZB,Frankfurt Hbf,Mannheim Hbf
 71,240,15/16_7,Standard,LZB,Mannheim Hbf,Karlsruhe
 65,160,15/16_7,Standard,PZB,Karlsruhe,Strasbourg-Kehl
 375,300,25/50,Standard,ETCS,Strasbourg-Kehl,Vaires-Torcy
