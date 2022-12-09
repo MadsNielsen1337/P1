@@ -65,7 +65,6 @@ void printGraph(struct Graph* graph)
             printf("%d -> %d (%d)\t", i, ptr->dest, ptr->weight);
             ptr = ptr->next;
         }
-
         printf("\n");
     }
 }

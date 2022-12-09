@@ -146,6 +146,8 @@ int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph
                 // this is our starting station
             }
      */
+    char draw_Menu = '|';
+    char menuSpacing = ' ';
     char choice = ' ';
     while (choice != 'q') {
         printf("\nChoose menu option:");
@@ -160,8 +162,10 @@ int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph
                 int s_start, s_end;
                 printf("\nInput station start:\n");
                 scanf("%d", &s_start);
+                clear_input();
                 printf("\nInput station end:\n");
                 scanf("%d", &s_end);
+                clear_input();
 
                 printf("\nGoing from station %s (%d) to station %s (%d) with total weight (%d)\n",
                        index_station_list(list_of_stations, s_start), s_start,
@@ -175,13 +179,25 @@ int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph
                 drawMenu();
                 break;
             case 'g':   // Print graph
+                printf("\n");
+                print_long_line_equals(UI_SIZE);
+                printf("\n%c%19cPrinted adjacency list%19c", draw_Menu, menuSpacing, draw_Menu);
+                print_long_line_equals(UI_SIZE);
+                printf("\n");
                 printGraph(graph);
+                printf("\n");
+                print_long_line_equals(UI_SIZE);
+                printf("\n%c%26cList end%26c", draw_Menu, menuSpacing, draw_Menu);
+                print_long_line_equals(UI_SIZE);
+                printf("\n\n");
+                drawMenu();
                 break;
             case 'b':    // Return to main menu
                 drawMenu();
                 break;
             default:
                 printf("\nDEFAULT\n");
+                printf("Choice = '%c'\n", choice);
                 drawMenu();
         }
     }
