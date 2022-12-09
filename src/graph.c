@@ -55,6 +55,7 @@ struct Graph* createGraph(struct Edge edges[], int n)
 void printGraph(struct Graph* graph)
 {
     int i;
+    printf("\n");
     for (i = 0; i < N; i++)
     {
         // print the current vertex and all its neighbors
@@ -64,7 +65,6 @@ void printGraph(struct Graph* graph)
             printf("%d -> %d (%d)\t", i, ptr->dest, ptr->weight);
             ptr = ptr->next;
         }
-
         printf("\n");
     }
 }
