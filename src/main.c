@@ -43,6 +43,9 @@ int main(void)
     // Construct a graph from the given edges
     struct Graph *graph = createGraph(edges, route_count);
 
+    //train_match(graph, 1);
+    printf("Random train is: %s\n", select_random_train(graph->head[2+1]->allowed_trains, graph->head[2]->allowed_trains));
+
     // Draw the UI
     GenerateUI(routes, list_of_stations, graph);
 

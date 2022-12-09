@@ -30,7 +30,6 @@ double time(route r, train t)
     // The time it takes to accelerate from v = 0 to t.max_speed (Times 2 to account for decel)
     time_max_speed = 2 * ((t.max_speed) / t.acceleration); // Unit: s
 
-
     double v;
     // Velocity at time_max_speed
     v = t.acceleration * time_max_speed / 2;
@@ -83,6 +82,10 @@ int weight_calc(route r, train t)
     /*if(power_f != fuel_type_s || track_gauge_f != train_track_gauge_s || control_f != control_s)             // Doubt you can do this. Prolly need strcmp or something
         weight += 10;       // Added delay in minutes. Find the average time it takes to switch trains.
 */
+
+    if(weight < 0) {
+        return -1;
+    }
 
     return weight;
 }
