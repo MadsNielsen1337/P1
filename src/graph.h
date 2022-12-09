@@ -5,7 +5,7 @@
 #include "trains.h"
 
 // Define the maximum number of vertices in the graph. Should use list_length from routes.h after a station list is built!!
-#define N 60
+#define N 100
 
 // Data structure to store adjacency list nodes of the graph
 struct Node

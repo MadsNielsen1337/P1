@@ -6,7 +6,6 @@
 
 #define UI_SIZE 61
 #define SPACING 2
-#define MENU_OPTIONS 4
 
 // -----------------------------------------------------------------------------------
 // Local prototypes. Globals are declared in UI.h
@@ -26,9 +25,6 @@ void drawMenu(void);
 int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph* graph);
 
 void list_all_stations(station_list_node* list_of_stations);
-
-int convert_letter(char input_letter);
-
 
 
 // -----------------------------------------------------------------------------------
@@ -206,9 +202,14 @@ int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph
 
 void list_all_stations(station_list_node* list_of_stations)
 {
+    char draw_Menu = '|';
+    char menuSpacing = ' ';
+
+    printf("\n");
+    print_long_line_equals(UI_SIZE);
+    printf("\n%c%14cHere are all available stations%15c", draw_Menu, menuSpacing, draw_Menu);
     print_long_line_equals(UI_SIZE);
     printf("\n");
-    printf("\nHere are all available stations:\n");
 
     // Dynamically prints ALL available stations and their index.
     for (int i = 0; i <= 9; ++i) {
@@ -218,7 +219,11 @@ void list_all_stations(station_list_node* list_of_stations)
         //printf("\n%c [%d] %s",drawMenu, i, routes[i].station_start);
         printf("\n [%d] %s", i,index_station_list(list_of_stations, i));
     }
+    printf("\n");
     print_long_line_equals(UI_SIZE);
+    printf("\n%c%23cEnd of stations%22c", draw_Menu, menuSpacing, draw_Menu);
+    print_long_line_equals(UI_SIZE);
+    printf("\n");
 }
 
 // Encapsulates all UI functions into one for ease of use
