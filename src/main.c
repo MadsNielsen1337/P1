@@ -61,7 +61,7 @@ int main(void)
 
     //printf("\n%s", compatible_trains(trains, routes[0], train_count));
 
-    printf("Function thinks shortest route has weight %d\n", dijkstra(graph, 0, 10));
+    //printf("Function thinks shortest route has weight %d\n", dijkstra(graph, 0, 10));
 
     // Give memory back to the OS
     free(edges);
