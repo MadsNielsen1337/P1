@@ -129,7 +129,7 @@ int visited_position(const int target, const int* positions){
     return 0;   //if the for-loop finishes, we know the target is not in the positions-array and return false
 }
 
-/*
+
 int train_match(struct Graph* graph, int search_pos)
 {
 
@@ -147,7 +147,7 @@ int train_match(struct Graph* graph, int search_pos)
 
     }
 }
-*/
+
 
 
 

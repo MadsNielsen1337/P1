@@ -39,6 +39,6 @@ struct Edge* build_edges(station_list_node* list, route* r, int route_count, tra
 
 int dijkstra(struct Graph* graph, int start_node, int end_node);
 
-int train_match(struct Graph* graph, int search_pos);
+//int train_match(struct Graph* graph, int search_pos);
 
 #endif //P1_GRAPH_H
