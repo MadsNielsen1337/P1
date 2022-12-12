@@ -71,7 +71,6 @@ char* select_random_train(const char* str, const char* target) {
             }
         }
     }
-
     for (int i = strlen(to_search) - 1; i >= 0; i--) {
 
 
@@ -80,7 +79,16 @@ char* select_random_train(const char* str, const char* target) {
         strcpy(out, &to_search[i + 1]);
     }
 
-
+/*
+ * f(index, str)
+ *  for loop as above
+ *      if(str == .
+ *          index--
+*       if(index == 0)
+ *          strcpy(str, out)
+ *
+ *
+ */
 
     return out;
 }
