@@ -169,10 +169,10 @@ int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph
                 scanf("%d", &s_end);
                 clear_input();
 
-                printf("\nGoing from station %s (%d) to station %s (%d) with total weight (%d)\n",
+                /*printf("\nGoing from station %s (%d) to station %s (%d) with total weight (%d)\n",
                        index_station_list(list_of_stations, s_start), s_start,
                        index_station_list(list_of_stations, s_end), s_end, dijkstra(graph, s_start, s_end));
-                drawMenu();
+                drawMenu();*/
                 break;
             }
             case 's':    // Show all stations
