@@ -40,13 +40,13 @@ int main(void)
     struct Edge* edges = build_edges(list_of_stations, routes, route_count, trains, train_count);
 
     // Construct a graph from the given edges
-    struct Graph *graph = createGraph(edges, route_count);
+    struct Graph* graph = createGraph(edges, route_count);
 
     //train_match(graph, 1);
     printf("Random train is: %s\n", select_random_train(0, graph->head[2]->allowed_trains));
 
     // Draw the UI
-    GenerateUI(routes, list_of_stations, graph);
+    //GenerateUI(routes, list_of_stations, graph);
 
     // Test to see if calc were done correct. Should be deleted later
     //printf("R = %d\n", route_count);
@@ -62,8 +62,13 @@ int main(void)
 
 
     //printf("\n%s", compatible_trains(trains, routes[0], train_count));
+    float dist[route_count];    //holds the distances from the start_node to every other node in the graph - should be defined elsewhere so the function can return them
+    int prev[route_count];    //holds the previous node in the shortest path to the node corresponding to the index
+    dijkstra(graph, dist, prev, 0, list_length(list_of_stations));
 
-    //printf("Function thinks shortest route has weight %d\n", dijkstra(graph, 0, 10));
+    for (int i = 0; i < list_length(list_of_stations); ++i) {
+        printf("\nDistance to %d is %f", i, dist[i]);
+        }
 
     // Give memory back to the OS
     free(edges);
