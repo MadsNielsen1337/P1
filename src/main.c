@@ -5,6 +5,7 @@
 #include "graph.h"
 #include "UI.h"
 #include "readFiles.h"
+#include "string.h"
 
 // Source vs header
 // https://stackoverflow.com/questions/3482948/what-is-the-fundamental-difference-between-source-and-header-files-in-c
@@ -42,8 +43,21 @@ int main(void)
     // Construct a graph from the given edges
     struct Graph *graph = createGraph(edges, route_count);
 
-    //train_match(graph, 1);
-    printf("Random train is: %s\n", select_random_train(0, graph->head[2]->allowed_trains));
+    // For finding a random train
+    printf("Random train is: %s\n", select_random_train(graph->head[2]->allowed_trains));
+
+    // For finding all trains and comparing them to a string
+    char train_test[DATA_SIZE];
+    for (int i = 0; i <= select_all_trains_helper(graph->head[2]->allowed_trains); ++i) {
+        strcpy(train_test, select_all_trains(graph->head[2]->allowed_trains, i));
+        if(segmented_string_compare(train_test, "ICE1")) {
+            printf("\nTrain %d is %s and matches ICE1\n", i, train_test);
+        }
+    }
+
+
+    train_match(graph, 0, list_of_stations);
+
 
     // Draw the UI
     GenerateUI(routes, list_of_stations, graph);

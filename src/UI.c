@@ -218,7 +218,7 @@ void list_all_stations(station_list_node* list_of_stations)
 
     // Dynamically prints ALL available stations and their index.
     for (int i = 0; i <= 9; ++i) {
-        printf("\n [%d]  %s", i,index_station_list(list_of_stations, i));
+        printf("\n [%d] %s", i,index_station_list(list_of_stations, i));
     }
     for (int i = 10; i < (list_length(list_of_stations)); ++i) {
         //printf("\n%c [%d] %s",drawMenu, i, routes[i].station_start);
