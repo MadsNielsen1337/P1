@@ -11,6 +11,7 @@
 struct Node
 {
     int dest, weight;
+    char* allowed_trains;
     struct Node* next;
 };
 
@@ -24,11 +25,11 @@ struct Graph
 // Data structure to store graph edges
 struct Edge {
     int src, dest, weight;
-    char trains[DATA_SIZE];
+    char trains[XL_DATA_SIZE];
 };
 
 // Function to create an adjacency list from specified edges
-struct Graph* createGraph(struct Edge edges[], int n);
+struct Graph* createGraph(struct Edge edges[], int route_count);
 
 // Function to print adjacency list representation of a graph
 void printGraph(struct Graph* graph);
@@ -38,5 +39,6 @@ struct Edge* build_edges(station_list_node* list, route* r, int route_count, tra
 
 int dijkstra(struct Graph* graph, int start_node, int end_node);
 
+//int train_match(struct Graph* graph, int search_pos);
 
 #endif //P1_GRAPH_H

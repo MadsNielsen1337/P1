@@ -5,7 +5,6 @@
 #include "graph.h"
 #include "UI.h"
 #include "readFiles.h"
-#include "time_calc.h"
 
 // Source vs header
 // https://stackoverflow.com/questions/3482948/what-is-the-fundamental-difference-between-source-and-header-files-in-c
@@ -42,6 +41,9 @@ int main(void)
 
     // Construct a graph from the given edges
     struct Graph *graph = createGraph(edges, route_count);
+
+    //train_match(graph, 1);
+    printf("Random train is: %s\n", select_random_train(0, graph->head[2]->allowed_trains));
 
     // Draw the UI
     GenerateUI(routes, list_of_stations, graph);

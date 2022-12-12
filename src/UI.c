@@ -156,10 +156,16 @@ int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph
             case 'r':    // SORTA DEFINED OR NOT
             {
                 int s_start, s_end;
+                char temp;
                 printf("\nInput station start:\n");
+                /*fscanf(stdin, "%[^0-9]", &temp);
+                s_start = strtol(&temp, NULL, 10);
+                printf("start: %d", temp);*/
                 scanf("%d", &s_start);
                 clear_input();
                 printf("\nInput station end:\n");
+                /*fscanf(stdin, "%[^0-9]", &temp);
+                s_end = strtol(&temp, NULL, 10);*/
                 scanf("%d", &s_end);
                 clear_input();
 
@@ -188,8 +194,7 @@ int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph
                 printf("\n\n");
                 drawMenu();
                 break;
-            case 'b':    // Return to main menu
-                drawMenu();
+            case 'b':    // UNUSED
                 break;
             default:
                 printf("\nDEFAULT\n");
