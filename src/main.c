@@ -56,11 +56,12 @@ int main(void)
     }
 
 
-    train_match(graph, 0, list_of_stations);
 
 
-    // Draw the UI
-    //GenerateUI(routes, list_of_stations, graph);
+    //train_match(graph, 66, list_of_stations);
+
+
+
 
     // Test to see if calc were done correct. Should be deleted later
     //printf("R = %d\n", route_count);
@@ -81,8 +82,15 @@ int main(void)
     dijkstra(graph, dist, prev, 0, list_length(list_of_stations));
 
     for (int i = 0; i < list_length(list_of_stations); ++i) {
-        printf("\nDistance to %d is %f", i, dist[i]);
+        //printf("\nDistance to %d is %f", i, dist[i]);
         }
+    int train_compat[route_count];
+    char* current_train[DATA_SIZE];
+    prev_finder(0, 45, prev, graph, train_compat, *current_train, list_of_stations);
+
+
+    // Draw the UI - NO FUNCTION THAT NEED EXECUTION MAY BE PLACED BELOW THE UI
+    GenerateUI(routes, list_of_stations, graph);
 
     // Give memory back to the OS
     free(edges);
