@@ -29,7 +29,6 @@ struct Graph* createGraph(struct Edge edges[], int route_count)
         char* allowed_trains;
         allowed_trains = edges[i].trains;
 
-
         // allocate new node of adjacency list from `src` to `dest`
         struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
         newNode->dest = dest;
@@ -74,34 +73,6 @@ void printGraph(struct Graph* graph)
         printf("\n");
     }
 }
-
-// Weighted Directed Graph Implementation in C
-
-
-/*
-int main(void)
-{
-    // input array containing edges of the graph (as per above diagram)
-    // `(x, y, w)` tuple in the array represents an edge from `x` to `y`
-    // having weight `w`
-    struct Edge edges[] =
-            {
-                    { 4, 1, 6 }, { 1, 2, 7 }, { 2, 0, 5 }, { 2, 1, 4 },
-                    { 3, 2, 10 }, { 4, 5, 1 }, { 5, 4, 3 }
-            };
-
-    // calculate the number of edges
-    int n = sizeof(edges)/sizeof(edges[0]);
-
-    // construct a graph from the given edges
-    struct Graph *graph = createGraph(edges, n);
-
-    // print adjacency list representation of a graph
-    printGraph(graph);
-
-    return 0;
-}
- */
 
 // Function that constructs the edges for the graph
 struct Edge* build_edges(station_list_node* list, route* r, int route_count, train* t, int train_count){
@@ -167,6 +138,11 @@ void dijkstra(struct Graph* graph, float* dist, int* prev, int start_node, int n
         }
     }
 }
+
+
+// =========================================
+// Code scrap of a iteration of find_best_train
+/*
 
 int prev_finder(int start_pos ,int search_pos, int* prev, struct Graph* graph, int* train_compat, station_list_node* list_of_stations)
 {
@@ -238,7 +214,7 @@ int train_match(struct Graph* graph, int search_pos, station_list_node* list_of_
         current_compatible_trains[last_char] = '\0';
     }
     printf("\nCompatible trains: %s\n", current_compatible_trains);
-    /*
+
     // For-loop that looks one station ahead of next and sees if next_train is compatible. If so, next train is our current train.
     for (int j = 0; j <= select_all_trains_helper(ptr->next->next->allowed_trains); ++j) {
         strcpy(next_next_train, select_all_trains(ptr->next->next->allowed_trains, j));
@@ -278,11 +254,11 @@ int train_match(struct Graph* graph, int search_pos, station_list_node* list_of_
                index_station_list(list_of_stations, search_pos), next_train, ptr->next->dest,
                index_station_list(list_of_stations, ptr->next->dest));
     }
-    */
+
 
     return 0;
 }
-
+*/
 
 
 // =========================================

@@ -5,6 +5,7 @@
 #include "graph.h"
 #include "UI.h"
 #include "readFiles.h"
+#include "time_calc.h"
 #include "string.h"
 
 // Source vs header
@@ -44,24 +45,16 @@ int main(void)
     struct Graph* graph = createGraph(edges, route_count);
 
     // For finding a random train
-    printf("Random train is: %s\n", select_random_train(graph->head[2]->allowed_trains));
+    //printf("Random train is: %s\n", select_random_train(graph->head[2]->allowed_trains));
 
     // For finding all trains and comparing them to a string
-    char train_test[DATA_SIZE];
+    /*char train_test[DATA_SIZE];
     for (int i = 0; i <= select_all_trains_helper(graph->head[2]->allowed_trains); ++i) {
         strcpy(train_test, select_all_trains(graph->head[2]->allowed_trains, i));
         if(segmented_string_compare(train_test, "ICE1")) {
             printf("\nTrain %d is %s and matches ICE1\n", i, train_test);
         }
-    }
-
-
-
-
-    //train_match(graph, 66, list_of_stations);
-
-
-
+    }*/
 
     // Test to see if calc were done correct. Should be deleted later
     //printf("R = %d\n", route_count);
@@ -82,11 +75,12 @@ int main(void)
     dijkstra(graph, dist, prev, 0, list_length(list_of_stations));
 
     for (int i = 0; i < list_length(list_of_stations); ++i) {
-        //printf("\nDistance to %d is %f", i, dist[i]);
-        }
-    int train_compat[route_count];
-    char* current_train[DATA_SIZE];
-    prev_finder(0, 80, prev, graph, train_compat, list_of_stations);
+        printf("\nDistance to %d is %f", i, dist[i]);
+    }
+
+    char start_train[DATA_SIZE];
+
+    printf("\nExtra delay is %d", extra_delay(graph, 80, 0, prev, start_train));
 
     // Draw the UI - NO FUNCTION THAT NEED EXECUTION MAY BE PLACED BELOW THE UI
     GenerateUI(routes, list_of_stations, graph);

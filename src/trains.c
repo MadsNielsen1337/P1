@@ -4,7 +4,6 @@
 #include "routes.h"
 #include "trains.h"
 #include "time.h"
-//#include "graph.h"
 
 //Take a dot seperated string and target string and returns 1 if the target string matches a part of the dot seperated string
 int segmented_string_compare(const char* str, const char* target) {
@@ -61,7 +60,7 @@ char* select_random_train(const char* str) {
     char to_search[XL_DATA_SIZE];                            // string to store input string
     char* out = malloc(sizeof(char) * DATA_SIZE);       // output string
     int dot_count = 0;      // Count how many dots are in the input string
-    int index = 0;          // Count how many trains are in the input string
+    int index;          // Count how many trains are in the input string
     strcpy(to_search, str);     // copying input string into to_search
 
     // Error testing
@@ -117,6 +116,8 @@ char* select_random_train(const char* str) {
 }
 
 
+/*
+ *
 // Function to find the array index when using select_all_trains in a for loop.
 int select_all_trains_helper(const char* str) {
     char to_search[XL_DATA_SIZE];           // string to store input string
@@ -211,3 +212,4 @@ char* select_all_trains(const char* str, int array_index)
     }
     return NULL;
 }
+*/
