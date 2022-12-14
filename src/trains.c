@@ -57,7 +57,7 @@ char* compatible_trains(const train* t, const route r, const int train_count){
     return compatible_trains;
 }
 
-char* select_random_train(int index, const char* str) {
+char* select_random_train(const char* str) {
     char to_search[XL_DATA_SIZE];// string to store input string
     char* out = malloc(sizeof(char) * DATA_SIZE);
     int dot_count = 0;
@@ -69,7 +69,7 @@ char* select_random_train(int index, const char* str) {
             dot_count++;
         }
     }
-    index = dot_count + 1;
+    int index = dot_count + 1;
     int index_arr[strlen(to_search) - dot_count];
     int j = 0;
 

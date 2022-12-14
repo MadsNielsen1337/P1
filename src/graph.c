@@ -29,7 +29,6 @@ struct Graph* createGraph(struct Edge edges[], int route_count)
         char* allowed_trains;
         allowed_trains = edges[i].trains;
 
-
         // allocate new node of adjacency list from `src` to `dest`
         struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
         newNode->dest = dest;
@@ -211,7 +210,7 @@ int dijkstra(struct Graph* graph, int start_node, int end_node)
  * function that finds the shortest possible path from a given node in the graph to every other reachable position
  * @param graph is the graph struct that holds the graph to be searched
  * @param dist is the array which the function will write the distances into. The index to a given distance corresponds to the node that is reached in that distance. It should be as long as the number nodes in the graph.
- * @param prev is an array which the function will write the previous node to the node represented by the index value into. Its size should match @param dist
+ * @param prev is an array which the function will write the previous node to the node represented by the index value into for all nodes. Its size should match @param dist
  * @param start_node is the integer corresponding to the node from which to measure distances from.
  * @param node_count is the number of nodes in the graph. This corresponds to the length of the linked station list.
  */
@@ -236,7 +235,7 @@ void dijkstra(struct Graph* graph, float* dist, int* prev, int start_node, int n
         }
         float temp = INFINITY;
         int search_pos;
-        for (int j = 0; j < node_count; ++j) {
+        for (int j = 0; j < node_count; ++j) {  //finding the smallest value in the queue and grabbing its index to search from
             if(queue[j] < temp){
                 temp = queue[j];
                 search_pos = j;
@@ -254,29 +253,3 @@ void dijkstra(struct Graph* graph, float* dist, int* prev, int start_node, int n
         }
     }
 }
-
-
-
-
-
-/*
-    float queue[node_count];
-
-    for (int i = 0; i < node_count; ++i) {
-        for (int j = 0; j < node_count; ++j) {
-            if(queue[j] != INFINITY){
-                queue[j] = dist[j];
-            }
-        }
-
-        float temp = INFINITY;
-        int index;
-        for (int j = 0; j < node_count; ++j) {
-            if(queue[j] < temp){
-                temp = queue[j];
-                index = j;
-                printf("\nIndex updated to %d\n", j);
-            }
-        }
-        queue[index] = INFINITY;
-*/

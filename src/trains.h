@@ -18,5 +18,5 @@ typedef struct train{
 //void convert_controls(train* t, route r, int train_count);
 int segmented_string_compare(const char* str, const char* target);
 char* compatible_trains(const train* t, route r, int train_count);
-char* select_random_train(int index, const char* str);
+char* select_random_train(const char* str);
 #endif //P1_TRAINS_H
