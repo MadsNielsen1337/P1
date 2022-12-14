@@ -1,3 +1,4 @@
+#include <math.h>
 #include "routes.h"
 #include "trains.h"
 #include "time_calc.h"
@@ -8,80 +9,70 @@
 // Calculate the time it takes to go from station_start to station_end. Takes accel & decel into account
 double time(route r, train t)
 {
-    if(r.track_speed < t.max_speed)
-        t.max_speed = r.track_speed;
-
-
-    double time_max_speed;
-    t.max_speed /= METER_PER_SECOND_CONVERSION;
-    r.distance *= METER_CONVERSION;
-
     // Since data about decel is hard to find, it is expected that accel = decel.
-    // This accounts both for accel and decel
 
     // Accel
     // v = a * t + v_0
 
     // t = (v-v_0)/a
 
-    // t = (sqrt(2 * a_0 * s - 2 * a_0 * s_0 + v_0^2) - v_0)/ a_0
+    // Include the distance
+    // t = sqrt(2 * a * s + v_0^2) - v_0 / a
 
+    if(r.track_speed < t.max_speed)
+        t.max_speed = r.track_speed;
 
-    // The time it takes to accelerate from v = 0 to t.max_speed (Times 2 to account for decel)
-    time_max_speed = 2 * ((t.max_speed) / t.acceleration); // Unit: s
+    double time_max_speed,
+           time_max_speed_half_distance,
+           s,
+           time,
+           average_speed_half,
+           final_time_large,
+           final_time;
 
-    double v;
-    // Velocity at time_max_speed
-    v = t.acceleration * time_max_speed / 2;
+    t.max_speed /= METER_PER_SECOND_CONVERSION;
+    r.distance *= METER_CONVERSION;
 
-    // The time it takes to travel distance with velocity v
-    double time = (r.distance) / t.max_speed; // Unit: s
+    // The time it takes to accelerate from v = 0 to t.max_speed
+    time_max_speed = t.max_speed / t.acceleration; // Unit: s
 
-    // This simple solution subtracts the accel/decel time with total time. While it isn't 100% accurate it tries to make an estimate of the time taken to travel the given distance.
-    double total_time = (time - time_max_speed) + added_delay(r, t);
+    // s = 1/2 * a * t^2 + v_0 * t
+    // The distance travelled with t.accel and time_max_speed starting from v = 0
+    s = 1.0/2.0 * t.acceleration * pow(time_max_speed, 2);
 
-    if(time_max_speed > total_time) {
-        total_time = (time - (time_max_speed / 2)) + added_delay(r, t);
+    // Include the distance
+    // t = sqrt(2 * a * s + v_0^2) - v_0 / a
+    // The time it takes to travel the accel distance with t.accel.
+    time_max_speed_half_distance = sqrt(2 * t.acceleration * s) / t.acceleration;
+
+    // t = s / v_0  ->  t * v_0 = s  ->  v_0 = s / t
+    // The average speed of half of t.accel distance. This corresponds to t.max_speed in the accel/decel phase
+    average_speed_half = (s / 2.0) / (time_max_speed_half_distance / 2);
+
+    if(s > r.distance/2.0) {
+        // The time it takes to travel the total distance (which is the accel/decel distance) with the average accel/decel speed.
+        final_time = (r.distance) / average_speed_half;
+
+        return final_time;
     }
+    else {
+        // The time it takes to travel the accel/decel distance with the average accel/decel speed.
+        final_time_large = (2 * s) / average_speed_half;
 
-    return total_time;
-}
+        // The time it takes to travel r.distance. With greater precision since accel/decel calculations have been refined
+        time = ((r.distance - (2 * s)) / t.max_speed) + final_time_large; // Unit: s
 
-// Adds delay to the time if we're switching trains. More or less a placeholder for now
-double added_delay(route r, train t)
-{
-    double delay = 0;    // Delay time in minutes
-
-    if(t.fuels != r.power)
-        delay += 5;
-    if(t.gauge != r.gauge)
-        delay += 5;
-    if(t.controls != r.controls)
-        delay += 5;
-
-    return delay;
-
+        return time;
+    }
 }
 
 // Calculates the weight for the edge going from station_start to station_end
 int weight_calc(route r, train t)
 {
-    int weight = 0;    // Delay time in minutes
+    int weight;    // Delay time in minutes
 
-    weight += time(r, t);
+    weight = time(r, t);
     // maybe also make a delay at each vertex to account for passengers leaving/getting on the train - unless the vertex is the final destination
-
-
-    // Comments down below are loose thoughts and random stuff
-
-
-    // We convert km && km/h to m && m/s
-    //   weight += ((distance * METER_CONVERSION) / (avg_track_speed_r/METER_PER_SECOND_CONVERSION)); // distance travel time with average track speed.
-
-    // check to see if the train in use can continue onto the next edge. Find a way to check layer 3 & 4 stats for next edge.
-    /*if(power_f != fuel_type_s || track_gauge_f != train_track_gauge_s || control_f != control_s)             // Doubt you can do this. Prolly need strcmp or something
-        weight += 10;       // Added delay in minutes. Find the average time it takes to switch trains.
-*/
 
     if(weight < 0) {
         return -1;

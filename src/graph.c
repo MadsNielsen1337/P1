@@ -123,7 +123,7 @@ struct Edge* build_edges(station_list_node* list, route* r, int route_count, tra
 /**
  * function that finds the shortest possible path from a given node in the graph to every other reachable position
  * @param graph is the graph struct that holds the graph to be searched
- * @param dist is the array which the function will write the distances into. The index to a given distance corresponds to the node that is reached in that distance. It should be as long as the number nodes in the graph.
+ * @param dist is the array which the function will write the distances into. The index to a given distance corresponds to the node that is reached in that distance. It should be as long as the number of nodes in the graph.
  * @param prev is an array which the function will write the previous node to the node represented by the index value into. Its size should match @param dist
  * @param start_node is the integer corresponding to the node from which to measure distances from.
  * @param node_count is the number of nodes in the graph. This corresponds to the length of the linked station list.
@@ -168,55 +168,119 @@ void dijkstra(struct Graph* graph, float* dist, int* prev, int start_node, int n
     }
 }
 
+int prev_finder(int start_pos ,int search_pos, int* prev, struct Graph* graph, int* train_compat, station_list_node* list_of_stations)
+{
+    if(search_pos == start_pos) {
+        //printf("\nStopped prev_finder since start_pos (%d) equals search_pos (%d)\n",start_pos, search_pos);
+        return start_pos;
+    }
+    if(search_pos <= 0 || start_pos < 0) {
+        printf("\nError: Previous search_pos out of range with %d\n", search_pos);
+        return -1;
+    }
+
+    printf("\nprev %d", prev[search_pos]);
+
+    if(train_match(graph, prev[search_pos], list_of_stations)) {
+        train_compat[search_pos] = 1;
+    }
+    else {
+        train_compat[search_pos] = 0;
+    }
+    return prev_finder(start_pos, prev[search_pos], prev, graph, train_compat, list_of_stations);
+}
+
 int train_match(struct Graph* graph, int search_pos, station_list_node* list_of_stations)
 {
     if(search_pos < 0) {
         printf("\nError: Search_pos out of range with %d\n", search_pos);
         return 0;
     }
-
-    // Get a random train for the initial node
-    char first_train[DATA_SIZE];
-    strcpy(first_train, select_random_train(graph->head[search_pos]->allowed_trains));
-
-
-    // Check if the initial train is compatible with the next node
-    // Currently has a problem if the selected random first_train is not compatible with next_train but another first_train would have been
-    int i = 0, compat;
-    char next_train[DATA_SIZE];
-    for (i; i <= select_all_trains_helper(graph->head[search_pos]->next->allowed_trains); ++i) {
-        strcpy(next_train, select_all_trains(graph->head[search_pos]->next->allowed_trains, i));
-        if(segmented_string_compare(next_train, first_train)) {
-            printf("\nPrevious train %d is %s (route [%d] %s) and matches next train %s (route [%d] %s)\n", i, next_train, search_pos,
-                   index_station_list(list_of_stations, search_pos), first_train, graph->head[search_pos]->next->dest,
-                   index_station_list(list_of_stations, graph->head[search_pos]->dest));
-            return 1;
-        }
-        printf("test %d\n", i);
+    else if(search_pos == 0) {
+        printf("\n End of the line reached. Stopping on node %d\n", search_pos);
+        return 0;
     }
 
-    printf("\nPrevious train %d is %s (route [%d] %s) and DOES NOT match next train %s (route [%d] %s)\n", i,
-           next_train, search_pos,
-           index_station_list(list_of_stations, search_pos), first_train, graph->head[search_pos]->next->dest,
-           index_station_list(list_of_stations, graph->head[search_pos]->next->dest));
-    return 0;
+    struct Node *ptr = graph->head[search_pos];
 
+    int i = 0;
+    char* current_compatible_trains = malloc(XL_DATA_SIZE * sizeof(char));
+    char* next_compatible_trains = malloc(XL_DATA_SIZE * sizeof(char));
+    char first_train[DATA_SIZE];
+    char next_train[DATA_SIZE];
 
+    current_compatible_trains[0] = '\0';
+    next_compatible_trains[0] = '\0';
 
-    // For finding a random train
-    //printf("Random train is: %s\n", select_random_train(graph->head[search_pos]->allowed_trains));
+    if(current_compatible_trains[0] != '\0') {
 
-    /*
-    // For finding all trains and comparing them to a string
-    char train_test[DATA_SIZE];
-    for (int i = 0; i <= select_all_trains_helper(graph->head[2]->allowed_trains); ++i) {
-        strcpy(train_test, select_all_trains(graph->head[2]->allowed_trains, i));
-        if(segmented_string_compare(train_test, "ICE1")) {
-            printf("\nTrain %d is %s and matches ICE1\n", i, train_test);
+    }
+
+    // For-loop that compares allowed trains from start_pos to next_pos and searches for a match
+    for (i; i <= select_all_trains_helper(ptr->allowed_trains); ++i) {
+        strcpy(first_train, select_all_trains(ptr->allowed_trains, i));
+        for (int j = 0; j <= select_all_trains_helper(ptr->next->allowed_trains); ++j) {
+            strcpy(next_train, select_all_trains(ptr->next->allowed_trains, j));
+
+            if (stricmp(next_train, first_train) == 0) {
+                strcat(current_compatible_trains, next_train);
+                strcat(current_compatible_trains, ".");
+
+                printf("\n[MATCH] First train is %s (route [%d] %s) and next is train %s (route [%d] %s)\n",
+                       first_train, search_pos,
+                       index_station_list(list_of_stations, search_pos), next_train, ptr->next->dest,
+                       index_station_list(list_of_stations, ptr->next->dest));
+            }
         }
+    }
+    int last_char = strlen(current_compatible_trains) - 1;
+    if(current_compatible_trains[last_char] == '.'){
+        current_compatible_trains[last_char] = '\0';
+    }
+    printf("\nCompatible trains: %s\n", current_compatible_trains);
+    /*
+    // For-loop that looks one station ahead of next and sees if next_train is compatible. If so, next train is our current train.
+    for (int j = 0; j <= select_all_trains_helper(ptr->next->next->allowed_trains); ++j) {
+        strcpy(next_next_train, select_all_trains(ptr->next->next->allowed_trains, j));
+        if(stricmp(next_train, next_next_train) == 0) {
+            strcpy(&current_train, next_train);
+            printf("\n[LOOK-AHEAD] Next train is %s (route [%d] %s) and next next train is %s (route [%d] %s)\n",
+                   next_train, search_pos,
+                   index_station_list(list_of_stations, search_pos), next_next_train, ptr->next->dest,
+                   index_station_list(list_of_stations, ptr->next->next->dest));
+        }
+    }
+*/
+
+     /*
+    if(stricmp(&current_train, "n") != 0) {
+         printf("\n [IF] current_train = %s\n", &current_train);
+         printf("\n [IF] first_train = %s\n", first_train);
+         printf("\n [IF] next_train = %s\n", next_train);
+        if(stricmp(next_train, first_train) == 0 &&
+           stricmp(&current_train, next_train) == 0) {
+            strcpy(&current_train, next_train);
+
+            printf("\n[MATCH Current] Previous train is %s (route [%d] %s) and next is train %s (route [%d] %s)\n",
+                   next_train, search_pos,
+                   index_station_list(list_of_stations, search_pos), &current_train, ptr->next->dest,
+                   index_station_list(list_of_stations, ptr->next->dest));
+            return 1;
+        }
+    }
+        */
+
+
+/* Use this code if you also wanna find the incompatible ones
+    if (stricmp(first_train, next_train) != 0) {
+        printf("\n[NO MATCH] Previous train is %s (route [%d] %s) and next is train %s (route [%d] %s)\n", first_train,
+               search_pos,
+               index_station_list(list_of_stations, search_pos), next_train, ptr->next->dest,
+               index_station_list(list_of_stations, ptr->next->dest));
     }
     */
 
+    return 0;
 }
 
 

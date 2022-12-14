@@ -43,4 +43,7 @@ int train_match(struct Graph* graph, int search_pos, station_list_node* list_of_
 
 void dijkstra(struct Graph* graph, float* distance, int* previous_node, int start_node, int node_count);
 
+int prev_finder(int start_pos ,int search_pos, int* prev, struct Graph* graph, int* train_compat, station_list_node* list_of_stations);
+
+
 #endif //P1_GRAPH_H
