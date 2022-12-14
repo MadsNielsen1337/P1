@@ -86,8 +86,7 @@ int main(void)
         }
     int train_compat[route_count];
     char* current_train[DATA_SIZE];
-    prev_finder(0, 45, prev, graph, train_compat, *current_train, list_of_stations);
-
+    prev_finder(0, 80, prev, graph, train_compat, list_of_stations);
 
     // Draw the UI - NO FUNCTION THAT NEED EXECUTION MAY BE PLACED BELOW THE UI
     GenerateUI(routes, list_of_stations, graph);
