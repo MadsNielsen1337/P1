@@ -100,19 +100,19 @@ struct Edge* build_edges(station_list_node* list, route* r, int route_count, tra
  * @param node_count is the number of nodes in the graph. This corresponds to the length of the linked station list.
  */
 void dijkstra(struct Graph* graph, float* dist, int* prev, int start_node, int node_count) {
-    for (int i = 0; i <
-                    node_count; ++i) {  //setup initial distances to all vertices i. these are infinite to signal that they have not been visited yet
+    float queue[node_count];
+    for (int i = 0; i < node_count; ++i) {
+        queue[i] = INFINITY;
+    }
+
+    for (int i = 0; i < node_count; ++i) {  //setup initial distances to all vertices i. these are infinite to signal that they have not been visited yet
         dist[i] = INFINITY;
-        prev[i] = -1;                   //no paths exist yet, so the previous node to any other is nonexistent, represented by -1
+        prev[i] = -1;                       //no paths exist yet, so the previous node to any other is nonexistent, represented by -1
     }
     dist[start_node] = 0;               //we begin at this node, so the distance is 0
     prev[start_node] = -1;              //and there is no previous node to the first one, so we set it to -1
 
-
-    float queue[node_count];
-
     for (int i = 0; i < node_count; ++i) {
-
         for (int j = 0; j < node_count; ++j) {
             if(!isnan(queue[j])){
                 queue[j] = dist[j];     //copying all entries in the distance array into the queue unless that spot in the queue is NaN
