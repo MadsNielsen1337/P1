@@ -61,7 +61,7 @@ void scan_routes(FILE* p_file, route* r, const int* route_count)
         fscanf(p_file, "%*[^a-zA-Z0-9]");           //skip characters until a letter or number is reached, which would be at the next line
 
         //printf to test if the format is right. delete later
-        printf("%d %d %s %s %s %s %s\n",r[0].distance,r[i].track_speed,r[i].power,r[i].gauge,r[i].controls,r[i].station_start,r[i].station_end);
+        //printf("%d %d %s %s %s %s %s\n",r[0].distance,r[i].track_speed,r[i].power,r[i].gauge,r[i].controls,r[i].station_start,r[i].station_end);
     }
 }
 
@@ -90,6 +90,6 @@ void scan_trains(FILE* p_file, train* t, const int* train_count)
         fscanf(p_file, "%*[^a-zA-Z0-9]");
 
         //printf to test if the format is right. delete later
-        printf("%s %s %s %s %.0lf %.0lf %d\n",t[i].name,t[i].gauge,t[i].controls,t[i].fuels,t[i].acceleration,t[i].max_speed,t[i].passenger_space);
+        //printf("%s %s %s %s %.0lf %.0lf %d\n",t[i].name,t[i].gauge,t[i].controls,t[i].fuels,t[i].acceleration,t[i].max_speed,t[i].passenger_space);
     }
 }

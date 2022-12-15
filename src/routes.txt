@@ -1,8 +1,90 @@
-481,184,15/16_7,Standard,Controls,Berlin_Hbf,Mannheim_Hbf
-450,262,25/50.15/16_7,Standard,Controls,Mannheim_Hbf,Paris_Est
-577,183,15/16_7,Standard,Controls,Berlin_Hbf,Cologne_Hbf
-184,231,15/16_7.25/50.3.15/3000,Standard,Controls,Cologne_Hbf,Bruxelles-Midi
-354,233,25/50.15/16_7.3.15/3000,Standard,Controls,Bruxelles-Midi,Paris_Nord
-547,233,25/50.15/16_7.3.15/3000,Standard,Controls,Cologne_Hbf,Paris_Nord
-589,206,15/16_7,Standard,Controls,Berlin_Hbf,Frankfurt_Main_Hbf
-589,228,25/50.15/16_7,Standard,Controls,Frankfurt_Main_Hbf,Paris_Est
+16,60,15/16_7,Standard,PZB,Berlin Hbf,Berlin-Spandau
+167,250,15/16_7,Standard,LZB,Berlin-Spandau,Wolfsburg Hbf
+78,160,15/16_7,Standard,PZB,Wolfsburg Hbf,Hildesheim
+209,250,15/16_7,Standard,LZB,Hildesheim,Fulda
+103,160,15/16_7,Standard,PZB,Fulda,Frankfurt Hbf
+79,200,15/16_7,Standard,LZB,Frankfurt Hbf,Mannheim Hbf
+71,240,15/16_7,Standard,LZB,Mannheim Hbf,Karlsruhe
+65,160,15/16_7,Standard,PZB,Karlsruhe,Strasbourg-Kehl
+375,300,25/50,Standard,ETCS,Strasbourg-Kehl,Vaires-Torcy
+20,80,25/50,Standard,KVB,Vaires-Torcy,Paris Est
+55,200,15/16_7,Standard,LZB,Wolfsburg Hbf,Lehrte
+16,120,15/16_7,Standard,PZB,Lehrte,Hannover Hbf
+21,200,15/16_7,Standard,LZB,Hannover Hbf,Wunstorf
+6,160,15/16_7,Standard,PZB,Wunstorf,Haste Hf
+27,200,15/16_7,Standard,LZB,Haste Hf,Buckeburg
+106,200,15/16_7,Standard,PZB,Buckeburg,Hamm-West Hbf
+32,200,15/16_7,Standard,LZB,Hamm-West Hbf,Dortmund Hbf
+107,200,15/16_7,Standard,PZB,Dortmund Hbf,Cologne Hbf
+70,250,15/16_7,Standard,PZB,Cologne Hbf,Aachen Hbf
+8,160,3,Standard,PZB,Aachen Hbf,Hergenrath Bf
+31,260,25/50,Standard,ETCS,Hergenrath Bf,Chenee
+12,140,3,Standard,ETCS,Chenee,Bierset-Awans
+59,300,25/50,Standard,ETCS,Bierset-Awans,Leuven
+25,160,3,Standard,ETCS,Leuven,Bruxelles-Midi
+15,160,3,Standard,ETCS,Bruxelles-Midi,Halle
+233,300,25/50,Standard,TVM,Halle,Villers-Le-Bel
+13,120,25/50,Standard,KVB,Villers-Le-Bel,Paris Nord
+129,140,15/16_7,Standard,PZB,Buckeburg,Bad Bentheim
+154,130,1_5,Standard,ATB,Bad Bentheim,Amsterdam Centraal
+12,130,1_5,Standard,ATB,Amsterdam Centraal,Schiphol Airport
+47,300,25/50,Standard,ETCS,Schiphol Airport,Rotterdam
+9,130,1_5,Standard,ATB,Rottendam,Barendrecht
+72,300,25/50,Standard,ETCS,Barendrecht,Antwerpen
+42,160,3,Standard,ETCS,Antwerpen,Bruxelles-Midi
+130,160,15/16_7,Standard,PZB,Mannheim Hbf,Saarbrucken
+46,130,25/50,Standard,KVB,Saarbrucken,Herny
+281,320,25/50,Standard,ETCS,Herny,Vaires-Torcy
+22,160,15/16_7,Standard,PZB,Karlsruhe,Rastatt
+47,250,15/16_7,Standard,LZB,Rastatt,Offenburg
+106,160,15/16_7,Standard,LZB,Offenburg,Basel SBB
+168,160,15/16_7,Standard,ETCS,Basel SBB,Domodossola
+45,110,3,Standard,ETCS,Domodossola,Arona
+59,160,3,Standard,SCMT,Arona,Milan Centrale
+16,120,3,Standard,ETCS,Milan Centrale,Melegnano
+232,300,25/50,Standard,ETCS,Melegnano,Firenze Castello
+4,100,3,Standard,SCMT,Firenze Castello,Firenze Campo
+231,250,3,Standard,ETCS,Firenze Campo,Rome Termini
+68,200,15/16_7,Standard,ETCS,Basel SBB,Bern
+11,100,1_5,Standard,KVB,Paris Nord,Le Verte de Maisons
+7,140,1_5,Standard,ETCS,Le Verte de Maisons,Brevannes
+350,150,25/50,Standard,ETCS,Brevannes,Montanay
+210,300,25/50,Standard,TVM,Montanay,La Begude
+16,300,25/50,Standard,ETCS,La Begude,Nimes Pont du Gard
+12,120,1_5,Standard,KVB,Nimes Pont du Gard,Nimes Centre
+168,160,1_5,Standard,KVB,Nimes Centre,Perpignan
+159,300,25/50,Standard,ETCS,Perpignan,Barcelona-sants
+503,300,25/50,Standard,ETCS,Barcelona-sants,Madrid Puerta
+29,200,25/50,Standard,KVB,Basel SBB,Mulhouse Ville
+97,220,25/50,Standard,KVB,Strasbourg-Kehl,Mulhouse Ville
+38,160,25/50,Standard,KVB,Mulhouse Ville,Belfort
+100,320,25/50,Standard,ETCS,Belfort,Collonges-Les-Premieres
+383,160,1_5,Standard,KVB,Collonges-Les-Premieres,Nimes Centre
+35,160,1_5,Standard,ETCS,Amsterdam Centraal,Utrecht Centraal
+68,130,1_5,Standard,ATB,Utrecht Centraal,Zevenaar
+74,160,15/16_7,Standard,PZB,Zevenaar,Oberhausen Hbf
+60,300,15/16_7,Standard,LZB,Oberhausen Hbf,Cologne Hbf
+152,300,15/16_7,Standard,LZB,Cologne Hbf,Frankfurt Hbf
+66,160,15/16_7,Standard,PZB,Fulda,Eisenach
+149,300,15/16_7,Standard,ETCS,Eisenach,Leipzig
+63,200,15/16_7,Standard,LZB,Leipzig,Riesa
+43,120,15/16_7,Standard,PZB,Riesa,Dresden Hbf
+37,150,15/16_7,Standard,ETCS,Dresden Hbf,Schona
+90,160,3,Standard,ETCS,Schona,Prague hl
+35,200,15/16_7,Standard,PZB,Berlin Hbf,Zossen
+72,200,15/16_7,Standard,ETCS,Zossen,Ruckersdorf
+61,160,15/16_7,Standard,PZB,Ruckersdorf,Dresden Hbf
+1,30,25/50,Standard,KVB,Paris Est,Paris Nord
+63,200,15/16_7,Standard,ETCS,Berlin Hbf,Juterbog
+87,200,15/16_7,Standard,LZB,Juterbog,Leipzig
+179,300,15/16_7,Standard,ETCS,Leipzig,Zapfendorf
+65,160,15/16_7,Standard,PZB,Zapfendorf,Nurnberg Hbf
+80,300,15/16_7,Standard,LZB,Nurnberg Hbf,Ingolstadt
+35,160,15/16_7,Standard,PZB,Ingolstadt,Paindorf
+35,200,15/16_7,Standard,LZB,Paindorf,Munchen Hbf
+75,130,15/16_7,Standard,PZB,Munchen Hbf,Kiefersfelden
+81,80,15/16_7,Standard,ETCS,Kiefersfelden,Brenner-Brennero
+184,140,3,Standard,ETCS,Brenner-Brennero,Vernoa
+61,180,3,Standard,SCMT,Vernoa,Brescia
+62,300,25/50,Standard,ETCS,Brescia,Melzo
+180,300,25/50,Standard,SCMT,Melzo,Milan Centrale
