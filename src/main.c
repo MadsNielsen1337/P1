@@ -68,19 +68,32 @@ int main(void)
     printf("Weight for above-mentioned route: %d\n", weight_calc(routes[0], trains[0]));
     *///list_test();
 
-
     //printf("\n%s", compatible_trains(trains, routes[0], train_count));
-    float dist[route_count];    //holds the distances from the start_node to every other node in the graph - should be defined elsewhere so the function can return them
-    int prev[route_count];    //holds the previous node in the shortest path to the node corresponding to the index
-    dijkstra(graph, dist, prev, 0, list_length(list_of_stations));
+    int node_count = (list_length(list_of_stations) - 1);
 
-    for (int i = 0; i < list_length(list_of_stations); ++i) {
-        printf("\nDistance to %d is %f", i, dist[i]);
-    }
-
+    float dist[node_count];    //holds the distances from the start_node to every other node in the graph
+    int prev[node_count];    //holds the previous node in the shortest path to the node corresponding to the index
+    float new_dist[node_count];
     char start_train[DATA_SIZE];
 
-    printf("\nExtra delay is %d", extra_delay(graph, 80, 0, prev, start_train));
+    for (int i = 0; i < node_count; ++i) {
+        printf("\nDIJKSTRA %d", i);
+
+        dijkstra(graph, dist, prev, i, list_length(list_of_stations));
+        for (int j = 0; j < node_count; ++j) {
+            printf("\n%f + %f", dist[j],(float)extra_delay(graph, j, i, prev, start_train));
+        }
+
+        for (int j = 0; j < node_count; ++j) {
+
+            new_dist[j] = dist[j] + (float)extra_delay(graph, j, i, prev, start_train);
+
+            printf("\nAverage delay is %f", average_weight_difference(new_dist, dist, node_count));
+            printf("\nAverage extra time in percent %f", percentage_weight_difference(new_dist, dist, node_count));
+            printf("\n\n");
+
+        }
+    }
 
     // Draw the UI - NO FUNCTION THAT NEED EXECUTION MAY BE PLACED BELOW THE UI
     GenerateUI(routes, list_of_stations, graph);

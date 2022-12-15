@@ -188,8 +188,44 @@ int extra_delay(const struct Graph* graph, int pos, const int end_pos, const int
             strcpy(chosen_train, new_best_train);
             free(new_best_train);
 
-            printf("\nTrain changed to \"%s\"", chosen_train);
+            //printf("\nTrain changed to \"%s\"", chosen_train);
         }
         return delay + extra_delay(graph, prev[pos], end_pos, prev, chosen_train);
     }
 }
+
+//function to calculate the average difference between all entries in two arrays of the same size
+float average_weight_difference(const float* a, const float* b, const int array_length){
+    float differences[array_length];
+    for (int i = 0; i < array_length; ++i) {          //find and add differences to an array
+        differences[i] = a[i] - b[i];
+    }
+    float sum = 0;
+    for (int i = 0; i < array_length; ++i) {          //find sum of non-zero values in that array
+        sum += differences[i];
+    }
+    return sum/(float)array_length;  //return sum divided by number of entries i.e. the average
+}
+
+//function to calculate the percentage difference between all entries in two arrays of the same size
+float percentage_weight_difference(const float* a, const float* b, const int array_length){
+    float differences[array_length];
+    for (int i = 0; i < array_length; ++i) {          //find and add differences to an array
+        differences[i] = a[i] - b[i];
+    }
+
+    float percentage[array_length];
+    for (int i = 0; i < array_length; ++i) {          //find the percentage that difference makes up of original value and add them to an array
+        if(differences[i] != 0 && b[i] != 0) {
+            percentage[i] = (differences[i] / b[i]) * 100;
+        } else {
+            percentage[i] = 0;
+        }
+    }
+    float sum = 0;
+    for (int i = 0; i < array_length; ++i) {          //find sum of non-zero values in that array
+        sum += percentage[i];
+    }
+    return sum/(float)array_length;  //return sum divided by number of entries i.e. the average
+}
+
