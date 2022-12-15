@@ -46,6 +46,9 @@
 4,100,3,Standard,SCMT,Firenze Castello,Firenze Campo
 231,250,3,Standard,ETCS,Firenze Campo,Rome Termini
 68,200,15/16_7,Standard,ETCS,Basel SBB,Bern
+113,200,15/16_7,Standard,ETCS,Bern,Domodossola
+155,140,15/16_7,Standard,ETCS,Basel SBB,St Margrethen
+162,160,15/16_7,Standard,PZB,St Margrethen,Munchen Hbf
 11,100,1_5,Standard,KVB,Paris Nord,Le Verte de Maisons
 7,140,1_5,Standard,ETCS,Le Verte de Maisons,Brevannes
 350,150,25/50,Standard,ETCS,Brevannes,Montanay
@@ -54,6 +57,12 @@
 12,120,1_5,Standard,KVB,Nimes Pont du Gard,Nimes Centre
 168,160,1_5,Standard,KVB,Nimes Centre,Perpignan
 159,300,25/50,Standard,ETCS,Perpignan,Barcelona-sants
+127,300,25/50,Standard,ETCS,Milan Centrale,Torino
+81,150,3,Standard,SCMT,Torino,Modane
+59,130,1_5,Standard,KVB,Modane,Montmelian
+102,140,25/50,Standard,KVB,Montmelian,Valence-TGV
+117,300,25/50,Standard,TVM,Valence-TGV,Avignon
+28,300,25/50,Standard,ETCS,Avignon,Nimes Pont du Gard
 503,300,25/50,Standard,ETCS,Barcelona-sants,Madrid Puerta
 29,200,25/50,Standard,KVB,Basel SBB,Mulhouse Ville
 97,220,25/50,Standard,KVB,Strasbourg-Kehl,Mulhouse Ville
@@ -71,6 +80,10 @@
 43,120,15/16_7,Standard,PZB,Riesa,Dresden Hbf
 37,150,15/16_7,Standard,ETCS,Dresden Hbf,Schona
 90,160,3,Standard,ETCS,Schona,Prague hl
+29,100,3,Standard,ETCS,Prague hl,Beroun
+55,140,25/50,Standard,ETCS,Beroun,Plzen hl
+123,140,Diesel,Standard,PZB,Plzen hl,Regensburg
+105,140,15/16_7,Standard,PZB,Regensburg,Munchen Hbf
 35,200,15/16_7,Standard,PZB,Berlin Hbf,Zossen
 72,200,15/16_7,Standard,ETCS,Zossen,Ruckersdorf
 61,160,15/16_7,Standard,PZB,Ruckersdorf,Dresden Hbf
