@@ -252,6 +252,7 @@ int delay_optimised(const struct Graph* graph, char* chosen_trains, const int* p
                 if (segmented_string_compare(ptr->allowed_trains, selected_train)) {    //if the selected_train is in allowed_trains for this route, add it to the new_trains-string
                     strcat(new_trains, selected_train);
                     strcat(new_trains, ".");
+                    //printf("\tAdding: %s", selected_train);
                 }
             }
         }
@@ -262,8 +263,10 @@ int delay_optimised(const struct Graph* graph, char* chosen_trains, const int* p
         }
 
         if(segmented_string_length(new_trains) > 0){                                                              //check if there are any trains still allowed on the current route
+            //printf("\nProceeding with: %s", new_trains);
             return delay_optimised(graph, new_trains, prev, end_pos, prev[pos]);                        //run the function on the next part of the path with the trains we have found to be compatible
         } else {
+            //printf("\nCHANGING to: %s from %s", ptr->allowed_trains, chosen_trains);
             return CHANGE_DELAY + delay_optimised(graph, ptr->allowed_trains, prev, end_pos, prev[pos]); //add a delay and run the function on the next part of the path with the trains we know can run on it
         }
     } else {
