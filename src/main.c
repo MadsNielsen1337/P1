@@ -77,23 +77,23 @@ int main(void)
     char start_train[DATA_SIZE];
 
     for (int i = 0; i < node_count; ++i) {
-        printf("\nDIJKSTRA %d", i);
+        //printf("\nDIJKSTRA %d", i);
 
         dijkstra(graph, dist, prev, i, list_length(list_of_stations));
         for (int j = 0; j < node_count; ++j) {
-            printf("\n%f + %f", dist[j],(float)extra_delay(graph, j, i, prev, start_train));
+            //printf("\n%f + %f", dist[j],(float)extra_delay(graph, j, i, prev, start_train));
         }
 
         for (int j = 0; j < node_count; ++j) {
 
             new_dist[j] = dist[j] + (float)extra_delay(graph, j, i, prev, start_train);
-
-            printf("\nAverage delay is %f", average_weight_difference(new_dist, dist, node_count));
-            printf("\nAverage extra time in percent %f", percentage_weight_difference(new_dist, dist, node_count));
-            printf("\n\n");
-
         }
+        printf("\n[%d] Average delay is %f", i, average_weight_difference(new_dist, dist, node_count));
+        printf("\n[%d] Average extra time in percent %f", i,  percentage_weight_difference(new_dist, dist, node_count));
+        printf("\n\n");
     }
+
+
 
     // Draw the UI - NO FUNCTION THAT NEED EXECUTION MAY BE PLACED BELOW THE UI
     GenerateUI(routes, list_of_stations, graph, dist, prev);
