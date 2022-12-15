@@ -3,6 +3,7 @@
 #include <string.h>
 #include "routes.h"
 #include "graph.h"
+#include "time_calc.h"
 
 #define UI_SIZE 61
 #define SPACING 2
@@ -22,7 +23,7 @@ void clear_input(void);
 void drawMenu(void);
 
 // Processes the user input
-int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph* graph);
+int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph* graph, float* dist, int* prev);
 
 void list_all_stations(station_list_node* list_of_stations);
 
@@ -128,7 +129,7 @@ void drawMenu(void)
 }
 
 // Processes the user input
-int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph* graph) {
+int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph* graph, float* dist, int* prev) {
     /*
         fscanf(stdin, "%[^A-Za-z0-9]", &choice);    // Read until a letter or number is found.
         fscanf(choice, "%[^q]", choice);            // Check if 'q' was input
@@ -169,10 +170,21 @@ int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph
                 scanf("%d", &s_end);
                 clear_input();
 
-                /*printf("\nGoing from station %s (%d) to station %s (%d) with total weight (%d)\n",
+                printf("\nGoing from station %s (%d) to station %s (%d) with total weight (%d)\n",
                        index_station_list(list_of_stations, s_start), s_start,
-                       index_station_list(list_of_stations, s_end), s_end, dijkstra(graph, s_start, s_end));
-                drawMenu();*/
+                       index_station_list(list_of_stations, s_end), s_end, graph->head[s_end]->weight);
+
+               /* for (int i = 0; i < list_length((list_of_stations)); ++i) {
+                    dijkstra();
+                    for (int j = 0; j < list_length((list_of_stations)); ++j) {
+                        extra_delay(graph, j, i, prev, chosen_train)
+                    }
+                }*/
+
+
+
+                //dijkstra(graph, dist, prev, 0, list_length(list_of_stations));
+                drawMenu();
                 break;
             }
             case 's':    // Show all stations
@@ -232,8 +244,8 @@ void list_all_stations(station_list_node* list_of_stations)
 }
 
 // Encapsulates all UI functions into one for ease of use
-void GenerateUI(route* routes, station_list_node* list_of_stations, struct Graph* graph)
+void GenerateUI(route* routes, station_list_node* list_of_stations, struct Graph* graph, float* dist, int* prev)
 {
     drawMenu();
-    menu_choice(routes, list_of_stations, graph);
+    menu_choice(routes, list_of_stations, graph, dist, prev);
 }

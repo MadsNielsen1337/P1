@@ -83,7 +83,7 @@ int main(void)
     printf("\nExtra delay is %d", extra_delay(graph, 80, 0, prev, start_train));
 
     // Draw the UI - NO FUNCTION THAT NEED EXECUTION MAY BE PLACED BELOW THE UI
-    GenerateUI(routes, list_of_stations, graph);
+    GenerateUI(routes, list_of_stations, graph, dist, prev);
 
     // Give memory back to the OS
     free(edges);
