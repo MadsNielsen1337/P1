@@ -75,24 +75,37 @@ int main(void)
     int prev[node_count];    //holds the previous node in the shortest path to the node corresponding to the index
     float new_dist[node_count];
     char start_train[DATA_SIZE];
-
     for (int i = 0; i < node_count; ++i) {
-        //printf("\nDIJKSTRA %d", i);
+        printf("\nDIJKSTRA %d", i);
 
         dijkstra(graph, dist, prev, i, list_length(list_of_stations));
         for (int j = 0; j < node_count; ++j) {
-            //printf("\n%f + %f", dist[j],(float)extra_delay(graph, j, i, prev, start_train));
+            //printf("\n%f + %f", dist[j],(float)delay_optimised(graph, start_train , prev, i, j ));
         }
 
         for (int j = 0; j < node_count; ++j) {
+            struct Node *ptr = graph->head[j];
+            while (ptr != NULL && ptr->dest != prev[j]) {     //find the correct route to check for matching trains on
+                ptr = ptr->next;
+            }
+            if(i != j) {
 
-            new_dist[j] = dist[j] + (float)extra_delay(graph, j, i, prev, start_train);
+                new_dist[j] = dist[j] + (float) delay_optimised(graph, ptr->allowed_trains, prev, i, j);
+                /*
+                if(900 < (float) delay_optimised(graph, ptr->allowed_trains, prev, i, j)){
+                    printf("Starting with: %s", ptr->allowed_trains);
+                    printf("\nOptimised: %lf\n", (float) delay_optimised(graph, ptr->allowed_trains, prev, i, j));
+                    printf("Not Optimised: %lf\n", (float) extra_delay(graph, j, i, prev, start_train));
+                }
+                 */
+            }
+
+
         }
         printf("\n[%d] Average delay is %f", i, average_weight_difference(new_dist, dist, node_count));
         printf("\n[%d] Average extra time in percent %f", i,  percentage_weight_difference(new_dist, dist, node_count));
         printf("\n\n");
     }
-
 
 
     // Draw the UI - NO FUNCTION THAT NEED EXECUTION MAY BE PLACED BELOW THE UI
