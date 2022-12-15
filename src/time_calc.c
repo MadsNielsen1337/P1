@@ -5,11 +5,11 @@
 #include "graph.h"
 #include <stdlib.h>
 #include <string.h>
-#include "stdio.h"
 
 #define METER_CONVERSION 1000               // Multiply this with km to get m
 #define METER_PER_SECOND_CONVERSION 3.6     // Divide this with km/h to get m/s
-#define CHANGE_TIME 900                     // Time to change trains in seconds. Obviously an estimation
+#define CHANGE_TIME 900                     // Time to change trains at a station. In seconds. Obviously an estimation
+#define BASE_DELAY 300                      // The base time it takes to move past a train station. Another estimation and subject to change
 
 // Calculate the time it takes to go from station_start to station_end. Takes accel & decel into account
 double time(route r, train t)
@@ -133,7 +133,7 @@ char* find_best_train(const struct Graph* graph, char* chosen_trains, const int*
     new_trains[0] = '\0';
     char to_search[XL_DATA_SIZE];   //initialise an array to hold a copy of chosen trains, so we can do work on it
     strcpy(to_search, chosen_trains);
-    char selected_train[XL_DATA_SIZE];
+    char selected_train[XL_DATA_SIZE];  //initialise an array to hold the train we wish to check for in allowed_trains
 
     for (int i = strlen(chosen_trains); i >= 0; --i) {
         if (to_search[i] == '.' || i == 0) {
@@ -229,3 +229,46 @@ float percentage_weight_difference(const float* a, const float* b, const int arr
     return sum/(float)array_length;  //return sum divided by number of entries i.e. the average
 }
 
+//end_pos is the position where the dijkstra-function that generated the prev-array began its pathfinding, pos is a given node in the graph and chosen_trains should begin as the trains allowed on the initial route
+int delay_optimised(const struct Graph* graph, char* chosen_trains, const int* prev, const int end_pos, const int pos){
+    if(pos != end_pos) {
+        struct Node *ptr = graph->head[pos];
+        while (ptr != NULL && ptr->dest != prev[pos]) {     //find the correct route to check for matching trains on
+            ptr = ptr->next;
+        }
+
+        char new_trains[XL_DATA_SIZE];      //initialise an array to hold matching trains and let the first spot be the end, so strcat can be used to build it
+        new_trains[0] = '\0';
+        char to_search[XL_DATA_SIZE];       //initialise an array to hold a copy of chosen trains, so we can do work on it
+        strcpy(to_search, chosen_trains);
+        char selected_train[XL_DATA_SIZE];  //initialise an array to hold the train we wish to check for in allowed_trains
+
+        for (int i = strlen(chosen_trains); i >= 0; --i) {
+            if (to_search[i] == '.' || i == 0) {
+                if(i != 0){
+                    to_search[i] = '\0';
+                    strcpy(selected_train, &to_search[i + 1]);                        //copy the rightmost entry in to_search into selected_train and prepare the next one
+                } else {
+                    strcpy(selected_train, &to_search[i]);                            //ditto but without preparing the next one, as this is the last entry in the string
+                }
+                if (segmented_string_compare(ptr->allowed_trains, selected_train)) {    //if the selected_train is in allowed_trains for this route, add it to the new_trains-string
+                    strcat(new_trains, selected_train);
+                    strcat(new_trains, ".");
+                }
+            }
+        }
+
+        int last_char = strlen(new_trains) - 1;               //format new segmented string correctly once it has been created
+        if (new_trains[last_char] == '.') {
+            new_trains[last_char] = '\0';
+        }
+
+        if(segmented_string_length(new_trains) > 0){                                                              //check if there are any trains still allowed on the current route
+            return delay_optimised(graph, new_trains, prev, end_pos, prev[pos]);                        //run the function on the next part of the path with the trains we have found to be compatible
+        } else {
+            return CHANGE_TIME + delay_optimised(graph, ptr->allowed_trains, prev, end_pos, prev[pos]); //add a delay and run the function on the next part of the path with the trains we know can run on it
+        }
+    } else {
+        return 0;
+    }
+}
