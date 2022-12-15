@@ -28,7 +28,6 @@ double time(route r, train t)
         t.max_speed = r.track_speed;
 
     double time_max_speed,
-           time_max_speed_half_distance,
            s,
            time,
            average_speed_half,
@@ -42,33 +41,22 @@ double time(route r, train t)
     time_max_speed = t.max_speed / t.acceleration; // Unit: s
 
     // s = 1/2 * a * t^2 + v_0 * t
-    // The distance travelled with t.accel and time_max_speed starting from v = 0
-    s = 1.0/2.0 * t.acceleration * pow(time_max_speed, 2);
-
-    // Include the distance
-    // t = sqrt(2 * a * s + v_0^2) - v_0 / a
-    // The time it takes to travel the accel distance with t.accel.
-    time_max_speed_half_distance = sqrt(2 * t.acceleration * s) / t.acceleration;
+    // The distance travelled with t.accel and time_max_speed starting from v = 0. Essentially the accel distance.
+    s = 1.0/2.0 * t.acceleration * pow(time_max_speed, 2); // Unit: m
 
     // t = s / v_0  ->  t * v_0 = s  ->  v_0 = s / t
     // The average speed of half of t.accel distance. This corresponds to t.max_speed in the accel/decel phase
-    average_speed_half = (s / 2.0) / (time_max_speed_half_distance / 2);
+    average_speed_half = ((s / 2) / time_max_speed); // Unit: m/s
 
-    if(s > r.distance/2.0) {
-        // The time it takes to travel the total distance (which is the accel/decel distance) with the average accel/decel speed.
-        final_time = (r.distance) / average_speed_half;
+    // The time it takes to travel the accel/decel distance with the average accel/decel speed.
+    final_time_large = (2 * s) / average_speed_half; // Unit: s
 
-        return final_time;
-    }
-    else {
-        // The time it takes to travel the accel/decel distance with the average accel/decel speed.
-        final_time_large = (2 * s) / average_speed_half;
+    // The time it takes to travel r.distance. With greater precision since accel/decel calculations have been refined
+    time = ((r.distance - (2 * s)) / t.max_speed) + final_time_large; // Unit: s
 
-        // The time it takes to travel r.distance. With greater precision since accel/decel calculations have been refined
-        time = ((r.distance - (2 * s)) / t.max_speed) + final_time_large; // Unit: s
+    //printf("\naccel speed phase %.0lf m/s reaching t.max_speed %.0lf m/s (%.0lf km/h) in accel_dist %0.lf m taking %.0lf s (%.0lf m)\n Total dist: %d m\n", average_speed_half, t.max_speed, t.max_speed*METER_PER_SECOND_CONVERSION, s, final_time_large, final_time_large/60, r.distance);
 
-        return time;
-    }
+    return time;
 }
 
 // Calculates the weight for the edge going from station_start to station_end
@@ -188,8 +176,44 @@ int extra_delay(const struct Graph* graph, int pos, const int end_pos, const int
             strcpy(chosen_train, new_best_train);
             free(new_best_train);
 
-            printf("\nTrain changed to \"%s\"", chosen_train);
+            //printf("\nTrain changed to \"%s\"", chosen_train);
         }
         return delay + extra_delay(graph, prev[pos], end_pos, prev, chosen_train);
     }
 }
+
+//function to calculate the average difference between all entries in two arrays of the same size
+float average_weight_difference(const float* a, const float* b, const int array_length){
+    float differences[array_length];
+    for (int i = 0; i < array_length; ++i) {          //find and add differences to an array
+        differences[i] = a[i] - b[i];
+    }
+    float sum = 0;
+    for (int i = 0; i < array_length; ++i) {          //find sum of non-zero values in that array
+        sum += differences[i];
+    }
+    return sum/(float)array_length;  //return sum divided by number of entries i.e. the average
+}
+
+//function to calculate the percentage difference between all entries in two arrays of the same size
+float percentage_weight_difference(const float* a, const float* b, const int array_length){
+    float differences[array_length];
+    for (int i = 0; i < array_length; ++i) {          //find and add differences to an array
+        differences[i] = a[i] - b[i];
+    }
+
+    float percentage[array_length];
+    for (int i = 0; i < array_length; ++i) {          //find the percentage that difference makes up of original value and add them to an array
+        if(differences[i] != 0 && b[i] != 0) {
+            percentage[i] = (differences[i] / b[i]) * 100;
+        } else {
+            percentage[i] = 0;
+        }
+    }
+    float sum = 0;
+    for (int i = 0; i < array_length; ++i) {          //find sum of non-zero values in that array
+        sum += percentage[i];
+    }
+    return sum/(float)array_length;  //return sum divided by number of entries i.e. the average
+}
+
