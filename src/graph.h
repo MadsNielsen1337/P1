@@ -5,7 +5,7 @@
 #include "trains.h"
 
 // Define the maximum number of vertices in the graph. Should use list_length from routes.h after a station list is built!!
-#define N 100
+#define N 91
 
 // Data structure to store adjacency list nodes of the graph
 struct Node
@@ -41,7 +41,7 @@ struct Edge* build_edges(station_list_node* list, route* r, int route_count, tra
 
 int train_match(struct Graph* graph, int search_pos, station_list_node* list_of_stations);
 
-void dijkstra(struct Graph* graph, float* distance, int* previous_node, int start_node, int node_count);
+void dijkstra(struct Graph* graph, float* dist, int* prev, int start_node, int node_count);
 
 int prev_finder(int start_pos ,int search_pos, int* prev, struct Graph* graph, int* train_compat, station_list_node* list_of_stations);
 
