@@ -16,7 +16,9 @@ float percentage_weight_difference(const float* a, const float* b, int array_len
 int delay_optimised(const struct Graph* graph, char* chosen_trains, const int* prev, int end_pos, int pos);
 
 float average_simple(const float* average, int length_of_array);
-
+float highest_num(const float* dist, int length_of_array);
+float lowest_num(const float* dist, int length_of_array);
+float median_finder(const float* dist, int length_of_array);
 
 
 #endif //P1_TIME_CALC_H
