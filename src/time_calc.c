@@ -274,13 +274,43 @@ int delay_optimised(const struct Graph* graph, char* chosen_trains, const int* p
     }
 }
 
+//Function that take an array and the length of the array and finds the average of the array
 float average_simple(const float* average, const int length_of_array){
-    float sum = 0, result = 0;
-    for(int i = 0; i < length_of_array; i++){
+    float sum = 0, result = 0;                                        //Two variables containing the sum of the array and the result which is the average of the array
+    for(int i = 0; i < length_of_array; i++){                         //For loop that sums everything inside array
         sum += average[i];
-        printf("\n%lf", average[i]);
+        //printf("\n%lf", average[i]);
     }
-    result = sum/(float)length_of_array;
-    return result;
+    result = sum/(float)length_of_array;                               //Calculates the average of the array using sum and length of array
+    return result;                                                     //returns the average
 }
 
+float highest_num(const float* dist, const int length_of_array){
+    float current_num = 0;
+    for(int i = 0; i < length_of_array; i++){
+        if(dist[i] > current_num){
+            current_num = dist[i];
+        }
+    }
+    return current_num;
+}
+
+float lowest_num(const float* dist, const int length_of_array) {
+    float current_num = 0;
+    for (int i = 0; i < length_of_array; i++) {
+        if (dist[i] < current_num) {
+            current_num = dist[i];
+        }
+    }
+    return current_num;
+}
+
+float median_finder(const float* dist, const int length_of_array){
+    float result = 0;
+    if(length_of_array % 2 == 0){
+        return dist[length_of_array/2];
+    } else {
+        result = dist[(int)floor(length_of_array)]+dist[(int)ceil(length_of_array)]/2;
+        return result;
+    }
+}

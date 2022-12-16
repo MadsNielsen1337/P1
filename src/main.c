@@ -76,6 +76,7 @@ int main(void)
     float new_dist[node_count];
     float average[node_count];
     float percent[node_count];
+    float delays[node_count];
     char start_train[DATA_SIZE];
     for (int i = 0; i < node_count; ++i) {
         printf("\nDIJKSTRA %d", i);
@@ -93,6 +94,8 @@ int main(void)
             if(i != j) {
                 new_dist[j] = dist[j] + (float) delay_optimised(graph, ptr->allowed_trains, prev, i, j);
                 new_dist[i] = 0;
+                delays[j] = (float) delay_optimised(graph, ptr->allowed_trains, prev, i, j);
+                delays[i] = 0;
                 //printf("\n[%d] Delay optimised: %lf\n", j, (float)delay_optimised(graph, ptr->allowed_trains, prev, i, j));
                 //printf("[%d] Dist: %f\n", j, dist[j]);
                 //printf("\n[%d] New dist: %f\n", j, new_dist[j]);
@@ -111,6 +114,10 @@ int main(void)
         percent[i] =  percentage_weight_difference(new_dist, dist, node_count);
         printf("\n[%d] Average delay is %f", i, average_weight_difference(new_dist, dist, node_count));
         printf("\n[%d] Average extra time in percent %f", i,  percent[i]);
+        printf("\n[%d] Highest delay: %f", i, highest_num(delays, node_count));
+        printf("\n[%d] Lowest delay %f", i, lowest_num(delays, node_count));
+        printf("\n[%d] Median delay: %f", i, median_finder(delays, node_count));
+
         printf("\n\n");
     }
     printf("\nAverage og averages: %lf\n", average_simple(average, node_count));
