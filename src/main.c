@@ -80,17 +80,12 @@ int main(void)
     float delays[node_count];
 
     /*
-    delays[j] = (float) delay_optimised(graph, ptr->allowed_trains, prev, i, j);
-    delays[i] = 0;
 
-    printf("\n[%d] Highest delay: %f", i, highest_num(delays, node_count));
-    printf("\n[%d] Lowest delay %f", i, lowest_num(delays, node_count));
-    printf("\n[%d] Median delay: %f", i, median_finder(delays, node_count));
 
      */
 
     // Draw the UI - NO FUNCTION THAT NEED EXECUTION MAY BE PLACED BELOW THE UI
-    GenerateUI(node_count, list_of_stations, graph, dist, prev, new_dist, average, percent);
+    GenerateUI(node_count, list_of_stations, graph, dist, prev, new_dist, average, percent, delays);
 
     // Give memory back to the OS
     free(edges);
