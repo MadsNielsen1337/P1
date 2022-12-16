@@ -22,17 +22,19 @@ void clear_input(void);
 void drawMenu(void);
 
 // Processes the user input
-int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph* graph, float* dist, int* prev);
+void menu_choice(int node_count, station_list_node* list_of_stations, struct Graph* graph, float distance[], int previous_node[], float new_dist[], float average[], float percent[]);
 
 void list_all_stations(station_list_node* list_of_stations);
 
+// Run dijkstra and its associated functions
+void path_finder(int node_count, station_list_node* list_of_stations, struct Graph* graph, float distance[], int previous_node[], float new_dist[], float average[], float percent[]);
 
 // -----------------------------------------------------------------------------------
 
 // Garbage collector.
 void clear_input(void){
     int garbageCollector;
-    while ((garbageCollector = getchar()) != '\n' && garbageCollector != EOF)   //keep reading the input until a new line (or the end of the file) is reached
+    while ((garbageCollector = getchar()) != '\n' && garbageCollector != EOF)   // Keeps reading the input until a new line (or the end of the file) is reached
     {}
 }
 
@@ -128,7 +130,8 @@ void drawMenu(void)
 }
 
 // Processes the user input
-int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph* graph, float* dist, int* prev) {
+void menu_choice(int node_count, station_list_node* list_of_stations, struct Graph* graph, float distance[], int previous_node[], float new_dist[], float average[], float percent[])
+{
     /*
         fscanf(stdin, "%[^A-Za-z0-9]", &choice);    // Read until a letter or number is found.
         fscanf(choice, "%[^q]", choice);            // Check if 'q' was input
@@ -147,51 +150,24 @@ int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph
     char choice = ' ';
     while (choice != 'q') {
         printf("\nChoose menu option:");
-        scanf("%c", &choice);       // Read input from user
+        scanf("%c", &choice);                // Read input from user
         clear_input();
 
         switch (choice) {
             case 'q':   // Quit
                 exit(EXIT_SUCCESS);
-            case 'r':    // SORTA DEFINED OR NOT
+            case 'r':                               // Dijkstra
             {
-                int s_start, s_end;
-                char temp;
-                printf("\nInput station start:\n");
-                /*fscanf(stdin, "%[^0-9]", &temp);
-                s_start = strtol(&temp, NULL, 10);
-                printf("start: %d", temp);*/
-                scanf("%d", &s_start);
-                clear_input();
-                printf("\nInput station end:\n");
-                /*fscanf(stdin, "%[^0-9]", &temp);
-                s_end = strtol(&temp, NULL, 10);*/
-                scanf("%d", &s_end);
-                clear_input();
-
-                printf("\nGoing from station %s (%d) to station %s (%d) with total weight (%d)\n",
-                       index_station_list(list_of_stations, s_start), s_start,
-                       index_station_list(list_of_stations, s_end), s_end, graph->head[s_end]->weight);
-
-               /* for (int i = 0; i < list_length((list_of_stations)); ++i) {
-                    dijkstra();
-                    for (int j = 0; j < list_length((list_of_stations)); ++j) {
-                        extra_delay(graph, j, i, prev, chosen_train)
-                    }
-                }*/
-
-
-
-                //dijkstra(graph, dist, prev, 0, list_length(list_of_stations));
+                path_finder(node_count, list_of_stations, graph, distance, previous_node, new_dist, average, percent);
                 drawMenu();
                 break;
             }
-            case 's':    // Show all stations
+            case 's':                           // Show all stations
                 list_all_stations(list_of_stations);
                 printf("\n\n");
                 drawMenu();
                 break;
-            case 'g':   // Print graph
+            case 'g':                           // Print graph
                 printf("\n");
                 print_long_line_equals(UI_SIZE);
                 printf("\n%c%19cPrinted adjacency list%19c", draw_Menu, menuSpacing, draw_Menu);
@@ -205,8 +181,6 @@ int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph
                 printf("\n\n");
                 drawMenu();
                 break;
-            case 'b':    // UNUSED
-                break;
             default:
                 printf("\nDEFAULT\n");
                 printf("Choice = '%c'\n", choice);
@@ -214,7 +188,6 @@ int menu_choice(route* routes, station_list_node* list_of_stations, struct Graph
         }
     }
 }
-
 
 void list_all_stations(station_list_node* list_of_stations)
 {
@@ -242,9 +215,57 @@ void list_all_stations(station_list_node* list_of_stations)
     printf("\n");
 }
 
+void path_finder(int node_count, station_list_node* list_of_stations, struct Graph* graph, float distance[], int previous_node[], float new_dist[], float average[], float percent[])
+{
+
+
+    for (int i = 0; i < node_count; ++i) {
+        dijkstra(graph, distance, previous_node, i, list_length(list_of_stations));
+
+        printf("\nDIJKSTRA %d", i);
+
+        /*for (int j = 0; j < node_count; ++j) {
+            //printf("\n%f + %f", dist[j],(float)delay_optimised(graph, start_train , prev, i, j ));
+        }*/
+
+        for (int j = 0; j < node_count; ++j) {
+            struct Node *ptr = graph->head[j];
+            while (ptr != NULL && ptr->dest != previous_node[j]) {     //find the correct route to check for matching trains on
+                ptr = ptr->next;
+            }
+            if(i != j) {
+                printf("\n[%d] Delay optimised: %lf\n", j, (float)delay_optimised(graph, ptr->allowed_trains, previous_node, i, j));
+                printf("[%d] Dist: %f\n", j, distance[j]);
+                printf("[%d] New dist: %f\n", j, new_dist[j]);
+
+
+                new_dist[j] = distance[j] + (float) delay_optimised(graph, ptr->allowed_trains, previous_node, i, j);
+                new_dist[i] = 0;
+                printf("\n[2 | %d] Delay optimised: %lf\n", j, (float)delay_optimised(graph, ptr->allowed_trains, previous_node, i, j));
+                printf("[2 | %d] Dist: %f\n", j, distance[j]);
+                printf("[2 | %d] New dist: %f\n", j, new_dist[j]);
+                /*
+                if(900 < (float) delay_optimised(graph, ptr->allowed_trains, prev, i, j)){
+                    printf("Starting with: %s", ptr->allowed_trains);
+                    printf("\nOptimised: %lf\n", (float) delay_optimised(graph, ptr->allowed_trains, prev, i, j));
+                    printf("Not Optimised: %lf\n", (float) extra_delay(graph, j, i, prev, start_train));
+                }
+                 */
+            }
+        }
+        average[i] = average_weight_difference(new_dist, distance, node_count);
+        percent[i] =  percentage_weight_difference(new_dist, distance, node_count);
+        printf("\n[%d] Average delay is %f", i, average_weight_difference(new_dist, distance, node_count));
+        printf("\n[%d] Average extra time in percent %f", i,  percent[i]);
+        printf("\n\n");
+    }
+    printf("\nAverage of averages: %lf\n", average_simple(average, node_count));
+    printf("Average of averages in percent: %lf\n", average_simple(percent, node_count));
+}
+
 // Encapsulates all UI functions into one for ease of use
-void GenerateUI(route* routes, station_list_node* list_of_stations, struct Graph* graph, float* dist, int* prev)
+void GenerateUI(int node_count, station_list_node* list_of_stations, struct Graph* graph, float distance[], int previous_node[], float new_dist[], float average[], float percent[])
 {
     drawMenu();
-    menu_choice(routes, list_of_stations, graph, dist, prev);
+    menu_choice(node_count, list_of_stations, graph, distance, previous_node, new_dist, average, percent);
 }
