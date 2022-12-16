@@ -278,7 +278,7 @@ float average_simple(const float* average, const int length_of_array){
     float sum = 0, result = 0;
     for(int i = 0; i < length_of_array; i++){
         sum += average[i];
-        printf("\n%lf", average[i]);
+        //printf("\n%lf", average[i]);
     }
     result = sum/(float)length_of_array;
     return result;
