@@ -195,13 +195,13 @@ float average_weight_difference(const float* a, const float* b, const int array_
     float differences[array_length];
     for (int i = 0; i < array_length; ++i) {          //find and add differences to an array
         differences[i] = a[i] - b[i];
-     //   printf("\n[%d] Difference %f = a[%f] - b[%f]\n",i, differences[i], a[i], b[i]);
+        //printf("\n[%d] Difference %f = a[%f] - b[%f]\n",i, differences[i], a[i], b[i]);
     }
     float sum = 0;
     for (int i = 0; i < array_length; ++i) {          //find sum of non-zero values in that array
         sum += differences[i];
     }
-   // printf("\nSum = %f\n", sum);
+    //printf("\nSum = %f\n", sum);
     return sum/(float)array_length;  //return sum divided by number of entries i.e. the average
 }
 
@@ -273,3 +273,14 @@ int delay_optimised(const struct Graph* graph, char* chosen_trains, const int* p
         return 0;
     }
 }
+
+float average_simple(const float* average, const int length_of_array){
+    float sum = 0, result = 0;
+    for(int i = 0; i < length_of_array; i++){
+        sum += average[i];
+        printf("\n%lf", average[i]);
+    }
+    result = sum/(float)length_of_array;
+    return result;
+}
+
