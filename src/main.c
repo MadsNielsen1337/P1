@@ -74,6 +74,8 @@ int main(void)
     float dist[node_count];    //holds the distances from the start_node to every other node in the graph
     int prev[node_count];    //holds the previous node in the shortest path to the node corresponding to the index
     float new_dist[node_count];
+    float average[node_count];
+    float percent[node_count];
     char start_train[DATA_SIZE];
     for (int i = 0; i < node_count; ++i) {
         printf("\nDIJKSTRA %d", i);
@@ -89,8 +91,11 @@ int main(void)
                 ptr = ptr->next;
             }
             if(i != j) {
-
                 new_dist[j] = dist[j] + (float) delay_optimised(graph, ptr->allowed_trains, prev, i, j);
+                new_dist[i] = 0;
+                //printf("\n[%d] Delay optimised: %lf\n", j, (float)delay_optimised(graph, ptr->allowed_trains, prev, i, j));
+                //printf("[%d] Dist: %f\n", j, dist[j]);
+                //printf("\n[%d] New dist: %f\n", j, new_dist[j]);
                 /*
                 if(900 < (float) delay_optimised(graph, ptr->allowed_trains, prev, i, j)){
                     printf("Starting with: %s", ptr->allowed_trains);
@@ -102,11 +107,14 @@ int main(void)
 
 
         }
+        average[i] = average_weight_difference(new_dist, dist, node_count);
+        percent[i] =  percentage_weight_difference(new_dist, dist, node_count);
         printf("\n[%d] Average delay is %f", i, average_weight_difference(new_dist, dist, node_count));
-        printf("\n[%d] Average extra time in percent %f", i,  percentage_weight_difference(new_dist, dist, node_count));
+        printf("\n[%d] Average extra time in percent %f", i,  percent[i]);
         printf("\n\n");
     }
-
+    printf("\nAverage og averages: %lf\n", average_simple(average, node_count));
+    printf("Average of percent: %lf\n", average_simple(percent, node_count));
 
     // Draw the UI - NO FUNCTION THAT NEED EXECUTION MAY BE PLACED BELOW THE UI
     GenerateUI(routes, list_of_stations, graph, dist, prev);
