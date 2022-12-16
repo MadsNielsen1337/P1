@@ -72,16 +72,16 @@ int main(void)
 
     // Stuff used in dijkstra and its associated functions
     int node_count = (list_length(list_of_stations) - 1);
-    float* dist[node_count];    //holds the distances from the start_node to every other node in the graph
-    int* prev[node_count];      //holds the previous node in the shortest path to the node corresponding to the index
-    float* new_dist[node_count];
-    float* average[node_count];
-    float* percent[node_count];
+    float dist[node_count];    //holds the distances from the start_node to every other node in the graph
+    int prev[node_count];      //holds the previous node in the shortest path to the node corresponding to the index
+    float new_dist[node_count];
+    float average[node_count];
+    float percent[node_count];
     //char* start_train[DATA_SIZE];
 
 
     // Draw the UI - NO FUNCTION THAT NEED EXECUTION MAY BE PLACED BELOW THE UI
-    GenerateUI(node_count, list_of_stations, graph, *dist, *prev, *new_dist, *average, *percent);
+    GenerateUI(node_count, list_of_stations, graph, dist, prev, new_dist, average, percent);
 
     // Give memory back to the OS
     free(edges);
