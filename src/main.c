@@ -77,11 +77,15 @@ int main(void)
     float new_dist[node_count];
     float average[node_count];
     float percent[node_count];
-    //char* start_train[DATA_SIZE];
+    float delays[node_count];
 
+    /*
+
+
+     */
 
     // Draw the UI - NO FUNCTION THAT NEED EXECUTION MAY BE PLACED BELOW THE UI
-    GenerateUI(node_count, list_of_stations, graph, dist, prev, new_dist, average, percent);
+    GenerateUI(node_count, list_of_stations, graph, dist, prev, new_dist, average, percent, delays);
 
     // Give memory back to the OS
     free(edges);

@@ -1,0 +1,645 @@
+
+=============================================================
+|                     Running simulation                    |
+=============================================================
+
+[0] Average delay is 140.000000
+[0] Average extra time in percent 0.545895
+[0] Highest delay: 1800.000000
+[0] Lowest delay 0.000000
+[0] Median delay: 900.000000
+
+
+[1] Average delay is 140.000000
+[1] Average extra time in percent 0.537267
+[1] Highest delay: 1800.000000
+[1] Lowest delay 0.000000
+[1] Median delay: 900.000000
+
+
+[2] Average delay is 140.000000
+[2] Average extra time in percent 0.568884
+[2] Highest delay: 1800.000000
+[2] Lowest delay 0.000000
+[2] Median delay: 900.000000
+
+
+[3] Average delay is 110.000000
+[3] Average extra time in percent 0.428114
+[3] Highest delay: 900.000000
+[3] Lowest delay 0.000000
+[3] Median delay: 900.000000
+
+
+[4] Average delay is 130.000000
+[4] Average extra time in percent 0.651013
+[4] Highest delay: 900.000000
+[4] Lowest delay 0.000000
+[4] Median delay: 900.000000
+
+
+[5] Average delay is 140.000000
+[5] Average extra time in percent 0.813988
+[5] Highest delay: 900.000000
+[5] Lowest delay 0.000000
+[5] Median delay: 900.000000
+
+
+[6] Average delay is 140.000000
+[6] Average extra time in percent 0.811702
+[6] Highest delay: 900.000000
+[6] Lowest delay 0.000000
+[6] Median delay: 900.000000
+
+
+[7] Average delay is 160.000000
+[7] Average extra time in percent 0.926054
+[7] Highest delay: 1800.000000
+[7] Lowest delay 0.000000
+[7] Median delay: 900.000000
+
+
+[8] Average delay is 170.000000
+[8] Average extra time in percent 1.024132
+[8] Highest delay: 1800.000000
+[8] Lowest delay 0.000000
+[8] Median delay: 900.000000
+
+
+[9] Average delay is 170.000000
+[9] Average extra time in percent 0.771531
+[9] Highest delay: 1800.000000
+[9] Lowest delay 0.000000
+[9] Median delay: 900.000000
+
+
+[10] Average delay is 170.000000
+[10] Average extra time in percent 0.747781
+[10] Highest delay: 1800.000000
+[10] Lowest delay 0.000000
+[10] Median delay: 900.000000
+
+
+[11] Average delay is 140.000000
+[11] Average extra time in percent 0.564751
+[11] Highest delay: 1800.000000
+[11] Lowest delay 0.000000
+[11] Median delay: 900.000000
+
+
+[12] Average delay is 140.000000
+[12] Average extra time in percent 0.565434
+[12] Highest delay: 1800.000000
+[12] Lowest delay 0.000000
+[12] Median delay: 900.000000
+
+
+[13] Average delay is 140.000000
+[13] Average extra time in percent 0.583362
+[13] Highest delay: 1800.000000
+[13] Lowest delay 0.000000
+[13] Median delay: 900.000000
+
+
+[14] Average delay is 150.000000
+[14] Average extra time in percent 0.628872
+[14] Highest delay: 1800.000000
+[14] Lowest delay 0.000000
+[14] Median delay: 900.000000
+
+
+[15] Average delay is 150.000000
+[15] Average extra time in percent 0.659002
+[15] Highest delay: 1800.000000
+[15] Lowest delay 0.000000
+[15] Median delay: 900.000000
+
+
+[16] Average delay is 120.000000
+[16] Average extra time in percent 0.503281
+[16] Highest delay: 900.000000
+[16] Lowest delay 0.000000
+[16] Median delay: 900.000000
+
+
+[17] Average delay is 140.000000
+[17] Average extra time in percent 0.726094
+[17] Highest delay: 900.000000
+[17] Lowest delay 0.000000
+[17] Median delay: 900.000000
+
+
+[18] Average delay is 140.000000
+[18] Average extra time in percent 0.868084
+[18] Highest delay: 900.000000
+[18] Lowest delay 0.000000
+[18] Median delay: 900.000000
+
+
+[19] Average delay is 140.000000
+[19] Average extra time in percent 0.796450
+[19] Highest delay: 900.000000
+[19] Lowest delay 0.000000
+[19] Median delay: 900.000000
+
+
+[20] Average delay is 130.000000
+[20] Average extra time in percent 0.656034
+[20] Highest delay: 900.000000
+[20] Lowest delay 0.000000
+[20] Median delay: 900.000000
+
+
+[21] Average delay is 130.000000
+[21] Average extra time in percent 0.685120
+[21] Highest delay: 900.000000
+[21] Lowest delay 0.000000
+[21] Median delay: 900.000000
+
+
+[22] Average delay is 130.000000
+[22] Average extra time in percent 0.650917
+[22] Highest delay: 900.000000
+[22] Lowest delay 0.000000
+[22] Median delay: 900.000000
+
+
+[23] Average delay is 120.000000
+[23] Average extra time in percent 0.568542
+[23] Highest delay: 900.000000
+[23] Lowest delay 0.000000
+[23] Median delay: 900.000000
+
+
+[24] Average delay is 120.000000
+[24] Average extra time in percent 0.556904
+[24] Highest delay: 900.000000
+[24] Lowest delay 0.000000
+[24] Median delay: 900.000000
+
+
+[25] Average delay is 120.000000
+[25] Average extra time in percent 0.550590
+[25] Highest delay: 900.000000
+[25] Lowest delay 0.000000
+[25] Median delay: 900.000000
+
+
+[26] Average delay is 160.000000
+[26] Average extra time in percent 0.690180
+[26] Highest delay: 1800.000000
+[26] Lowest delay 0.000000
+[26] Median delay: 900.000000
+
+
+[27] Average delay is 160.000000
+[27] Average extra time in percent 0.699023
+[27] Highest delay: 1800.000000
+[27] Lowest delay 0.000000
+[27] Median delay: 900.000000
+
+
+[28] Average delay is 140.000000
+[28] Average extra time in percent 0.500993
+[28] Highest delay: 1800.000000
+[28] Lowest delay 0.000000
+[28] Median delay: 900.000000
+
+
+[29] Average delay is 840.000000
+[29] Average extra time in percent 4.231660
+[29] Highest delay: 1800.000000
+[29] Lowest delay 0.000000
+[29] Median delay: 1800.000000
+
+
+[30] Average delay is 840.000000
+[30] Average extra time in percent 4.024257
+[30] Highest delay: 1800.000000
+[30] Lowest delay 0.000000
+[30] Median delay: 1800.000000
+
+
+[31] Average delay is 950.000000
+[31] Average extra time in percent 4.479466
+[31] Highest delay: 1800.000000
+[31] Lowest delay 0.000000
+[31] Median delay: 1800.000000
+
+
+[32] Average delay is 560.000000
+[32] Average extra time in percent 2.688749
+[32] Highest delay: 1800.000000
+[32] Lowest delay 0.000000
+[32] Median delay: 900.000000
+
+
+[33] Average delay is 120.000000
+[33] Average extra time in percent 0.479877
+[33] Highest delay: 900.000000
+[33] Lowest delay 0.000000
+[33] Median delay: 900.000000
+
+
+[34] Average delay is 120.000000
+[34] Average extra time in percent 0.517241
+[34] Highest delay: 900.000000
+[34] Lowest delay 0.000000
+[34] Median delay: 900.000000
+
+
+[35] Average delay is 130.000000
+[35] Average extra time in percent 0.619077
+[35] Highest delay: 900.000000
+[35] Lowest delay 0.000000
+[35] Median delay: 900.000000
+
+
+[36] Average delay is 130.000000
+[36] Average extra time in percent 0.569646
+[36] Highest delay: 900.000000
+[36] Lowest delay 0.000000
+[36] Median delay: 900.000000
+
+
+[37] Average delay is 160.000000
+[37] Average extra time in percent 0.951155
+[37] Highest delay: 1800.000000
+[37] Lowest delay 0.000000
+[37] Median delay: 900.000000
+
+
+[38] Average delay is 180.000000
+[38] Average extra time in percent 1.093755
+[38] Highest delay: 1800.000000
+[38] Lowest delay 0.000000
+[38] Median delay: 900.000000
+
+
+[39] Average delay is 190.000000
+[39] Average extra time in percent 1.327152
+[39] Highest delay: 1800.000000
+[39] Lowest delay 0.000000
+[39] Median delay: 900.000000
+
+
+[40] Average delay is 100.000000
+[40] Average extra time in percent 0.445855
+[40] Highest delay: 1800.000000
+[40] Lowest delay 0.000000
+[40] Median delay: 0.000000
+
+
+[41] Average delay is 100.000000
+[41] Average extra time in percent 0.410195
+[41] Highest delay: 1800.000000
+[41] Lowest delay 0.000000
+[41] Median delay: 0.000000
+
+
+[42] Average delay is 780.000000
+[42] Average extra time in percent 3.876710
+[42] Highest delay: 2700.000000
+[42] Lowest delay 0.000000
+[42] Median delay: 0.000000
+
+
+[43] Average delay is 780.000000
+[43] Average extra time in percent 3.671529
+[43] Highest delay: 2700.000000
+[43] Lowest delay 0.000000
+[43] Median delay: 0.000000
+
+
+[44] Average delay is 780.000000
+[44] Average extra time in percent 3.071509
+[44] Highest delay: 2700.000000
+[44] Lowest delay 0.000000
+[44] Median delay: 0.000000
+
+
+[45] Average delay is 780.000000
+[45] Average extra time in percent 2.995082
+[45] Highest delay: 2700.000000
+[45] Lowest delay 0.000000
+[45] Median delay: 0.000000
+
+
+[46] Average delay is 780.000000
+[46] Average extra time in percent 2.571824
+[46] Highest delay: 2700.000000
+[46] Lowest delay 0.000000
+[46] Median delay: 0.000000
+
+
+[47] Average delay is 210.000000
+[47] Average extra time in percent 1.537739
+[47] Highest delay: 1800.000000
+[47] Lowest delay 0.000000
+[47] Median delay: 900.000000
+
+
+[48] Average delay is 210.000000
+[48] Average extra time in percent 1.301775
+[48] Highest delay: 1800.000000
+[48] Lowest delay 0.000000
+[48] Median delay: 900.000000
+
+
+[49] Average delay is 220.000000
+[49] Average extra time in percent 1.507572
+[49] Highest delay: 1800.000000
+[49] Lowest delay 0.000000
+[49] Median delay: 900.000000
+
+
+[50] Average delay is 160.000000
+[50] Average extra time in percent 0.673613
+[50] Highest delay: 1800.000000
+[50] Lowest delay 0.000000
+[50] Median delay: 900.000000
+
+
+[51] Average delay is 160.000000
+[51] Average extra time in percent 0.654207
+[51] Highest delay: 1800.000000
+[51] Lowest delay 0.000000
+[51] Median delay: 900.000000
+
+
+[52] Average delay is 100.000000
+[52] Average extra time in percent 0.296356
+[52] Highest delay: 1800.000000
+[52] Lowest delay 0.000000
+[52] Median delay: 0.000000
+
+
+[53] Average delay is 100.000000
+[53] Average extra time in percent 0.305271
+[53] Highest delay: 1800.000000
+[53] Lowest delay 0.000000
+[53] Median delay: 0.000000
+
+
+[54] Average delay is 100.000000
+[54] Average extra time in percent 0.314197
+[54] Highest delay: 1800.000000
+[54] Lowest delay 0.000000
+[54] Median delay: 0.000000
+
+
+[55] Average delay is 100.000000
+[55] Average extra time in percent 0.322741
+[55] Highest delay: 1800.000000
+[55] Lowest delay 0.000000
+[55] Median delay: 0.000000
+
+
+[56] Average delay is 100.000000
+[56] Average extra time in percent 0.283175
+[56] Highest delay: 1800.000000
+[56] Lowest delay 0.000000
+[56] Median delay: 0.000000
+
+
+[57] Average delay is 100.000000
+[57] Average extra time in percent 0.262566
+[57] Highest delay: 1800.000000
+[57] Lowest delay 0.000000
+[57] Median delay: 0.000000
+
+
+[58] Average delay is 780.000000
+[58] Average extra time in percent 3.415729
+[58] Highest delay: 2700.000000
+[58] Lowest delay 0.000000
+[58] Median delay: 0.000000
+
+
+[59] Average delay is 680.000000
+[59] Average extra time in percent 2.689918
+[59] Highest delay: 2700.000000
+[59] Lowest delay 0.000000
+[59] Median delay: 0.000000
+
+
+[60] Average delay is 630.000000
+[60] Average extra time in percent 2.266858
+[60] Highest delay: 2700.000000
+[60] Lowest delay 0.000000
+[60] Median delay: 0.000000
+
+
+[61] Average delay is 120.000000
+[61] Average extra time in percent 0.383841
+[61] Highest delay: 1800.000000
+[61] Lowest delay 0.000000
+[61] Median delay: 0.000000
+
+
+[62] Average delay is 100.000000
+[62] Average extra time in percent 0.303831
+[62] Highest delay: 1800.000000
+[62] Lowest delay 0.000000
+[62] Median delay: 0.000000
+
+
+[63] Average delay is 100.000000
+[63] Average extra time in percent 0.220827
+[63] Highest delay: 1800.000000
+[63] Lowest delay 0.000000
+[63] Median delay: 0.000000
+
+
+[64] Average delay is 190.000000
+[64] Average extra time in percent 1.240249
+[64] Highest delay: 1800.000000
+[64] Lowest delay 0.000000
+[64] Median delay: 900.000000
+
+
+[65] Average delay is 190.000000
+[65] Average extra time in percent 1.131445
+[65] Highest delay: 1800.000000
+[65] Lowest delay 0.000000
+[65] Median delay: 900.000000
+
+
+[66] Average delay is 190.000000
+[66] Average extra time in percent 1.004630
+[66] Highest delay: 1800.000000
+[66] Lowest delay 0.000000
+[66] Median delay: 900.000000
+
+
+[67] Average delay is 740.000000
+[67] Average extra time in percent 3.512022
+[67] Highest delay: 1800.000000
+[67] Lowest delay 0.000000
+[67] Median delay: 1800.000000
+
+
+[68] Average delay is 110.000000
+[68] Average extra time in percent 0.427962
+[68] Highest delay: 900.000000
+[68] Lowest delay 0.000000
+[68] Median delay: 900.000000
+
+
+[69] Average delay is 150.000000
+[69] Average extra time in percent 1.006377
+[69] Highest delay: 900.000000
+[69] Lowest delay 0.000000
+[69] Median delay: 900.000000
+
+
+[70] Average delay is 130.000000
+[70] Average extra time in percent 0.588775
+[70] Highest delay: 900.000000
+[70] Lowest delay 0.000000
+[70] Median delay: 900.000000
+
+
+[71] Average delay is 140.000000
+[71] Average extra time in percent 0.592463
+[71] Highest delay: 900.000000
+[71] Lowest delay 0.000000
+[71] Median delay: 900.000000
+
+
+[72] Average delay is 160.000000
+[72] Average extra time in percent 0.705666
+[72] Highest delay: 1800.000000
+[72] Lowest delay 0.000000
+[72] Median delay: 900.000000
+
+
+[73] Average delay is 160.000000
+[73] Average extra time in percent 0.693327
+[73] Highest delay: 1800.000000
+[73] Lowest delay 0.000000
+[73] Median delay: 900.000000
+
+
+[74] Average delay is 280.000000
+[74] Average extra time in percent 1.356132
+[74] Highest delay: 2700.000000
+[74] Lowest delay 0.000000
+[74] Median delay: 900.000000
+
+
+[75] Average delay is 800.000000
+[75] Average extra time in percent 3.528516
+[75] Highest delay: 2700.000000
+[75] Lowest delay 0.000000
+[75] Median delay: 2700.000000
+
+
+[76] Average delay is 980.000000
+[76] Average extra time in percent 4.613549
+[76] Highest delay: 2700.000000
+[76] Lowest delay 0.000000
+[76] Median delay: 2700.000000
+
+
+[77] Average delay is 590.000000
+[77] Average extra time in percent 3.065898
+[77] Highest delay: 1800.000000
+[77] Lowest delay 0.000000
+[77] Median delay: 1800.000000
+
+
+[78] Average delay is 310.000000
+[78] Average extra time in percent 1.973300
+[78] Highest delay: 900.000000
+[78] Lowest delay 0.000000
+[78] Median delay: 900.000000
+
+
+[79] Average delay is 140.000000
+[79] Average extra time in percent 0.537904
+[79] Highest delay: 1800.000000
+[79] Lowest delay 0.000000
+[79] Median delay: 900.000000
+
+
+[80] Average delay is 160.000000
+[80] Average extra time in percent 0.640775
+[80] Highest delay: 1800.000000
+[80] Lowest delay 0.000000
+[80] Median delay: 900.000000
+
+
+[81] Average delay is 140.000000
+[81] Average extra time in percent 0.540408
+[81] Highest delay: 900.000000
+[81] Lowest delay 0.000000
+[81] Median delay: 900.000000
+
+
+[82] Average delay is 160.000000
+[82] Average extra time in percent 0.728782
+[82] Highest delay: 1800.000000
+[82] Lowest delay 0.000000
+[82] Median delay: 900.000000
+
+
+[83] Average delay is 180.000000
+[83] Average extra time in percent 0.917798
+[83] Highest delay: 1800.000000
+[83] Lowest delay 0.000000
+[83] Median delay: 900.000000
+
+
+[84] Average delay is 200.000000
+[84] Average extra time in percent 1.145320
+[84] Highest delay: 1800.000000
+[84] Lowest delay 0.000000
+[84] Median delay: 900.000000
+
+
+[85] Average delay is 200.000000
+[85] Average extra time in percent 1.237824
+[85] Highest delay: 1800.000000
+[85] Lowest delay 0.000000
+[85] Median delay: 900.000000
+
+
+[86] Average delay is 230.000000
+[86] Average extra time in percent 1.376213
+[86] Highest delay: 1800.000000
+[86] Lowest delay 0.000000
+[86] Median delay: 900.000000
+
+
+[87] Average delay is 130.000000
+[87] Average extra time in percent 0.643897
+[87] Highest delay: 1800.000000
+[87] Lowest delay 0.000000
+[87] Median delay: 0.000000
+
+
+[88] Average delay is 530.000000
+[88] Average extra time in percent 2.141581
+[88] Highest delay: 1800.000000
+[88] Lowest delay 0.000000
+[88] Median delay: 0.000000
+
+
+[89] Average delay is 800.000000
+[89] Average extra time in percent 3.492235
+[89] Highest delay: 2700.000000
+[89] Lowest delay 0.000000
+[89] Median delay: 0.000000
+
+=============================================================
+Overall average delay: 270.7
+
+Overall average delay in percent: 1.3
+=============================================================
+
+
+=============================================================
+|                    Simulation finished                    |
+=============================================================
+
