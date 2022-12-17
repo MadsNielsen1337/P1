@@ -5,8 +5,6 @@
 #include "graph.h"
 #include "UI.h"
 #include "readFiles.h"
-#include "time_calc.h"
-#include "string.h"
 
 // Source vs header
 // https://stackoverflow.com/questions/3482948/what-is-the-fundamental-difference-between-source-and-header-files-in-c
@@ -79,13 +77,8 @@ int main(void)
     float percent[node_count];
     float delays[node_count];
 
-    /*
-
-
-     */
-
     // Draw the UI - NO FUNCTION THAT NEED EXECUTION MAY BE PLACED BELOW THE UI
-    GenerateUI(node_count, list_of_stations, graph, dist, prev, new_dist, average, percent, delays);
+    GenerateUI(node_count, list_of_stations, graph, dist, prev, new_dist, average, percent, delays, trains, train_count);
 
     // Give memory back to the OS
     free(edges);

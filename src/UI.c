@@ -24,15 +24,18 @@ void clear_input(void);
 void drawMenu(void);
 
 // Processes the user input
-void menu_choice(int node_count, station_list_node* list_of_stations, struct Graph* graph, float distance[], int previous_node[], float new_dist[], float average[], float percent[], float delays[]);
+void menu_choice(int node_count, station_list_node *list_of_stations, struct Graph *graph, float distance[],
+                 int previous_node[], float new_dist[], float average[], float percent[], float delays[], train t[],
+                 int train_count);
 
 void list_all_stations(station_list_node* list_of_stations);
+
+int list_trains(train t[], int train_count);
 
 // Run dijkstra and its associated functions
 void path_finder(int node_count, station_list_node* list_of_stations, struct Graph* graph, float dist[], int prev[], float new_dist[], float average[], float percent[], float delays[]);
 
 void print_fine_Graph(struct Graph* graph, station_list_node* list_of_stations);
-
 
 // -----------------------------------------------------------------------------------
 
@@ -109,10 +112,11 @@ void drawMenu(void)
 
     add_spacing(SPACING - 1, UI_SIZE);
 
-    printf("\n%c [r] Run simulation (placeholder)%27c", drawMenu, drawMenu);
+    printf("\n%c [r] Run simulation%41c", drawMenu, drawMenu);
     printf("\n%c [s] See all available stations%29c", drawMenu, drawMenu);
+    printf("\n%c [t] See all available trains%31c", drawMenu, drawMenu);
     printf("\n%c [g] Print graph (raw)%38c", drawMenu, drawMenu);
-    printf("\n%c [f] Print graph (fine)%37c", drawMenu, drawMenu);
+    printf("\n%c [f] Print graph (readable)%33c", drawMenu, drawMenu);
     printf("\n%c [q] Exit%51c", drawMenu, drawMenu);
 
     add_spacing(SPACING - 1, UI_SIZE);
@@ -144,7 +148,9 @@ void drawMenu(void)
 }
 
 // Processes the user input
-void menu_choice(int node_count, station_list_node* list_of_stations, struct Graph* graph, float distance[], int previous_node[], float new_dist[], float average[], float percent[], float delays[])
+void menu_choice(int node_count, station_list_node *list_of_stations, struct Graph *graph, float distance[],
+                 int previous_node[], float new_dist[], float average[], float percent[], float delays[], train t[],
+                 int train_count)
 {
     char draw_Menu = '|';
     char menuSpacing = ' ';
@@ -176,6 +182,11 @@ void menu_choice(int node_count, station_list_node* list_of_stations, struct Gra
                 break;
             case 's':                           // Show all stations
                 list_all_stations(list_of_stations);
+                printf("\n\n");
+                drawMenu();
+                break;
+            case 't':                           // Show all trains
+                list_trains(t, train_count);
                 printf("\n\n");
                 drawMenu();
                 break;
@@ -249,6 +260,40 @@ void list_all_stations(station_list_node* list_of_stations)
     printf("\n");
 }
 
+int list_trains(train t[], int train_count)
+{
+    char draw_Menu = '|';
+    char menuSpacing = ' ';
+
+    printf("\n");
+    print_long_line_equals(UI_SIZE);
+    printf("\n%c%16cHere are all available trains%15c", draw_Menu, menuSpacing, draw_Menu);
+    print_long_line_equals(UI_SIZE);
+    printf("\n");
+
+    if(train_count < 9) {
+        for (int i = 0; i < train_count; ++i) {
+            printf("\n [%d] %s", i, t[i].name);
+        }
+        return 0;
+    }
+    else if(train_count >= 10) {
+        for (int i = 0; i <= 9; ++i) {
+            printf("\n [%d] %s", i, t[i].name);
+        }
+        for (int i = 10; i < train_count; ++i) {
+            printf("\n[%d] %s", i, t[i].name);
+        }
+
+        printf("\n");
+        print_long_line_equals(UI_SIZE);
+        printf("\n%c%24cEnd of trains%23c", draw_Menu, menuSpacing, draw_Menu);
+        print_long_line_equals(UI_SIZE);
+        printf("\n");
+    }
+    return 0;
+}
+
 void path_finder(int node_count, station_list_node* list_of_stations, struct Graph* graph, float dist[], int prev[], float new_dist[], float average[], float percent[], float delays[])
 {
     FILE* output_file = fopen("..\\..\\src\\simulation.txt", "w");
@@ -279,8 +324,6 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
 
     for (int i = 0; i < node_count; ++i) {
         dijkstra(graph, dist, prev, i, list_length(list_of_stations));
-
-        printf("\nDIJKSTRA %d", i);
 
         /*for (int j = 0; j < node_count; ++j) {
             //printf("\n%f + %f", dist[j],(float)delay_optimised(graph, start_train , prev, i, j ));
@@ -321,11 +364,12 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
         //  Print to console #1
         // ======================================
 
-        printf("\n[%d] Average delay is %f", i, average_weight_difference(new_dist, dist, node_count));
-        printf("\n[%d] Average extra time in percent %f", i, percent[i]);
-        printf("\n[%d] Highest delay: %f", i, highest_num(delays, node_count));
-        printf("\n[%d] Lowest delay %f", i, lowest_num(delays, node_count));
-        printf("\n[%d] Median delay: %f", i, median_finder(delays, node_count));
+        printf("\n[%d] Going from %s to any station\n", i, index_station_list(list_of_stations, i));
+        printf("%5cAverage delay is: %0.1f s\n", menuSpacing, average_weight_difference(new_dist, dist, node_count));
+        printf("%5cAverage extra time in percent: %0.2f %%\n", menuSpacing, percent[i]);
+        printf("%5cHighest delay: %0.1f s\n", menuSpacing, highest_num(delays, node_count));
+        printf("%5cLowest delay: %0.1f s\n", menuSpacing, lowest_num(delays, node_count));
+        printf("%5cMedian delay: %0.1f s\n", menuSpacing, median_finder(delays, node_count));
         printf("\n\n");
 
 
@@ -334,20 +378,22 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
         // ======================================
 
         // Output
-        fprintf(output_file, "\n[%d] Average delay is %f", i, average_weight_difference(new_dist, dist, node_count));
-        fprintf(output_file, "\n[%d] Average extra time in percent %f", i, percent[i]);
-        fprintf(output_file, "\n[%d] Highest delay: %f", i, highest_num(delays, node_count));
-        fprintf(output_file, "\n[%d] Lowest delay %f", i, lowest_num(delays, node_count));
-        fprintf(output_file, "\n[%d] Median delay: %f", i, median_finder(delays, node_count));
+        fprintf(output_file, "\n[%d] Going from %s to any station\n", i, index_station_list(list_of_stations, i));
+        fprintf(output_file, "\n%5cAverage delay is: %0.1f s", menuSpacing, average_weight_difference(new_dist, dist, node_count));
+        fprintf(output_file, "\n%5cAverage extra time in percent: %0.2f %%", menuSpacing, percent[i]);
+        fprintf(output_file, "\n%5cHighest delay: %0.1f s", menuSpacing, highest_num(delays, node_count));
+        fprintf(output_file, "\n%5cLowest delay: %0.1f s", menuSpacing, lowest_num(delays, node_count));
+        fprintf(output_file, "\n%5cMedian delay: %0.1f s", menuSpacing, median_finder(delays, node_count));
         fprintf(output_file, "\n\n");
     }
     // ======================================
     //  Print to console #2
     // ======================================
 
-    printf("\nAverage of averages: %lf\n", average_simple(average, node_count));
-    printf("Average of averages in percent: %lf\n", average_simple(percent, node_count));
-
+    print_long_line_equals(UI_SIZE);
+    printf("\n\nOverall average delay: %0.1lf s\n", average_simple(average, node_count));
+    printf("\nOverall average delay in percent: %0.2lf %%\n", average_simple(percent, node_count));
+    print_long_line_equals(UI_SIZE);
 
     // ======================================
     //  Print to file #3
@@ -357,8 +403,8 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
         fprintf(output_file, "%c", drawEquals);
     }
 
-    fprintf(output_file, "\nOverall average delay: %0.1lf\n",average_simple(average, node_count));
-    fprintf(output_file, "\nOverall average delay in percent: %0.1lf\n",average_simple(percent, node_count));
+    fprintf(output_file, "\n\nOverall average delay: %0.1lf s\n",average_simple(average, node_count));
+    fprintf(output_file, "\nOverall average delay in percent: %0.2lf %%\n",average_simple(percent, node_count));
 
     for (int j = 0; j < UI_SIZE; ++j) {
         fprintf(output_file, "%c", drawEquals);
@@ -425,8 +471,9 @@ void print_fine_Graph(struct Graph* graph, station_list_node* list_of_stations)
 }
 
 // Encapsulates all UI functions into one for ease of use
-void GenerateUI(int node_count, station_list_node* list_of_stations, struct Graph* graph, float dist[], int prev[], float new_dist[], float average[], float percent[], float delays[])
+void GenerateUI(int node_count, station_list_node *list_of_stations, struct Graph *graph, float dist[], int prev[],
+                float new_dist[], float average[], float percent[], float delays[], train t[], int train_count)
 {
     drawMenu();
-    menu_choice(node_count, list_of_stations, graph, dist, prev, new_dist, average, percent, delays);
+    menu_choice(node_count, list_of_stations, graph, dist, prev, new_dist, average, percent, delays, t, train_count);
 }
