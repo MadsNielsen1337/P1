@@ -3,639 +3,820 @@
 |                     Running simulation                    |
 =============================================================
 
-[0] Average delay is 140.000000
-[0] Average extra time in percent 0.545895
-[0] Highest delay: 1800.000000
-[0] Lowest delay 0.000000
-[0] Median delay: 900.000000
+[0] Going from Berlin Hbf to any station
 
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.55 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[1] Average delay is 140.000000
-[1] Average extra time in percent 0.537267
-[1] Highest delay: 1800.000000
-[1] Lowest delay 0.000000
-[1] Median delay: 900.000000
 
+[1] Going from Berlin-Spandau to any station
 
-[2] Average delay is 140.000000
-[2] Average extra time in percent 0.568884
-[2] Highest delay: 1800.000000
-[2] Lowest delay 0.000000
-[2] Median delay: 900.000000
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.54 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[3] Average delay is 110.000000
-[3] Average extra time in percent 0.428114
-[3] Highest delay: 900.000000
-[3] Lowest delay 0.000000
-[3] Median delay: 900.000000
+[2] Going from Wolfsburg Hbf to any station
 
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.57 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[4] Average delay is 130.000000
-[4] Average extra time in percent 0.651013
-[4] Highest delay: 900.000000
-[4] Lowest delay 0.000000
-[4] Median delay: 900.000000
 
+[3] Going from Hildesheim to any station
 
-[5] Average delay is 140.000000
-[5] Average extra time in percent 0.813988
-[5] Highest delay: 900.000000
-[5] Lowest delay 0.000000
-[5] Median delay: 900.000000
+     Average delay is: 110.0 s
+     Average extra time in percent: 0.43 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[6] Average delay is 140.000000
-[6] Average extra time in percent 0.811702
-[6] Highest delay: 900.000000
-[6] Lowest delay 0.000000
-[6] Median delay: 900.000000
+[4] Going from Fulda to any station
 
+     Average delay is: 130.0 s
+     Average extra time in percent: 0.65 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[7] Average delay is 160.000000
-[7] Average extra time in percent 0.926054
-[7] Highest delay: 1800.000000
-[7] Lowest delay 0.000000
-[7] Median delay: 900.000000
 
+[5] Going from Frankfurt Hbf to any station
 
-[8] Average delay is 170.000000
-[8] Average extra time in percent 1.024132
-[8] Highest delay: 1800.000000
-[8] Lowest delay 0.000000
-[8] Median delay: 900.000000
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.81 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[9] Average delay is 170.000000
-[9] Average extra time in percent 0.771531
-[9] Highest delay: 1800.000000
-[9] Lowest delay 0.000000
-[9] Median delay: 900.000000
+[6] Going from Mannheim Hbf to any station
 
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.81 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[10] Average delay is 170.000000
-[10] Average extra time in percent 0.747781
-[10] Highest delay: 1800.000000
-[10] Lowest delay 0.000000
-[10] Median delay: 900.000000
 
+[7] Going from Karlsruhe to any station
 
-[11] Average delay is 140.000000
-[11] Average extra time in percent 0.564751
-[11] Highest delay: 1800.000000
-[11] Lowest delay 0.000000
-[11] Median delay: 900.000000
+     Average delay is: 160.0 s
+     Average extra time in percent: 0.93 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[12] Average delay is 140.000000
-[12] Average extra time in percent 0.565434
-[12] Highest delay: 1800.000000
-[12] Lowest delay 0.000000
-[12] Median delay: 900.000000
+[8] Going from Strasbourg-Kehl to any station
 
+     Average delay is: 170.0 s
+     Average extra time in percent: 1.02 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[13] Average delay is 140.000000
-[13] Average extra time in percent 0.583362
-[13] Highest delay: 1800.000000
-[13] Lowest delay 0.000000
-[13] Median delay: 900.000000
 
+[9] Going from Vaires-Torcy to any station
 
-[14] Average delay is 150.000000
-[14] Average extra time in percent 0.628872
-[14] Highest delay: 1800.000000
-[14] Lowest delay 0.000000
-[14] Median delay: 900.000000
+     Average delay is: 170.0 s
+     Average extra time in percent: 0.77 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[15] Average delay is 150.000000
-[15] Average extra time in percent 0.659002
-[15] Highest delay: 1800.000000
-[15] Lowest delay 0.000000
-[15] Median delay: 900.000000
+[10] Going from Paris Est to any station
 
+     Average delay is: 170.0 s
+     Average extra time in percent: 0.75 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[16] Average delay is 120.000000
-[16] Average extra time in percent 0.503281
-[16] Highest delay: 900.000000
-[16] Lowest delay 0.000000
-[16] Median delay: 900.000000
 
+[11] Going from Lehrte to any station
 
-[17] Average delay is 140.000000
-[17] Average extra time in percent 0.726094
-[17] Highest delay: 900.000000
-[17] Lowest delay 0.000000
-[17] Median delay: 900.000000
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.56 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[18] Average delay is 140.000000
-[18] Average extra time in percent 0.868084
-[18] Highest delay: 900.000000
-[18] Lowest delay 0.000000
-[18] Median delay: 900.000000
+[12] Going from Hannover Hbf to any station
 
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.57 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[19] Average delay is 140.000000
-[19] Average extra time in percent 0.796450
-[19] Highest delay: 900.000000
-[19] Lowest delay 0.000000
-[19] Median delay: 900.000000
 
+[13] Going from Wunstorf to any station
 
-[20] Average delay is 130.000000
-[20] Average extra time in percent 0.656034
-[20] Highest delay: 900.000000
-[20] Lowest delay 0.000000
-[20] Median delay: 900.000000
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.58 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[21] Average delay is 130.000000
-[21] Average extra time in percent 0.685120
-[21] Highest delay: 900.000000
-[21] Lowest delay 0.000000
-[21] Median delay: 900.000000
+[14] Going from Haste Hf to any station
 
+     Average delay is: 150.0 s
+     Average extra time in percent: 0.63 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[22] Average delay is 130.000000
-[22] Average extra time in percent 0.650917
-[22] Highest delay: 900.000000
-[22] Lowest delay 0.000000
-[22] Median delay: 900.000000
 
+[15] Going from Buckeburg to any station
 
-[23] Average delay is 120.000000
-[23] Average extra time in percent 0.568542
-[23] Highest delay: 900.000000
-[23] Lowest delay 0.000000
-[23] Median delay: 900.000000
+     Average delay is: 150.0 s
+     Average extra time in percent: 0.66 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[24] Average delay is 120.000000
-[24] Average extra time in percent 0.556904
-[24] Highest delay: 900.000000
-[24] Lowest delay 0.000000
-[24] Median delay: 900.000000
+[16] Going from Hamm-West Hbf to any station
 
+     Average delay is: 120.0 s
+     Average extra time in percent: 0.50 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[25] Average delay is 120.000000
-[25] Average extra time in percent 0.550590
-[25] Highest delay: 900.000000
-[25] Lowest delay 0.000000
-[25] Median delay: 900.000000
 
+[17] Going from Dortmund Hbf to any station
 
-[26] Average delay is 160.000000
-[26] Average extra time in percent 0.690180
-[26] Highest delay: 1800.000000
-[26] Lowest delay 0.000000
-[26] Median delay: 900.000000
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.73 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[27] Average delay is 160.000000
-[27] Average extra time in percent 0.699023
-[27] Highest delay: 1800.000000
-[27] Lowest delay 0.000000
-[27] Median delay: 900.000000
+[18] Going from Cologne Hbf to any station
 
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.87 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[28] Average delay is 140.000000
-[28] Average extra time in percent 0.500993
-[28] Highest delay: 1800.000000
-[28] Lowest delay 0.000000
-[28] Median delay: 900.000000
 
+[19] Going from Aachen Hbf to any station
 
-[29] Average delay is 840.000000
-[29] Average extra time in percent 4.231660
-[29] Highest delay: 1800.000000
-[29] Lowest delay 0.000000
-[29] Median delay: 1800.000000
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.80 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[30] Average delay is 840.000000
-[30] Average extra time in percent 4.024257
-[30] Highest delay: 1800.000000
-[30] Lowest delay 0.000000
-[30] Median delay: 1800.000000
+[20] Going from Hergenrath Bf to any station
 
+     Average delay is: 130.0 s
+     Average extra time in percent: 0.66 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[31] Average delay is 950.000000
-[31] Average extra time in percent 4.479466
-[31] Highest delay: 1800.000000
-[31] Lowest delay 0.000000
-[31] Median delay: 1800.000000
 
+[21] Going from Chenee to any station
 
-[32] Average delay is 560.000000
-[32] Average extra time in percent 2.688749
-[32] Highest delay: 1800.000000
-[32] Lowest delay 0.000000
-[32] Median delay: 900.000000
+     Average delay is: 130.0 s
+     Average extra time in percent: 0.69 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[33] Average delay is 120.000000
-[33] Average extra time in percent 0.479877
-[33] Highest delay: 900.000000
-[33] Lowest delay 0.000000
-[33] Median delay: 900.000000
+[22] Going from Bierset-Awans to any station
 
+     Average delay is: 130.0 s
+     Average extra time in percent: 0.65 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[34] Average delay is 120.000000
-[34] Average extra time in percent 0.517241
-[34] Highest delay: 900.000000
-[34] Lowest delay 0.000000
-[34] Median delay: 900.000000
 
+[23] Going from Leuven to any station
 
-[35] Average delay is 130.000000
-[35] Average extra time in percent 0.619077
-[35] Highest delay: 900.000000
-[35] Lowest delay 0.000000
-[35] Median delay: 900.000000
+     Average delay is: 120.0 s
+     Average extra time in percent: 0.57 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[36] Average delay is 130.000000
-[36] Average extra time in percent 0.569646
-[36] Highest delay: 900.000000
-[36] Lowest delay 0.000000
-[36] Median delay: 900.000000
+[24] Going from Bruxelles-Midi to any station
 
+     Average delay is: 120.0 s
+     Average extra time in percent: 0.56 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[37] Average delay is 160.000000
-[37] Average extra time in percent 0.951155
-[37] Highest delay: 1800.000000
-[37] Lowest delay 0.000000
-[37] Median delay: 900.000000
 
+[25] Going from Halle to any station
 
-[38] Average delay is 180.000000
-[38] Average extra time in percent 1.093755
-[38] Highest delay: 1800.000000
-[38] Lowest delay 0.000000
-[38] Median delay: 900.000000
+     Average delay is: 120.0 s
+     Average extra time in percent: 0.55 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[39] Average delay is 190.000000
-[39] Average extra time in percent 1.327152
-[39] Highest delay: 1800.000000
-[39] Lowest delay 0.000000
-[39] Median delay: 900.000000
+[26] Going from Villers-Le-Bel to any station
 
+     Average delay is: 160.0 s
+     Average extra time in percent: 0.69 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[40] Average delay is 100.000000
-[40] Average extra time in percent 0.445855
-[40] Highest delay: 1800.000000
-[40] Lowest delay 0.000000
-[40] Median delay: 0.000000
 
+[27] Going from Paris Nord to any station
 
-[41] Average delay is 100.000000
-[41] Average extra time in percent 0.410195
-[41] Highest delay: 1800.000000
-[41] Lowest delay 0.000000
-[41] Median delay: 0.000000
+     Average delay is: 160.0 s
+     Average extra time in percent: 0.70 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[42] Average delay is 780.000000
-[42] Average extra time in percent 3.876710
-[42] Highest delay: 2700.000000
-[42] Lowest delay 0.000000
-[42] Median delay: 0.000000
+[28] Going from Bad Bentheim to any station
 
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.50 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[43] Average delay is 780.000000
-[43] Average extra time in percent 3.671529
-[43] Highest delay: 2700.000000
-[43] Lowest delay 0.000000
-[43] Median delay: 0.000000
 
+[29] Going from Amsterdam Centraal to any station
 
-[44] Average delay is 780.000000
-[44] Average extra time in percent 3.071509
-[44] Highest delay: 2700.000000
-[44] Lowest delay 0.000000
-[44] Median delay: 0.000000
+     Average delay is: 840.0 s
+     Average extra time in percent: 4.23 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 1800.0 s
 
 
-[45] Average delay is 780.000000
-[45] Average extra time in percent 2.995082
-[45] Highest delay: 2700.000000
-[45] Lowest delay 0.000000
-[45] Median delay: 0.000000
+[30] Going from Schiphol Airport to any station
 
+     Average delay is: 840.0 s
+     Average extra time in percent: 4.02 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 1800.0 s
 
-[46] Average delay is 780.000000
-[46] Average extra time in percent 2.571824
-[46] Highest delay: 2700.000000
-[46] Lowest delay 0.000000
-[46] Median delay: 0.000000
 
+[31] Going from Rotterdam to any station
 
-[47] Average delay is 210.000000
-[47] Average extra time in percent 1.537739
-[47] Highest delay: 1800.000000
-[47] Lowest delay 0.000000
-[47] Median delay: 900.000000
+     Average delay is: 950.0 s
+     Average extra time in percent: 4.48 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 1800.0 s
 
 
-[48] Average delay is 210.000000
-[48] Average extra time in percent 1.301775
-[48] Highest delay: 1800.000000
-[48] Lowest delay 0.000000
-[48] Median delay: 900.000000
+[32] Going from Rottendam to any station
 
+     Average delay is: 560.0 s
+     Average extra time in percent: 2.69 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[49] Average delay is 220.000000
-[49] Average extra time in percent 1.507572
-[49] Highest delay: 1800.000000
-[49] Lowest delay 0.000000
-[49] Median delay: 900.000000
 
+[33] Going from Barendrecht to any station
 
-[50] Average delay is 160.000000
-[50] Average extra time in percent 0.673613
-[50] Highest delay: 1800.000000
-[50] Lowest delay 0.000000
-[50] Median delay: 900.000000
+     Average delay is: 120.0 s
+     Average extra time in percent: 0.48 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[51] Average delay is 160.000000
-[51] Average extra time in percent 0.654207
-[51] Highest delay: 1800.000000
-[51] Lowest delay 0.000000
-[51] Median delay: 900.000000
+[34] Going from Antwerpen to any station
 
+     Average delay is: 120.0 s
+     Average extra time in percent: 0.52 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[52] Average delay is 100.000000
-[52] Average extra time in percent 0.296356
-[52] Highest delay: 1800.000000
-[52] Lowest delay 0.000000
-[52] Median delay: 0.000000
 
+[35] Going from Saarbrucken to any station
 
-[53] Average delay is 100.000000
-[53] Average extra time in percent 0.305271
-[53] Highest delay: 1800.000000
-[53] Lowest delay 0.000000
-[53] Median delay: 0.000000
+     Average delay is: 130.0 s
+     Average extra time in percent: 0.62 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[54] Average delay is 100.000000
-[54] Average extra time in percent 0.314197
-[54] Highest delay: 1800.000000
-[54] Lowest delay 0.000000
-[54] Median delay: 0.000000
+[36] Going from Herny to any station
 
+     Average delay is: 130.0 s
+     Average extra time in percent: 0.57 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[55] Average delay is 100.000000
-[55] Average extra time in percent 0.322741
-[55] Highest delay: 1800.000000
-[55] Lowest delay 0.000000
-[55] Median delay: 0.000000
 
+[37] Going from Rastatt to any station
 
-[56] Average delay is 100.000000
-[56] Average extra time in percent 0.283175
-[56] Highest delay: 1800.000000
-[56] Lowest delay 0.000000
-[56] Median delay: 0.000000
+     Average delay is: 160.0 s
+     Average extra time in percent: 0.95 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[57] Average delay is 100.000000
-[57] Average extra time in percent 0.262566
-[57] Highest delay: 1800.000000
-[57] Lowest delay 0.000000
-[57] Median delay: 0.000000
+[38] Going from Offenburg to any station
 
+     Average delay is: 180.0 s
+     Average extra time in percent: 1.09 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[58] Average delay is 780.000000
-[58] Average extra time in percent 3.415729
-[58] Highest delay: 2700.000000
-[58] Lowest delay 0.000000
-[58] Median delay: 0.000000
 
+[39] Going from Basel SBB to any station
 
-[59] Average delay is 680.000000
-[59] Average extra time in percent 2.689918
-[59] Highest delay: 2700.000000
-[59] Lowest delay 0.000000
-[59] Median delay: 0.000000
+     Average delay is: 190.0 s
+     Average extra time in percent: 1.33 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[60] Average delay is 630.000000
-[60] Average extra time in percent 2.266858
-[60] Highest delay: 2700.000000
-[60] Lowest delay 0.000000
-[60] Median delay: 0.000000
+[40] Going from Domodossola to any station
 
+     Average delay is: 100.0 s
+     Average extra time in percent: 0.45 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
-[61] Average delay is 120.000000
-[61] Average extra time in percent 0.383841
-[61] Highest delay: 1800.000000
-[61] Lowest delay 0.000000
-[61] Median delay: 0.000000
 
+[41] Going from Arona to any station
 
-[62] Average delay is 100.000000
-[62] Average extra time in percent 0.303831
-[62] Highest delay: 1800.000000
-[62] Lowest delay 0.000000
-[62] Median delay: 0.000000
+     Average delay is: 100.0 s
+     Average extra time in percent: 0.41 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
 
-[63] Average delay is 100.000000
-[63] Average extra time in percent 0.220827
-[63] Highest delay: 1800.000000
-[63] Lowest delay 0.000000
-[63] Median delay: 0.000000
+[42] Going from Milan Centrale to any station
 
+     Average delay is: 780.0 s
+     Average extra time in percent: 3.88 %
+     Highest delay: 2700.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
-[64] Average delay is 190.000000
-[64] Average extra time in percent 1.240249
-[64] Highest delay: 1800.000000
-[64] Lowest delay 0.000000
-[64] Median delay: 900.000000
 
+[43] Going from Melegnano to any station
 
-[65] Average delay is 190.000000
-[65] Average extra time in percent 1.131445
-[65] Highest delay: 1800.000000
-[65] Lowest delay 0.000000
-[65] Median delay: 900.000000
+     Average delay is: 780.0 s
+     Average extra time in percent: 3.67 %
+     Highest delay: 2700.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
 
-[66] Average delay is 190.000000
-[66] Average extra time in percent 1.004630
-[66] Highest delay: 1800.000000
-[66] Lowest delay 0.000000
-[66] Median delay: 900.000000
+[44] Going from Firenze Castello to any station
 
+     Average delay is: 780.0 s
+     Average extra time in percent: 3.07 %
+     Highest delay: 2700.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
-[67] Average delay is 740.000000
-[67] Average extra time in percent 3.512022
-[67] Highest delay: 1800.000000
-[67] Lowest delay 0.000000
-[67] Median delay: 1800.000000
 
+[45] Going from Firenze Campo to any station
 
-[68] Average delay is 110.000000
-[68] Average extra time in percent 0.427962
-[68] Highest delay: 900.000000
-[68] Lowest delay 0.000000
-[68] Median delay: 900.000000
+     Average delay is: 780.0 s
+     Average extra time in percent: 3.00 %
+     Highest delay: 2700.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
 
-[69] Average delay is 150.000000
-[69] Average extra time in percent 1.006377
-[69] Highest delay: 900.000000
-[69] Lowest delay 0.000000
-[69] Median delay: 900.000000
+[46] Going from Rome Termini to any station
 
+     Average delay is: 780.0 s
+     Average extra time in percent: 2.57 %
+     Highest delay: 2700.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
-[70] Average delay is 130.000000
-[70] Average extra time in percent 0.588775
-[70] Highest delay: 900.000000
-[70] Lowest delay 0.000000
-[70] Median delay: 900.000000
 
+[47] Going from Bern to any station
 
-[71] Average delay is 140.000000
-[71] Average extra time in percent 0.592463
-[71] Highest delay: 900.000000
-[71] Lowest delay 0.000000
-[71] Median delay: 900.000000
+     Average delay is: 210.0 s
+     Average extra time in percent: 1.54 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[72] Average delay is 160.000000
-[72] Average extra time in percent 0.705666
-[72] Highest delay: 1800.000000
-[72] Lowest delay 0.000000
-[72] Median delay: 900.000000
+[48] Going from St Margrethen to any station
 
+     Average delay is: 210.0 s
+     Average extra time in percent: 1.30 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[73] Average delay is 160.000000
-[73] Average extra time in percent 0.693327
-[73] Highest delay: 1800.000000
-[73] Lowest delay 0.000000
-[73] Median delay: 900.000000
 
+[49] Going from Munchen Hbf to any station
 
-[74] Average delay is 280.000000
-[74] Average extra time in percent 1.356132
-[74] Highest delay: 2700.000000
-[74] Lowest delay 0.000000
-[74] Median delay: 900.000000
+     Average delay is: 220.0 s
+     Average extra time in percent: 1.51 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[75] Average delay is 800.000000
-[75] Average extra time in percent 3.528516
-[75] Highest delay: 2700.000000
-[75] Lowest delay 0.000000
-[75] Median delay: 2700.000000
+[50] Going from Le Verte de Maisons to any station
 
+     Average delay is: 160.0 s
+     Average extra time in percent: 0.67 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
-[76] Average delay is 980.000000
-[76] Average extra time in percent 4.613549
-[76] Highest delay: 2700.000000
-[76] Lowest delay 0.000000
-[76] Median delay: 2700.000000
 
+[51] Going from Brevannes to any station
 
-[77] Average delay is 590.000000
-[77] Average extra time in percent 3.065898
-[77] Highest delay: 1800.000000
-[77] Lowest delay 0.000000
-[77] Median delay: 1800.000000
+     Average delay is: 160.0 s
+     Average extra time in percent: 0.65 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
 
 
-[78] Average delay is 310.000000
-[78] Average extra time in percent 1.973300
-[78] Highest delay: 900.000000
-[78] Lowest delay 0.000000
-[78] Median delay: 900.000000
+[52] Going from Montanay to any station
 
+     Average delay is: 100.0 s
+     Average extra time in percent: 0.30 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
-[79] Average delay is 140.000000
-[79] Average extra time in percent 0.537904
-[79] Highest delay: 1800.000000
-[79] Lowest delay 0.000000
-[79] Median delay: 900.000000
 
+[53] Going from La Begude to any station
 
-[80] Average delay is 160.000000
-[80] Average extra time in percent 0.640775
-[80] Highest delay: 1800.000000
-[80] Lowest delay 0.000000
-[80] Median delay: 900.000000
+     Average delay is: 100.0 s
+     Average extra time in percent: 0.31 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
 
-[81] Average delay is 140.000000
-[81] Average extra time in percent 0.540408
-[81] Highest delay: 900.000000
-[81] Lowest delay 0.000000
-[81] Median delay: 900.000000
+[54] Going from Nimes Pont du Gard to any station
 
+     Average delay is: 100.0 s
+     Average extra time in percent: 0.31 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
-[82] Average delay is 160.000000
-[82] Average extra time in percent 0.728782
-[82] Highest delay: 1800.000000
-[82] Lowest delay 0.000000
-[82] Median delay: 900.000000
 
+[55] Going from Nimes Centre to any station
 
-[83] Average delay is 180.000000
-[83] Average extra time in percent 0.917798
-[83] Highest delay: 1800.000000
-[83] Lowest delay 0.000000
-[83] Median delay: 900.000000
+     Average delay is: 100.0 s
+     Average extra time in percent: 0.32 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
 
-[84] Average delay is 200.000000
-[84] Average extra time in percent 1.145320
-[84] Highest delay: 1800.000000
-[84] Lowest delay 0.000000
-[84] Median delay: 900.000000
+[56] Going from Perpignan to any station
 
+     Average delay is: 100.0 s
+     Average extra time in percent: 0.28 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
-[85] Average delay is 200.000000
-[85] Average extra time in percent 1.237824
-[85] Highest delay: 1800.000000
-[85] Lowest delay 0.000000
-[85] Median delay: 900.000000
 
+[57] Going from Barcelona-sants to any station
 
-[86] Average delay is 230.000000
-[86] Average extra time in percent 1.376213
-[86] Highest delay: 1800.000000
-[86] Lowest delay 0.000000
-[86] Median delay: 900.000000
+     Average delay is: 100.0 s
+     Average extra time in percent: 0.26 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
 
-[87] Average delay is 130.000000
-[87] Average extra time in percent 0.643897
-[87] Highest delay: 1800.000000
-[87] Lowest delay 0.000000
-[87] Median delay: 0.000000
+[58] Going from Torino to any station
 
+     Average delay is: 780.0 s
+     Average extra time in percent: 3.42 %
+     Highest delay: 2700.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
-[88] Average delay is 530.000000
-[88] Average extra time in percent 2.141581
-[88] Highest delay: 1800.000000
-[88] Lowest delay 0.000000
-[88] Median delay: 0.000000
 
+[59] Going from Modane to any station
 
-[89] Average delay is 800.000000
-[89] Average extra time in percent 3.492235
-[89] Highest delay: 2700.000000
-[89] Lowest delay 0.000000
-[89] Median delay: 0.000000
+     Average delay is: 680.0 s
+     Average extra time in percent: 2.69 %
+     Highest delay: 2700.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
+
+
+[60] Going from Montmelian to any station
+
+     Average delay is: 630.0 s
+     Average extra time in percent: 2.27 %
+     Highest delay: 2700.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
+
+
+[61] Going from Valence-TGV to any station
+
+     Average delay is: 120.0 s
+     Average extra time in percent: 0.38 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
+
+
+[62] Going from Avignon to any station
+
+     Average delay is: 100.0 s
+     Average extra time in percent: 0.30 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
+
+
+[63] Going from Madrid Puerta to any station
+
+     Average delay is: 100.0 s
+     Average extra time in percent: 0.22 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
+
+
+[64] Going from Mulhouse Ville to any station
+
+     Average delay is: 190.0 s
+     Average extra time in percent: 1.24 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[65] Going from Belfort to any station
+
+     Average delay is: 190.0 s
+     Average extra time in percent: 1.13 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[66] Going from Collonges-Les-Premieres to any station
+
+     Average delay is: 190.0 s
+     Average extra time in percent: 1.00 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[67] Going from Utrecht Centraal to any station
+
+     Average delay is: 740.0 s
+     Average extra time in percent: 3.51 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 1800.0 s
+
+
+[68] Going from Zevenaar to any station
+
+     Average delay is: 110.0 s
+     Average extra time in percent: 0.43 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[69] Going from Oberhausen Hbf to any station
+
+     Average delay is: 150.0 s
+     Average extra time in percent: 1.01 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[70] Going from Eisenach to any station
+
+     Average delay is: 130.0 s
+     Average extra time in percent: 0.59 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[71] Going from Leipzig to any station
+
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.59 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[72] Going from Riesa to any station
+
+     Average delay is: 160.0 s
+     Average extra time in percent: 0.71 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[73] Going from Dresden Hbf to any station
+
+     Average delay is: 160.0 s
+     Average extra time in percent: 0.69 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[74] Going from Schona to any station
+
+     Average delay is: 280.0 s
+     Average extra time in percent: 1.36 %
+     Highest delay: 2700.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[75] Going from Prague hl to any station
+
+     Average delay is: 800.0 s
+     Average extra time in percent: 3.53 %
+     Highest delay: 2700.0 s
+     Lowest delay: 0.0 s
+     Median delay: 2700.0 s
+
+
+[76] Going from Beroun to any station
+
+     Average delay is: 980.0 s
+     Average extra time in percent: 4.61 %
+     Highest delay: 2700.0 s
+     Lowest delay: 0.0 s
+     Median delay: 2700.0 s
+
+
+[77] Going from Plzen hl to any station
+
+     Average delay is: 590.0 s
+     Average extra time in percent: 3.07 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 1800.0 s
+
+
+[78] Going from Regensburg to any station
+
+     Average delay is: 310.0 s
+     Average extra time in percent: 1.97 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[79] Going from Zossen to any station
+
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.54 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[80] Going from Ruckersdorf to any station
+
+     Average delay is: 160.0 s
+     Average extra time in percent: 0.64 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[81] Going from Juterbog to any station
+
+     Average delay is: 140.0 s
+     Average extra time in percent: 0.54 %
+     Highest delay: 900.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[82] Going from Zapfendorf to any station
+
+     Average delay is: 160.0 s
+     Average extra time in percent: 0.73 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[83] Going from Nurnberg Hbf to any station
+
+     Average delay is: 180.0 s
+     Average extra time in percent: 0.92 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[84] Going from Ingolstadt to any station
+
+     Average delay is: 200.0 s
+     Average extra time in percent: 1.15 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[85] Going from Paindorf to any station
+
+     Average delay is: 200.0 s
+     Average extra time in percent: 1.24 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[86] Going from Kiefersfelden to any station
+
+     Average delay is: 230.0 s
+     Average extra time in percent: 1.38 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 900.0 s
+
+
+[87] Going from Brenner-Brennero to any station
+
+     Average delay is: 130.0 s
+     Average extra time in percent: 0.64 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
+
+
+[88] Going from Vernoa to any station
+
+     Average delay is: 530.0 s
+     Average extra time in percent: 2.14 %
+     Highest delay: 1800.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
+
+
+[89] Going from Brescia to any station
+
+     Average delay is: 800.0 s
+     Average extra time in percent: 3.49 %
+     Highest delay: 2700.0 s
+     Lowest delay: 0.0 s
+     Median delay: 0.0 s
 
 =============================================================
-Overall average delay: 270.7
 
-Overall average delay in percent: 1.3
+Overall average delay: 270.7 s
+
+Overall average delay in percent: 1.25 %
 =============================================================
 
 
