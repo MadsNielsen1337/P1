@@ -73,7 +73,6 @@ int weight_calc(route r, train t)
     int weight;    // Delay time in minutes
 
     weight = time(r, t);
-    // maybe also make a delay at each vertex to account for passengers leaving/getting on the train - unless the vertex is the final destination
 
     if(weight < 0) {
         return -1;
