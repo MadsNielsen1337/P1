@@ -224,8 +224,9 @@ void menu_choice(int node_count, station_list_node *list_of_stations, struct Gra
                 drawMenu();
                 break;
             default:
-                printf("\nDEFAULT\n");
-                printf("Choice = '%c'\n", choice);
+                // Testing
+                //printf("\nDEFAULT\n");
+                //printf("Choice = '%c'\n", choice);
                 drawMenu();
         }
     }
