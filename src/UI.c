@@ -439,7 +439,6 @@ void print_fine_Graph(struct Graph* graph, station_list_node* list_of_stations)
 
     station[0] = '\0';
 
-    printf("\n");
     for (i = 0; i < N; i++)
     {
         struct Node* ptr = graph->head[i];
