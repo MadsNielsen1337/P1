@@ -322,7 +322,8 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
     // ======================================
     //  Print file TEMP END
     // ======================================
-
+    float highest_delays[node_count];
+    float lowest_delays[node_count];
     for (int i = 0; i < node_count; ++i) {
         dijkstra(graph, dist, prev, i, list_length(list_of_stations));
 
@@ -359,6 +360,8 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
         }
         average[i] = average_weight_difference(new_dist, dist, node_count);
         percent[i] = percentage_weight_difference(new_dist, dist, node_count);
+        highest_delays[i] = highest_num(delays, node_count);
+        lowest_delays[i] = lowest_num(delays, node_count);
 
 
         // ======================================
@@ -368,8 +371,8 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
         printf("\n[%d] Going from %s to any station\n", i, index_station_list(list_of_stations, i));
         printf("%5cAverage delay is: %0.1f s\n", menuSpacing, average_weight_difference(new_dist, dist, node_count));
         printf("%5cAverage extra time in percent: %0.2f %%\n", menuSpacing, percent[i]);
-        printf("%5cHighest delay: %0.1f s\n", menuSpacing, highest_num(delays, node_count));
-        printf("%5cLowest delay: %0.1f s\n", menuSpacing, lowest_num(delays, node_count));
+        printf("%5cHighest delay: %0.1f s\n", menuSpacing, highest_delays[i]);
+        printf("%5cLowest delay: %0.1f s\n", menuSpacing, lowest_delays[i]);
         printf("%5cMedian delay: %0.1f s\n", menuSpacing, median_finder(delays, node_count));
         printf("\n\n");
 
@@ -394,6 +397,10 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
     print_long_line_equals(UI_SIZE);
     printf("\nOverall average delay: %0.1lf s", average_simple(average, node_count));
     printf("\nOverall average delay in percent: %0.2lf %%", average_simple(percent, node_count));
+    printf("\nOverall Highest delay: %0.1f s", highest_num(highest_delays, node_count));
+    printf("\nOverall Lowest delay: %0.1f s", lowest_num(lowest_delays, node_count));
+    printf("\nOverall Median of averages: %0.1f s", median_finder(average, node_count));
+
     print_long_line_equals(UI_SIZE);
 
     // ======================================
@@ -404,8 +411,12 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
         fprintf(output_file, "%c", drawEquals);
     }
 
-    fprintf(output_file, "\nOverall average delay: %0.1lf s\n",average_simple(average, node_count));
-    fprintf(output_file, "\nOverall average delay in percent: %0.2lf %%\n",average_simple(percent, node_count));
+    fprintf(output_file, "\nOverall average delay: %0.1lf s",average_simple(average, node_count));
+    fprintf(output_file, "\nOverall average delay in percent: %0.2lf %%",average_simple(percent, node_count));
+    fprintf(output_file, "\nOverall highest delay: %0.1f s", highest_num(highest_delays, node_count));
+    fprintf(output_file, "\nOverall lowest delay: %0.1f s", lowest_num(lowest_delays, node_count));
+    fprintf(output_file, "\nOverall median of average delay: %0.1f s", median_finder(average, node_count));
+
 
     for (int j = 0; j < UI_SIZE; ++j) {
         fprintf(output_file, "%c", drawEquals);
