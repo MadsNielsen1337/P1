@@ -384,7 +384,7 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
         // Output
         fprintf(output_file, "\n[%d] Going from %s to any station\n", i, index_station_list(list_of_stations, i));
         fprintf(output_file, "\n%5cAverage delay is: %0.1f s", menuSpacing, average_weight_difference(new_dist, dist, node_count));
-        fprintf(output_file, "\n%5cAverage extra time in percent: %0.2f %%", menuSpacing, percent[i]);
+        fprintf(output_file, "\n%5cAverage delay in percent: %0.2f %%", menuSpacing, percent[i]);
         fprintf(output_file, "\n%5cHighest delay: %0.1f s", menuSpacing, highest_num(delays, node_count));
         fprintf(output_file, "\n%5cLowest delay: %0.1f s", menuSpacing, lowest_num(delays, node_count));
         fprintf(output_file, "\n%5cMedian delay: %0.1f s", menuSpacing, median_finder(delays, node_count));
