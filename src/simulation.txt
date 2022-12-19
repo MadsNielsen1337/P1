@@ -813,7 +813,6 @@
      Median delay: 0.0 s
 
 =============================================================
-
 Overall average delay: 270.7 s
 
 Overall average delay in percent: 1.25 %

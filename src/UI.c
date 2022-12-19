@@ -392,7 +392,7 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
     // ======================================
 
     print_long_line_equals(UI_SIZE);
-    printf("Overall average delay: %0.1lf s", average_simple(average, node_count));
+    printf("\nOverall average delay: %0.1lf s", average_simple(average, node_count));
     printf("\nOverall average delay in percent: %0.2lf %%", average_simple(percent, node_count));
     print_long_line_equals(UI_SIZE);
 
@@ -404,7 +404,7 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
         fprintf(output_file, "%c", drawEquals);
     }
 
-    fprintf(output_file, "\n\nOverall average delay: %0.1lf s\n",average_simple(average, node_count));
+    fprintf(output_file, "\nOverall average delay: %0.1lf s\n",average_simple(average, node_count));
     fprintf(output_file, "\nOverall average delay in percent: %0.2lf %%\n",average_simple(percent, node_count));
 
     for (int j = 0; j < UI_SIZE; ++j) {
