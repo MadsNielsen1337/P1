@@ -1,9 +1,7 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "routes.h"
 #include "trains.h"
-#include "time.h"
 
 //Take a dot seperated string and target string and returns 1 if the target string matches a part of the dot seperated string
 int segmented_string_compare(const char* str, const char* target) {

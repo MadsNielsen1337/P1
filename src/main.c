@@ -12,12 +12,12 @@ int main(void)
     int train_count = 0;
 
     // Calculate size of route.txt - aka. how many lines are there?
-    FILE* routefile = fopen("routes.txt", "r");
+    FILE* routefile = fopen("..\\..\\src\\routes.txt", "r");
     route_count = lines_in_file(routefile);
     fclose(routefile);
 
     // Calculate size of trains.txt - aka. how many lines are there?
-    FILE* trainfile = fopen("trains.txt", "r");
+    FILE* trainfile = fopen("..\\..\\src\\trains.txt", "r");
     train_count = lines_in_file(trainfile);
     fclose(trainfile);
 

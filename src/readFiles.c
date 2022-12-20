@@ -24,7 +24,7 @@ int lines_in_file(FILE* p_file){
 // Reads input in route.txt using scan_routes
 void read_routes(route* routes, int* route_count)
 {
-    FILE* routefile = fopen("routes.txt", "r");
+    FILE* routefile = fopen("..\\..\\src\\routes.txt", "r");
     scan_routes(routefile, routes, route_count);
     fclose(routefile);
 }
@@ -32,7 +32,7 @@ void read_routes(route* routes, int* route_count)
 // // Reads input in trains.txt using scan_trains
 void read_trains(train* trains, int* train_count)
 {
-    FILE* trainfile = fopen("trains.txt", "r");
+    FILE* trainfile = fopen("..\\..\\src\\trains.txt", "r");
     scan_trains(trainfile, trains, train_count);
     fclose(trainfile);
 }
