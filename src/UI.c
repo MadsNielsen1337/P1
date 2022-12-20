@@ -39,6 +39,7 @@ void print_fine_Graph(struct Graph* graph, station_list_node* list_of_stations);
 
 // -----------------------------------------------------------------------------------
 
+
 // Garbage collector.
 void clear_input(void){
     int garbageCollector;
@@ -91,8 +92,6 @@ void print_long_line_equals(int ui_size)
     }
 }
 
-
-
 // Draws a UI in the terminal
 void drawMenu(void)
 {
@@ -124,27 +123,6 @@ void drawMenu(void)
     print_long_line_equals(UI_SIZE);
 
     printf("\n");
-
-
-
-/* // Tests to see if the format is right
-    printf("\n");
-    for (int i = 0; i < list_length(list_of_stations); ++i) {
-        printf("\nP[%d] '%s'", i, routes[i].power);
-    }
-    printf("\n");
-    for (int i = 0; i < list_length(list_of_stations); ++i) {
-        printf("\nG[%d] '%s'", i, routes[i].gauge);
-    }
-    printf("\n");
-    for (int i = 0; i < list_length(list_of_stations); ++i) {
-        printf("\nC[%d] '%s'", i, routes[i].controls);
-    }
-
-    printf("\nlist_length: %d\n", list_length(list_of_stations));
-    print_station_list(list_of_stations);
-*/
-
 }
 
 // Processes the user input
@@ -224,9 +202,6 @@ void menu_choice(int node_count, station_list_node *list_of_stations, struct Gra
                 drawMenu();
                 break;
             default:
-                // Testing
-                //printf("\nDEFAULT\n");
-                //printf("Choice = '%c'\n", choice);
                 drawMenu();
         }
     }
@@ -297,7 +272,7 @@ int list_trains(train t[], int train_count)
 
 void path_finder(int node_count, station_list_node* list_of_stations, struct Graph* graph, float dist[], int prev[], float new_dist[], float average[], float percent[], float delays[])
 {
-    FILE* output_file = fopen("..\\..\\src\\simulation.txt", "w");
+    FILE* output_file = fopen("simulation.txt", "w");
 
     char draw_Menu = '|';
     char menuSpacing = ' ';
@@ -327,10 +302,6 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
     for (int i = 0; i < node_count; ++i) {
         dijkstra(graph, dist, prev, i, list_length(list_of_stations));
 
-        /*for (int j = 0; j < node_count; ++j) {
-            //printf("\n%f + %f", dist[j],(float)delay_optimised(graph, start_train , prev, i, j ));
-        }*/
-
         for (int j = 0; j < node_count; ++j) {
             struct Node *ptr = graph->head[j];
             while (ptr != NULL && ptr->dest != prev[j]) {     //find the correct route to check for matching trains on
@@ -342,20 +313,6 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
 
                 delays[j] = (float) delay_optimised(graph, ptr->allowed_trains, prev, i, j);
                 delays[i] = 0;
-
-                // Error testing here
-
-                //printf("\n[2 | %d] Delay optimised: %lf\n", j, (float)delay_optimised(graph, ptr->allowed_trains, prev, i, j));
-                //printf("[2 | %d] Dist: %f\n", j, dist[j]);
-                //r
-                // printf("[2 | %d] New dist: %f\n", j, new_dist[j]);
-                /*
-                if(900 < (float) delay_optimised(graph, ptr->allowed_trains, prev, i, j)){
-                    printf("Starting with: %s", ptr->allowed_trains);
-                    printf("\nOptimised: %lf\n", (float) delay_optimised(graph, ptr->allowed_trains, prev, i, j));
-                    printf("Not Optimised: %lf\n", (float) extra_delay(graph, j, i, prev, start_train));
-                }
-                 */
             }
         }
         average[i] = average_weight_difference(new_dist, dist, node_count);
@@ -381,7 +338,6 @@ void path_finder(int node_count, station_list_node* list_of_stations, struct Gra
         //  Print to file #2
         // ======================================
 
-        // Output
         fprintf(output_file, "\n[%d] Going from %s to any station\n", i, index_station_list(list_of_stations, i));
         fprintf(output_file, "\n%5cAverage delay is: %0.1f s", menuSpacing, average_weight_difference(new_dist, dist, node_count));
         fprintf(output_file, "\n%5cAverage delay in percent: %0.2f %%", menuSpacing, percent[i]);
@@ -453,21 +409,23 @@ void print_fine_Graph(struct Graph* graph, station_list_node* list_of_stations)
     for (i = 0; i < N; i++)
     {
         struct Node* ptr = graph->head[i];
+
         // print the current vertex and all its neighbors
         while (ptr != NULL)
         {
+            // strcat used to check string size of each station to properly align weights
             strcat(station, "[Station %d] ");
             strcat(station, index_station_list(list_of_stations, i));
             strcat(station," -> ");
             strcat(station, index_station_list(list_of_stations, ptr->dest));
 
-            //printf("\nConcat string:%s\n", station_1);
-
+            // Stations printed
             if(i <= 9)
-                printf("\n [Station %d] %s -> %s", i, index_station_list(list_of_stations, i) , index_station_list(list_of_stations, ptr->dest));
+                printf("\n [Station %d] %s -> %s", i, index_station_list(list_of_stations, i), index_station_list(list_of_stations, ptr->dest));
             else if(i >= 10)
-                printf("\n[Station %d] %s -> %s", i, index_station_list(list_of_stations, i) , index_station_list(list_of_stations, ptr->dest));
+                printf("\n[Station %d] %s -> %s", i, index_station_list(list_of_stations, i), index_station_list(list_of_stations, ptr->dest));
 
+            // Weights are aligned
             for (int j = 0; j < 56-strlen(station); ++j) {
                 printf("%c", menuSpacing);
             }

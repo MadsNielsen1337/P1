@@ -37,13 +37,7 @@ void printGraph(struct Graph* graph);
 // Function that constructs the edges for the graph
 struct Edge* build_edges(station_list_node* list, route* r, int route_count, train* t, int train_count);
 
-//int dijkstra(struct Graph* graph, int start_node, int end_node);
-
-int train_match(struct Graph* graph, int search_pos, station_list_node* list_of_stations);
-
+// Dijkstra's algorithm
 void dijkstra(struct Graph* graph, float* dist, int* prev, int start_node, int node_count);
-
-int prev_finder(int start_pos ,int search_pos, int* prev, struct Graph* graph, int* train_compat, station_list_node* list_of_stations);
-
 
 #endif //P1_GRAPH_H

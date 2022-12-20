@@ -93,18 +93,3 @@ char* index_station_list(station_list_node* node, const int index)
         }
     }
 }
-
-// Function to test the linked station list's basic functions
-void list_test()
-{
-    station_list_node* list = create_station_list("Test:");
-    char name[DATA_SIZE];
-    for (int i = 0; i < 5; ++i) {
-        scanf("%s", name);
-        add_node(list, name);
-    }
-    print_station_list(list);
-    printf("\nList has a length of %d\n", list_length(list));
-    printf("\nWord \"hello\" is at index %d\n" ,search_station_list(list, "hello"));
-    printf("\nWord at the 3rd index is \"%s\"", index_station_list(list, 3));
-}

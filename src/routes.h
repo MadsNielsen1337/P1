@@ -42,9 +42,6 @@ int search_list_recursive(station_list_node* node, const char* searched_name, in
 int search_station_list(station_list_node* list, const char* searched_name);
 
 // Returns the name at a given index of a station list starting from the location pointed to by the node variable. Does not support negative index values
-char* index_station_list(station_list_node* node, int index);   // changed 'const int' to 'int'. The function definition is still the same though, as it only affects definitions, not declarations.
-
-// Function to test the linked station list's basic functions
-void list_test();
+char* index_station_list(station_list_node* node, int index);
 
 #endif //P1_ROUTES_H

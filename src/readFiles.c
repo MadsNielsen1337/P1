@@ -24,7 +24,7 @@ int lines_in_file(FILE* p_file){
 // Reads input in route.txt using scan_routes
 void read_routes(route* routes, int* route_count)
 {
-    FILE* routefile = fopen("..\\..\\src\\routes.txt", "r");
+    FILE* routefile = fopen("routes.txt", "r");
     scan_routes(routefile, routes, route_count);
     fclose(routefile);
 }
@@ -32,7 +32,7 @@ void read_routes(route* routes, int* route_count)
 // // Reads input in trains.txt using scan_trains
 void read_trains(train* trains, int* train_count)
 {
-    FILE* trainfile = fopen("..\\..\\src\\trains.txt", "r");
+    FILE* trainfile = fopen("trains.txt", "r");
     scan_trains(trainfile, trains, train_count);
     fclose(trainfile);
 }
@@ -59,9 +59,6 @@ void scan_routes(FILE* p_file, route* r, const int* route_count)
         fscanf(p_file, "%*[,]");
         fscanf(p_file, "%[^\n]", r[i].station_end); //station_end is the last piece of data. a newline character comes right after it
         fscanf(p_file, "%*[^a-zA-Z0-9]");           //skip characters until a letter or number is reached, which would be at the next line
-
-        //printf to test if the format is right. delete later
-        //printf("%d %d %s %s %s %s %s\n",r[0].distance,r[i].track_speed,r[i].power,r[i].gauge,r[i].controls,r[i].station_start,r[i].station_end);
     }
 }
 
@@ -88,8 +85,5 @@ void scan_trains(FILE* p_file, train* t, const int* train_count)
         fscanf(p_file, "%[^\n]", temp);
         t[i].passenger_space = strtol(temp, NULL, 10);
         fscanf(p_file, "%*[^a-zA-Z0-9]");
-
-        //printf to test if the format is right. delete later
-        //printf("%s %s %s %s %.0lf %.0lf %d\n",t[i].name,t[i].gauge,t[i].controls,t[i].fuels,t[i].acceleration,t[i].max_speed,t[i].passenger_space);
     }
 }
